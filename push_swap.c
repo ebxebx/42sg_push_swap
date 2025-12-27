@@ -6,7 +6,7 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/26 12:33:51 by zchoo             #+#    #+#             */
-/*   Updated: 2025/12/27 22:15:18 by zchoo            ###   ########.fr       */
+/*   Updated: 2025/12/27 22:45:26 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -182,6 +182,7 @@ int	main(int ac, char **av)
 	update_rank(stack_a);
 	print_stack(stack_a);
 
+/* 
 	push(&stack_a, &stack_b, 'b');
 	push(&stack_a, &stack_b, 'b');
 	push(&stack_a, &stack_b, 'b');
@@ -238,7 +239,47 @@ int	main(int ac, char **av)
 	ft_putstr_fd("Stack A:\n", 1);
 	print_stack(stack_a);
 	ft_putstr_fd("Stack B:\n", 1);
-	print_stack(stack_b);
+	print_stack(stack_b); */
+
+	if (ac > 1)
+	{
+		int i = 0;
+		while (i < bit_count(ac - 1))
+		{
+			int j = 0;
+			int k = ft_lstsize(stack_a);
+			while (j < k)
+			{
+				// Perform bitwise operations for each bit
+				if (((t_data *)stack_a->content)->rank & (1 << i))
+					rotate(&stack_a, &stack_b, 'a');
+				else
+					push(&stack_a, &stack_b, 'b');
+				j++;
+			}
+
+			j = 0;
+			k = ft_lstsize(stack_b);
+			while (j < k)
+			{
+				push(&stack_a, &stack_b, 'a');
+				j++;
+			}
+			i++;
+		}
+
+		// int j = 0;
+		// int k = ft_lstsize(stack_a);
+		// while (j < k - 1)
+		// {
+		// 	rotate(&stack_a, &stack_b, 'a');
+		// 	j++;
+		// }
+		ft_putendl_fd("Stack A after sorting:", 1);
+		print_stack(stack_a);
+		ft_putendl_fd("Stack B after sorting:", 1);
+		print_stack(stack_b);
+	}
 
 	return (0);
 }

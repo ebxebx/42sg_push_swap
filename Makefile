@@ -1,11 +1,12 @@
 NAME      = push_swap
-TEST_CMD = ./$(NAME) 1 2 3 -100 -1000
+TEST_CMD = ./$(NAME) 2 1 3 -111
+# TEST_CMD = ./$(NAME) 1 2 3 -100 -1000
 # TEST_CMD = ./$(NAME) 9 1 -10 -2 5 100
 
 LIBFT_DIR = ./libft
 LIBFT     = $(LIBFT_DIR)/libft.a
 
-SRCS = push_swap.c push_swap_utils.c move_stack.c
+SRCS = push_swap.c push_swap_utils.c move_stack.c push_swap_test.c
 OBJS = $(SRCS:.c=.o)
 
 CC = cc

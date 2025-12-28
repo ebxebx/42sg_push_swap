@@ -6,7 +6,7 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/26 12:33:51 by zchoo             #+#    #+#             */
-/*   Updated: 2025/12/27 22:45:26 by zchoo            ###   ########.fr       */
+/*   Updated: 2025/12/28 14:57:49 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void print_stack(t_list *stack)
 	}
 }
 
+// buggy, something is wrong with the rank checking
 int check_rank(t_list *stack)
 {
 	t_list *current;
@@ -45,6 +46,14 @@ int check_rank(t_list *stack)
 				((t_data *)current->next->content)->value,
 				((t_data *)current->next->content)->rank);
 			if (!compare_rank(data, (t_data *)current->next->content))
+				return (0);
+		}
+		else
+		{
+			printf("First node's Value: %d, Rank: %d\n",
+				((t_data *)stack->content)->value,
+				((t_data *)stack->content)->rank);
+			if (!compare_rank(data, (t_data *)stack->content))
 				return (0);
 		}
         current = current->next;
@@ -77,13 +86,14 @@ int check_order(t_list *stack)
 
 int	compare_rank(t_data *data1, t_data *data2)
 {
-	if (data2->rank < data1->rank && data2->value > data1->value)
-		return (0);
-	if (data2->rank > data1->rank && data2->value < data1->value)
-		return (0);
-	return (1);
+	if (data2->value > data1->value)
+		return (data2->rank > data1->rank);
+	if (data2->value < data1->value)
+		return (data2->rank < data1->rank);
+	return (0);
 }
 
+// buggy, due to compare_rank logic
 void update_rank(t_list *stack)
 {
 	t_list	*current;
@@ -103,63 +113,153 @@ void update_rank(t_list *stack)
 
 		while (next)
 		{
-			printf("Comparing %d (rank %d) with %d (rank %d)\n",
+			/* printf("Comparing %d (rank %d) with %d (rank %d)\n",
 				((t_data *)next->content)->value, ((t_data *)next->content)->rank,
-				data->value, data->rank);
+				data->value, data->rank); */
 			if (!compare_rank(data, (t_data *)next->content))
 			{
 				swapped = data->rank;
 				data->rank = ((t_data *)next->content)->rank;
 				((t_data *)next->content)->rank = swapped;
 
-				printf("Swapped ranks: %d <-> %d\n", data->rank, ((t_data *)next->content)->rank);
+				/* printf("Swapped ranks: %d <-> %d\n", data->rank, ((t_data *)next->content)->rank);
 				printf("After swap: %d (rank %d), %d (rank %d)\n",
 					data->value, data->rank,
-					((t_data *)next->content)->value, ((t_data *)next->content)->rank);
+					((t_data *)next->content)->value, ((t_data *)next->content)->rank); */
 			}
 			next = next->next;
 		}
 
-		printf("=====\n");
-		print_stack(stack);
+		/* printf("=====\n");
+		print_stack(stack); */
 		current = current->next;
-		if (!current){
+		if (!current)
 			current = stack;
-			swapped = 1;
-		}
 	}
-	printf("+++++\n");
+	// printf("+++++\n");
+}
+
+void compute_rank(t_list *stack)
+{
+	t_list	*current;
+	t_list	*next;
+	t_data	*data;
+	int		i;
+
+	i = 1;
+	current = stack;
+	while (current)
+	{
+		// printf("%d---->\n", i++);
+		data = (t_data *)current->content;
+		next = stack;
+
+		while (next)
+		{
+			if (data->value > ((t_data *)next->content)->value)
+				data->rank++;
+			next = next->next;
+		}
+
+		// printf("=====\n");
+		// print_stack(stack);
+		current = current->next;
+	}
+	// printf("+++++\n");
 }
 
 int read_input(int ac, char **av, t_list **stack)
 {
 	int		rank;
 	int		temp;
+	int		offset;
 	t_data	*data;
 
-	rank = 1;
+	rank = 0;
+	offset = 1;
+	if (ac == 2)
+	{
+		av = ft_split(av[1], ' ');
+		ac = ft_strarr_len(av) + offset;
+		offset = 0;
+	}
 	while (ac >= 2)
 	{
-		temp = ft_atoi(av[1]);
-		if (temp == 0 && av[1][0] != '0')
+		temp = ft_atoi(av[offset]);
+		if (temp == 0 && av[offset][0] != '0')
 		{
-			ft_putstr_fd("Error, invalid input: ", 2);
-			ft_putstr_fd(av[1], 2);
-			ft_putstr_fd("\n", 2);
+			/* ft_putstr_fd("Error, invalid input: ", 2);
+			ft_putstr_fd(av[offset], 2);
+			ft_putstr_fd("\n", 2); */
 			return (1);
 		}
 		data = ft_calloc(1, sizeof(t_data));
 		data->value = temp;
-		data->rank = rank++;
+		data->rank = rank;
+		// rank++; // Uncomment this line if you want to increment rank for each element
+		// for compute_rank, default rank is 0
 		ft_lstadd_back(stack, ft_lstnew(data));
 		av++;
 		ac--;
-		ft_putstr_fd("Add: ", 1);
+		/* ft_putstr_fd("Add: ", 1);
 		ft_putnbr_fd(data->value, 1);
-		ft_putstr_fd("\n", 1);
+		ft_putstr_fd("\n", 1); */
 	}
 
 	return (0);
+}
+
+int max_bits(t_list *stack)
+{
+	int max = 0;
+	t_list *current = stack;
+
+	while (current)
+	{
+		t_data *data = (t_data *)current->content;
+		if (data->rank > max)
+			max = data->rank;
+		current = current->next;
+	}
+	return (bit_count(max));
+}
+
+void radix_sort(t_list **stack_a)
+{
+	t_list *stack_b;
+	int		i;
+	int		j;
+	int		k;
+	int		bits;
+
+	stack_b = NULL;
+	i = 0;
+	bits = max_bits(*stack_a);
+	// printf("Max bits: %d\n", bits);
+	while (i < bits)
+	{
+		j = 0;
+		k = ft_lstsize(*stack_a);
+		while (j < k)
+		{
+			// Perform bitwise operations for each bit
+			if (((t_data *)(*stack_a)->content)->rank & (1 << i))
+				rotate(stack_a, &stack_b, 'a');
+			else
+				push(stack_a, &stack_b, 'b');
+			j++;
+		}
+
+		j = 0;
+		k = ft_lstsize(stack_b);
+		while (j++ < k)
+			push(stack_a, &stack_b, 'a');
+		i++;
+	}
+	/* ft_putendl_fd("Stack A after sorting:", 1);
+	print_stack(*stack_a);
+	ft_putendl_fd("Stack B after sorting:", 1);
+	print_stack(stack_b); */
 }
 
 int	main(int ac, char **av)
@@ -175,111 +275,13 @@ int	main(int ac, char **av)
 	if (result != 0)
 		return (1);
 
-	ft_putstr_fd("Stack A:\n", 1);
-	print_stack(stack_a);
-
-	ft_putstr_fd("Sort Stack A's ranks:\n", 1);
-	update_rank(stack_a);
-	print_stack(stack_a);
-
-/* 
-	push(&stack_a, &stack_b, 'b');
-	push(&stack_a, &stack_b, 'b');
-	push(&stack_a, &stack_b, 'b');
-	ft_putstr_fd("Stack A:\n", 1);
-	print_stack(stack_a);
-	ft_putstr_fd("Stack B:\n", 1);
-	print_stack(stack_b);
-
-	push(&stack_a, &stack_b, 'a');
-	ft_putstr_fd("Stack A:\n", 1);
-	print_stack(stack_a);
-	ft_putstr_fd("Stack B:\n", 1);
-	print_stack(stack_b);
-
-	// sa
-	swap(&stack_a, 'a');
-	ft_putstr_fd("Stack A:\n", 1);
-	print_stack(stack_a);
-
-	// sb
-	swap(&stack_b, 'b');
-	ft_putstr_fd("Stack B:\n", 1);
-	print_stack(stack_b);
-
-	// ra
-	rotate(&stack_a, &stack_b, 'a');
-	ft_putstr_fd("Stack A:\n", 1);
-	print_stack(stack_a);
-
-	// rb
-	rotate(&stack_a, &stack_b, 'b');
-	ft_putstr_fd("Stack B:\n", 1);
-	print_stack(stack_b);
-
-	// rr
-	rotate(&stack_a, &stack_b, 'c');
-	ft_putstr_fd("Stack A:\n", 1);
-	print_stack(stack_a);
-	ft_putstr_fd("Stack B:\n", 1);
-	print_stack(stack_b);
-
-	// rra
-	rotate_reverse(&stack_a, &stack_b, 'a');
-	ft_putstr_fd("Stack A:\n", 1);
-	print_stack(stack_a);
-
-	// rra
-	rotate_reverse(&stack_a, &stack_b, 'b');
-	ft_putstr_fd("Stack B:\n", 1);
-	print_stack(stack_b);
-
-	// rrr
-	rotate_reverse(&stack_a, &stack_b, 'c');
-	ft_putstr_fd("Stack A:\n", 1);
-	print_stack(stack_a);
-	ft_putstr_fd("Stack B:\n", 1);
-	print_stack(stack_b); */
+	compute_rank(stack_a);
+	// test_move_stack();
 
 	if (ac > 1)
-	{
-		int i = 0;
-		while (i < bit_count(ac - 1))
-		{
-			int j = 0;
-			int k = ft_lstsize(stack_a);
-			while (j < k)
-			{
-				// Perform bitwise operations for each bit
-				if (((t_data *)stack_a->content)->rank & (1 << i))
-					rotate(&stack_a, &stack_b, 'a');
-				else
-					push(&stack_a, &stack_b, 'b');
-				j++;
-			}
+		radix_sort(&stack_a);
 
-			j = 0;
-			k = ft_lstsize(stack_b);
-			while (j < k)
-			{
-				push(&stack_a, &stack_b, 'a');
-				j++;
-			}
-			i++;
-		}
-
-		// int j = 0;
-		// int k = ft_lstsize(stack_a);
-		// while (j < k - 1)
-		// {
-		// 	rotate(&stack_a, &stack_b, 'a');
-		// 	j++;
-		// }
-		ft_putendl_fd("Stack A after sorting:", 1);
-		print_stack(stack_a);
-		ft_putendl_fd("Stack B after sorting:", 1);
-		print_stack(stack_b);
-	}
-
+	ft_lstclear(&stack_a, free);
+	ft_lstclear(&stack_b, free);	
 	return (0);
 }

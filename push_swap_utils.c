@@ -99,3 +99,52 @@ int	bit_count(int max)
 	}
 	return (bits);
 }
+
+
+t_list	*find_min_rank(t_list *a)
+{
+	t_list *cur;
+	t_list *min_node;
+	int min_rank;
+	int r;
+
+	cur = a;
+	min_node = a;
+	min_rank = ((t_data *)a->content)->rank;
+
+	while (cur)
+	{
+		r = ((t_data *)cur->content)->rank;
+		if (r < min_rank)
+		{
+			min_rank = r;
+			min_node = cur;
+		}
+		cur = cur->next;
+	}
+	return (min_node);
+}
+
+t_list	*find_max_rank(t_list *a)
+{
+	t_list *cur;
+	t_list *max_node;
+	int max_rank;
+	int r;
+
+	cur = a;
+	max_node = a;
+	max_rank = ((t_data *)a->content)->rank;
+
+	while (cur)
+	{
+		r = ((t_data *)cur->content)->rank;
+		if (r > max_rank)
+		{
+			max_rank = r;
+			max_node = cur;
+		}
+		cur = cur->next;
+	}
+	return (max_node);
+}

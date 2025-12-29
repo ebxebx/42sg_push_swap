@@ -145,9 +145,9 @@ void compute_rank(t_list *stack)
 	t_list	*current;
 	t_list	*next;
 	t_data	*data;
-	int		i;
+	// int		i;
 
-	i = 1;
+	// i = 1;
 	current = stack;
 	while (current)
 	{
@@ -169,6 +169,18 @@ void compute_rank(t_list *stack)
 	// printf("+++++\n");
 }
 
+int duplicate(t_list *stack, int n)
+{
+	while(stack)
+	{
+		if (((t_data *)(stack->content))->value == n)
+			return (1);
+
+		stack = stack->next;
+	}
+	return (0);
+}
+
 int read_input(int ac, char **av, t_list **stack)
 {
 	int		rank;
@@ -186,14 +198,17 @@ int read_input(int ac, char **av, t_list **stack)
 		av_backup = av;
 		ac = ft_strarr_len(av) + offset;
 		offset = 0;
+		// printf("aaa\n");
 	}
 	while (ac >= 2)
 	{
+		// printf("bb\n");
 		temp = ft_atoi(av[offset]);
-		if (temp == 0 && av[offset][0] != '0')
+		if ((temp == 0 && av[offset][0] != '0')
+			|| duplicate(*stack, temp) )
 		{
-			ft_putstr_fd("Error, invalid input: ", 2);
-			ft_putstr_fd(av[offset], 2);
+			ft_putstr_fd("Error", 2);
+			// ft_putstr_fd(av[offset], 2);
 			ft_putstr_fd("\n", 2);
 
 			if (av_backup)
@@ -206,6 +221,8 @@ int read_input(int ac, char **av, t_list **stack)
 				}
 				free(av_backup);
 			}
+
+			ft_lstclear(stack, free);
 
 			return (1);
 		}
@@ -380,6 +397,97 @@ void	get_longest_increasing_subsequence(t_list *stack, int stack_size, int *lis_
 	free(prev);
 }
 
+int	calc_chunks(t_ctx *ctx)
+{
+	if (ctx->size_a < 100)
+	{
+		if (50 < ctx->size_a && ctx->size_a < 80)
+			return (4);
+		else if (ctx->size_a < 50)
+			return (2);
+	}
+	else if (ctx->size_a < 150)
+		return (5);
+	else if (ctx->size_a < 200)
+		return (6);
+	else if (ctx->size_a < 250)
+		return (7);
+	else if (ctx->size_a < 325)
+		return (8);
+	else if (ctx->size_a < 400)
+		return (9);
+	else if (ctx->size_a < 500)
+		return (10);
+	else
+		return (11);
+	return (0);
+}
+
+void sort_small(t_ctx *ctx)
+{
+
+}
+
+// pb by chunk
+void	chunking(t_ctx *ctx)
+{
+	// 100 -> 5 chunk
+	// 200 -> 7
+	// 300 -> 9
+	// 400 -> 10
+	// 500 -> 11 chunk
+	int	chunks;
+	int chunk_size;
+	int	i;
+
+	chunks = calc_chunks(ctx);
+	chunk_size = ctx->size_a / chunks;
+	i = 0;
+	int from = 0;
+	int to;
+	t_data *data;
+	while (i < chunks)
+	{
+		if (i == chunks - 1){
+			t_list *node = NULL;
+			node = find_max_rank(ctx->a);
+			// if (node)
+			// 	printf("node->rank: %d", ((t_data *)(node->content))->rank);
+			to = ((t_data *)(node->content))->rank;
+			// if (to - from >= 6)
+			// 	to -= 5;
+			// else
+			// left one only, because need in sort order
+				to -= 1;
+		}
+		else
+			to = from + chunk_size - 1;
+		int j = to - from + 1;
+		// printf("from: %d, to: %d\n", from, to);
+		while (j >= 1)
+		{
+			data = (t_data *)(ctx->a->content);
+			if (from <= data->rank && data->rank <= to)
+			{
+				push(&(ctx->a), &(ctx->b), 'b', 1);
+				ctx->size_a--;
+				ctx->size_b++;
+				j--;
+			}
+			else
+			{
+				rotate(&(ctx->a), &(ctx->b), 'a', 1);
+			}
+		}
+		from = to + 1;		
+		i++;
+		// printf("Stack B after chunking:\n");
+		// print_stack(ctx->b);
+	}
+	// printf("Stack A after chunking:\n");
+	// print_stack(ctx->a);
+}
+
 int	main(int ac, char **av)
 {
 	// t_list *stack_a;
@@ -399,8 +507,12 @@ int	main(int ac, char **av)
 	compute_rank(ctx.a);
 	// test_move_stack();
 
-	if (ac > 1)
+	init_cache_a(&ctx);
+	init_cache_b(&ctx);
+
+	if (ac > 1 && ctx.size_a > 0)
 	{
+		// printf("ccc\n");
 		// radix_sort(&(ctx.a));
 		// radix_sort(&stack_a);
 		// Phase 1, Reduce Stage (push to B to reduce A)
@@ -408,33 +520,41 @@ int	main(int ac, char **av)
 		int *lis_arr = NULL;
 		get_longest_increasing_subsequence(ctx.a, calc_stack_size(ctx.a), &lis_size, &lis_arr);
 
-		int	i;
-		while (calc_stack_size(ctx.a) != lis_size)
+		if (lis_size >= ctx.size_a / 2)
 		{
-			i = 0;
-			while (i < lis_size)
+			int	i;
+			while (ctx.size_a != lis_size)
 			{
-				if (((t_data *)ctx.a->content)->rank == lis_arr[i])
+				i = 0;
+				while (i < lis_size)
 				{
-					rotate(&(ctx.a), &(ctx.b), 'a', 1);
-					continue;
+					if (((t_data *)ctx.a->content)->rank == lis_arr[i])
+					{
+						rotate(&(ctx.a), &(ctx.b), 'a', 1);
+						continue;
+					}
+					i++;
 				}
-				i++;
+				// printf("LIS Rank: %d\n", lis_arr[i]);
+				push(&(ctx.a), &(ctx.b), 'b', 1);
+				ctx.size_a--;
+				ctx.size_b++;
 			}
-			// printf("LIS Rank: %d\n", lis_arr[i]);
-			push(&(ctx.a), &(ctx.b), 'b', 1);
+			// printf("Stack A after extracting LIS:\n");
+			// print_stack(stack_a);
+			// printf("Stack B after extracting LIS:\n");
+			// print_stack(stack_b);
+			free(lis_arr);
 		}
-		// printf("Stack A after extracting LIS:\n");
-		// print_stack(stack_a);
-		// printf("Stack B after extracting LIS:\n");
-		// print_stack(stack_b);
-		free(lis_arr);
+		else
+			chunking(&ctx);
 
+		// printf("size_a: %d, size_b: %d\n", ctx.size_a, ctx.size_b);
 		// printf("=============================\n");
 		// Phase 1, Rebuild Stage (push back to A in order)
 		t_move	move;
-		init_cache_a(&ctx);
-		init_cache_b(&ctx);
+		// init_cache_a(&ctx);
+		// init_cache_b(&ctx);
 		while (ctx.size_b)
 		{
 			// printf("size_b: %d\n", ctx.size_b);
@@ -457,6 +577,8 @@ int	main(int ac, char **av)
 		// printf("Stack A after final rotate:\n");
 		// print_stack(ctx.a);
 	}
+	else
+		ft_putstr_fd("Error\n", 2);
 
 	ft_lstclear(&(ctx.a), free);
 	ft_lstclear(&(ctx.b), free);

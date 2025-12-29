@@ -73,5 +73,6 @@ int			calc_index_of_node(t_list *stack, t_list *node);
 int			combine_rr(int *cost_a, int *cost_b);
 t_list		*find_smallest_larger(t_list *a, int x_rank);
 t_list		*find_min_rank(t_list *a);
+t_list		*find_max_rank(t_list *a);
 
 #endif

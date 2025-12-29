@@ -169,27 +169,3 @@ t_list	*find_smallest_larger(t_list *a, int x_rank)
 	}
 	return (best);
 }
-
-t_list	*find_min_rank(t_list *a)
-{
-	t_list *cur;
-	t_list *min_node;
-	int min_rank;
-	int r;
-
-	cur = a;
-	min_node = a;
-	min_rank = ((t_data *)a->content)->rank;
-
-	while (cur)
-	{
-		r = ((t_data *)cur->content)->rank;
-		if (r < min_rank)
-		{
-			min_rank = r;
-			min_node = cur;
-		}
-		cur = cur->next;
-	}
-	return (min_node);
-}

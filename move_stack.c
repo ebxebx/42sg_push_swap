@@ -6,7 +6,7 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 17:36:05 by zchoo             #+#    #+#             */
-/*   Updated: 2025/12/28 14:33:36 by zchoo            ###   ########.fr       */
+/*   Updated: 2025/12/29 19:48:31 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,80 +32,92 @@ void	swap(t_list **stack, char stack_id)
 		ft_putstr_fd("sb\n", 1);
 }
 
-void	push(t_list **stack_a, t_list **stack_b, char stack_id)
+void	push(t_list **stack_a, t_list **stack_b, char stack_id, int n)
 {
-	if (stack_id != 'a' && stack_id != 'b')
+	while (n)
 	{
-		ft_putstr_fd("Error: Invalid stack identifier. Use 'a' or 'b'.\n", 2);
-		return ;
-	}
-	if (stack_id == 'a' && (!stack_b || !*stack_b))
-	{
-		ft_putstr_fd("Error: Stack B is empty\n", 2);
-		return ;
-	}
-	if (stack_id == 'b' && (!stack_a || !*stack_a))
-	{
-		ft_putstr_fd("Error: Stack A is empty\n", 2);
-		return ;
-	}
-	if (stack_id == 'a' && stack_b && *stack_b)
-	{
-		ft_lstadd_front(stack_a, ft_lstpop(stack_b));
-		ft_putstr_fd("pa\n", 1);
-	}
-	else if (stack_id == 'b' && stack_a && *stack_a)
-	{
-		ft_lstadd_front(stack_b, ft_lstpop(stack_a));
-		ft_putstr_fd("pb\n", 1);
+		if (stack_id != 'a' && stack_id != 'b')
+		{
+			ft_putstr_fd("Error: Invalid stack identifier. Use 'a' or 'b'.\n", 2);
+			return ;
+		}
+		if (stack_id == 'a' && (!stack_b || !*stack_b))
+		{
+			ft_putstr_fd("Error: Stack B is empty\n", 2);
+			return ;
+		}
+		if (stack_id == 'b' && (!stack_a || !*stack_a))
+		{
+			ft_putstr_fd("Error: Stack A is empty\n", 2);
+			return ;
+		}
+		if (stack_id == 'a' && stack_b && *stack_b)
+		{
+			ft_lstadd_front(stack_a, ft_lstpop(stack_b));
+			ft_putstr_fd("pa\n", 1);
+		}
+		else if (stack_id == 'b' && stack_a && *stack_a)
+		{
+			ft_lstadd_front(stack_b, ft_lstpop(stack_a));
+			ft_putstr_fd("pb\n", 1);
+		}
+		n--;
 	}
 }
 
-void	rotate(t_list **stack_a, t_list **stack_b, char stack_id)
+void	rotate(t_list **stack_a, t_list **stack_b, char stack_id, int n)
 {
-	if (stack_id == 'a' || stack_id == 'c')
+	while (n)
 	{
-		if (!stack_a || !*stack_a || !(*stack_a)->next)
-			return ;
+		if (stack_id == 'a' || stack_id == 'c')
+		{
+			if (!stack_a || !*stack_a || !(*stack_a)->next)
+				return ;
 
-		ft_lstadd_back(stack_a, ft_lstpop(stack_a));
+			ft_lstadd_back(stack_a, ft_lstpop(stack_a));
+		}
+		if (stack_id == 'b' || stack_id == 'c')
+		{
+			if (!stack_b || !*stack_b || !(*stack_b)->next)
+				return ;
+			ft_lstadd_back(stack_b, ft_lstpop(stack_b));
+		}
+		if (stack_id == 'c')
+			ft_putstr_fd("rr\n", 1);
+		else if (stack_id == 'a')
+			ft_putstr_fd("ra\n", 1);
+		else if (stack_id == 'b')
+			ft_putstr_fd("rb\n", 1);
+		n--;
 	}
-	if (stack_id == 'b' || stack_id == 'c')
-	{
-		if (!stack_b || !*stack_b || !(*stack_b)->next)
-			return ;
-		ft_lstadd_back(stack_b, ft_lstpop(stack_b));
-	}
-	if (stack_id == 'c')
-		ft_putstr_fd("rr\n", 1);
-	else if (stack_id == 'a')
-		ft_putstr_fd("ra\n", 1);
-	else if (stack_id == 'b')
-		ft_putstr_fd("rb\n", 1);
 }
 
-void	rotate_reverse(t_list **stack_a, t_list **stack_b, char stack_id)
+void	rotate_reverse(t_list **stack_a, t_list **stack_b, char stack_id, int n)
 {
 	t_list	*last;
 
-	if (stack_id == 'a' || stack_id == 'c')
+	while (n)
 	{
-		if (!stack_a || !*stack_a || !(*stack_a)->next)
-			return ;
-		last = ft_lstpop_back(stack_a);
-		ft_lstadd_front(stack_a, last);
+		if (stack_id == 'a' || stack_id == 'c')
+		{
+			if (!stack_a || !*stack_a || !(*stack_a)->next)
+				return ;
+			last = ft_lstpop_back(stack_a);
+			ft_lstadd_front(stack_a, last);
+		}
+		if (stack_id == 'b' || stack_id == 'c')
+		{
+			if (!stack_b || !*stack_b || !(*stack_b)->next)
+				return ;
+			last = ft_lstpop_back(stack_b);
+			ft_lstadd_front(stack_b, last);
+		}
+		if (stack_id == 'c')
+			ft_putstr_fd("rrr\n", 1);
+		else if (stack_id == 'a')
+			ft_putstr_fd("rra\n", 1);
+		else if (stack_id == 'b')
+			ft_putstr_fd("rrb\n", 1);
+		n--;
 	}
-	if (stack_id == 'b' || stack_id == 'c')
-	{
-		if (!stack_b || !*stack_b || !(*stack_b)->next)
-			return ;
-		last = ft_lstpop_back(stack_b);
-		ft_lstadd_front(stack_b, last);
-	}
-	if (stack_id == 'c')
-		ft_putstr_fd("rrr\n", 1);
-	else if (stack_id == 'a')
-		ft_putstr_fd("rra\n", 1);
-	else if (stack_id == 'b')
-		ft_putstr_fd("rrb\n", 1);
 }

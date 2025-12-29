@@ -6,11 +6,12 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/26 12:33:51 by zchoo             #+#    #+#             */
-/*   Updated: 2025/12/28 14:57:49 by zchoo            ###   ########.fr       */
+/*   Updated: 2025/12/29 22:20:04 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <limits.h>
 
 void print_stack(t_list *stack)
 {
@@ -39,20 +40,20 @@ int check_rank(t_list *stack)
 	while (current)
 	{
 		data = (t_data *)current->content;
-		printf("Checking node with Value: %d, Rank: %d\n",data->value, data->rank);
+		// printf("Checking node with Value: %d, Rank: %d\n",data->value, data->rank);
 		if (current->next)
 		{
-			printf("Next node's Value: %d, Rank: %d\n",
-				((t_data *)current->next->content)->value,
-				((t_data *)current->next->content)->rank);
+			// printf("Next node's Value: %d, Rank: %d\n",
+				// ((t_data *)current->next->content)->value,
+				// ((t_data *)current->next->content)->rank);
 			if (!compare_rank(data, (t_data *)current->next->content))
 				return (0);
 		}
 		else
 		{
-			printf("First node's Value: %d, Rank: %d\n",
-				((t_data *)stack->content)->value,
-				((t_data *)stack->content)->rank);
+			// printf("First node's Value: %d, Rank: %d\n",
+				// ((t_data *)stack->content)->value,
+				// ((t_data *)stack->content)->rank);
 			if (!compare_rank(data, (t_data *)stack->content))
 				return (0);
 		}
@@ -70,12 +71,12 @@ int check_order(t_list *stack)
 	while (current)
 	{
 		data = (t_data *)current->content;
-		printf("Checking node with Value: %d, Rank: %d\n",data->value, data->rank);
+		// printf("Checking node with Value: %d, Rank: %d\n",data->value, data->rank);
 		if (current->next)
 		{
-			printf("Next node's Value: %d, Rank: %d\n",
-				((t_data *)current->next->content)->value,
-				((t_data *)current->next->content)->rank);
+			// printf("Next node's Value: %d, Rank: %d\n",
+				// ((t_data *)current->next->content)->value,
+				// ((t_data *)current->next->content)->rank);
 			if (data->value > ((t_data *)current->next->content)->value)
 				return (0);
 		}
@@ -100,20 +101,20 @@ void update_rank(t_list *stack)
 	t_list	*next;
 	t_data	*data;
 	int		swapped;
-	int		i = 1;
+	// int		i = 1;
 
 	swapped = 1;
 	current = stack;
 	while (!check_rank(stack))
 	{
-		printf("%d---->\n", i++);
+		// printf("%d---->\n", i++);
 		swapped = 0;
 		data = (t_data *)current->content;
 		next = current->next;
 
 		while (next)
 		{
-			/* printf("Comparing %d (rank %d) with %d (rank %d)\n",
+			/* // printf("Comparing %d (rank %d) with %d (rank %d)\n",
 				((t_data *)next->content)->value, ((t_data *)next->content)->rank,
 				data->value, data->rank); */
 			if (!compare_rank(data, (t_data *)next->content))
@@ -122,16 +123,16 @@ void update_rank(t_list *stack)
 				data->rank = ((t_data *)next->content)->rank;
 				((t_data *)next->content)->rank = swapped;
 
-				/* printf("Swapped ranks: %d <-> %d\n", data->rank, ((t_data *)next->content)->rank);
-				printf("After swap: %d (rank %d), %d (rank %d)\n",
+				/* // printf("Swapped ranks: %d <-> %d\n", data->rank, ((t_data *)next->content)->rank);
+				// printf("After swap: %d (rank %d), %d (rank %d)\n",
 					data->value, data->rank,
 					((t_data *)next->content)->value, ((t_data *)next->content)->rank); */
 			}
 			next = next->next;
 		}
 
-		/* printf("=====\n");
-		print_stack(stack); */
+		/* // printf("=====\n");
+		// print_stack(stack); */
 		current = current->next;
 		if (!current)
 			current = stack;
@@ -173,13 +174,16 @@ int read_input(int ac, char **av, t_list **stack)
 	int		rank;
 	int		temp;
 	int		offset;
+	char	**av_backup;
 	t_data	*data;
 
 	rank = 0;
 	offset = 1;
+	av_backup = NULL;
 	if (ac == 2)
 	{
 		av = ft_split(av[1], ' ');
+		av_backup = av;
 		ac = ft_strarr_len(av) + offset;
 		offset = 0;
 	}
@@ -204,6 +208,16 @@ int read_input(int ac, char **av, t_list **stack)
 		/* ft_putstr_fd("Add: ", 1);
 		ft_putnbr_fd(data->value, 1);
 		ft_putstr_fd("\n", 1); */
+	}
+	if (av_backup)
+	{
+		temp = 0;
+		while (av_backup[temp])
+		{
+			free(av_backup[temp]);
+			temp++;
+		}
+		free(av_backup);
 	}
 
 	return (0);
@@ -244,22 +258,114 @@ void radix_sort(t_list **stack_a)
 		{
 			// Perform bitwise operations for each bit
 			if (((t_data *)(*stack_a)->content)->rank & (1 << i))
-				rotate(stack_a, &stack_b, 'a');
+				rotate(stack_a, &stack_b, 'a', 1);
 			else
-				push(stack_a, &stack_b, 'b');
+				push(stack_a, &stack_b, 'b', 1);
 			j++;
 		}
 
 		j = 0;
 		k = ft_lstsize(stack_b);
 		while (j++ < k)
-			push(stack_a, &stack_b, 'a');
+			push(stack_a, &stack_b, 'a', 1);
 		i++;
 	}
 	/* ft_putendl_fd("Stack A after sorting:", 1);
-	print_stack(*stack_a);
+	// print_stack(*stack_a);
 	ft_putendl_fd("Stack B after sorting:", 1);
-	print_stack(stack_b); */
+	// print_stack(stack_b); */
+}
+
+int	calc_stack_size(t_list *stack)
+{
+	int size = 0;
+	while (stack)
+	{
+		size++;
+		stack = stack->next;
+	}
+	return (size);
+}
+//ddd
+void	get_longest_increasing_subsequence(t_list *stack, int stack_size, int *lis_size, int **lis_arr)
+{
+	int *arr;
+	int *dp;
+	int *prev;
+	int i, j;
+
+	arr = malloc(sizeof(int) * stack_size);
+	dp = malloc(sizeof(int) * stack_size);
+	prev = malloc(sizeof(int) * stack_size);
+
+	// dump stack to arr;
+	t_list *current = stack;
+	i = 0;
+	while (current)
+	{
+		arr[i++] = ((t_data *)current->content)->rank;
+		current = current->next;
+	}
+	// while (i--)
+	// {
+	// 	// printf("Stack Rank[%d]: %d\n", i, arr[i]);
+	// }
+
+	i = 0;
+	while (i < stack_size)
+	{
+		dp[i] = 1;
+		prev[i] = -1;
+		j = 0;
+		while (j < i)
+		{
+			if (arr[i] > arr[j] 
+				&& dp[j] + 1 > dp[i]
+			)
+			{
+				dp[i] = dp[j] + 1;
+				prev[i] = j;
+			}
+			j++;
+		}
+		i++;
+	}
+	// while (i--)
+	// {
+	// 	// printf("DP[%d]: %d, Prev[%d]: %d\n", i, dp[i], i, prev[i]);
+	// }
+
+	*lis_size = 0;
+	i = 0;
+	int last = -1;
+	while (i < stack_size)
+	{
+		if (dp[i] > *lis_size){
+			*lis_size = dp[i];
+			last = i;
+		}
+		i++;
+	}
+	// printf("LIS Size: %d\n", *lis_size);
+	// printf("LIS Last: %d\n", last);
+	*lis_arr = malloc(sizeof(int) * (*lis_size));
+	if (!*lis_arr)
+		return ;
+	i = *lis_size;
+	while (i && (last != -1))
+	{
+		(*lis_arr)[--i] = arr[last];
+		last = prev[last];
+	}
+	i = 0;
+	while (i < *lis_size)
+	{
+		// printf("LIS Arr[%d]: %d\n", i, (*lis_arr)[i]);
+		i++;
+	}
+	free(arr);
+	free(dp);
+	free(prev);
 }
 
 int	main(int ac, char **av)
@@ -267,6 +373,7 @@ int	main(int ac, char **av)
 	t_list *stack_a;
 	t_list *stack_b;
 	int		result;
+	t_ctx	ctx;
 
 	stack_a = NULL;
 	stack_b = NULL;
@@ -279,9 +386,69 @@ int	main(int ac, char **av)
 	// test_move_stack();
 
 	if (ac > 1)
-		radix_sort(&stack_a);
+	{
+		ctx.a = stack_a;
+		ctx.b = stack_b;
+		// radix_sort(&stack_a);
+		// Phase 1, Reduce Stage (push to B to reduce A)
+		int lis_size = 0;
+		int *lis_arr = NULL;
+		get_longest_increasing_subsequence(stack_a, calc_stack_size(stack_a), &lis_size, &lis_arr);
 
-	ft_lstclear(&stack_a, free);
-	ft_lstclear(&stack_b, free);	
+		int	i;
+		while (calc_stack_size(stack_a) != lis_size)
+		{
+			i = 0;
+			while (i < lis_size)
+			{
+				if (((t_data *)stack_a->content)->rank == lis_arr[i])
+				{
+					rotate(&stack_a, &stack_b, 'a', 1);
+					continue;
+				}
+				i++;
+			}
+			// printf("LIS Rank: %d\n", lis_arr[i]);
+			push(&stack_a, &stack_b, 'b', 1);
+		}
+		// printf("Stack A after extracting LIS:\n");
+		// print_stack(stack_a);
+		// printf("Stack B after extracting LIS:\n");
+		// print_stack(stack_b);
+		free(lis_arr);
+
+		// printf("=============================\n");
+		// Phase 1, Rebuild Stage (push back to A in order)
+		t_move	move;
+		init_cache_a(&ctx);
+		init_cache_b(&ctx);
+		while (ctx.size_b)
+		{
+			// printf("size_b: %d\n", ctx.size_b);
+			move = calc_best_cost_move(&ctx);
+			perform_move(&ctx, &move);
+
+			// printf("Stack A after perform move:\n");
+			// print_stack(ctx.a);
+			// printf("Stack B after perform move:\n");
+			// print_stack(ctx.b);
+		}
+		// printf("Stack A after Greedy Insertion:\n");
+		// print_stack(ctx.a);
+		// printf("Stack B after Greedy Insertion:\n");
+		// print_stack(ctx.b);
+
+		int final_rotate = calc_index_of_node(ctx.a, find_min_rank(ctx.a));
+		// printf("Final rotate: %d\n", final_rotate);
+		rotate(&(ctx.a), &(ctx.b), 'a', final_rotate);
+		// printf("Stack A after final rotate:\n");
+		// print_stack(ctx.a);
+	}
+
+	ft_lstclear(&(ctx.a), free);
+	ft_lstclear(&(ctx.b), free);
+
+	// ft_lstclear(&stack_a, free);
+	// ft_lstclear(&stack_b, free);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/28 14:33:49 by zchoo             #+#    #+#             */
-/*   Updated: 2025/12/28 15:00:06 by zchoo            ###   ########.fr       */
+/*   Updated: 2025/12/29 19:51:45 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	test_move_stack(void)
 	print_stack(stack_a);
 
 	// Perform some moves
-	push(&stack_a, &stack_b, 'a');
+	push(&stack_a, &stack_b, 'a', 1);
 	ft_putstr_fd("After push A:\n", 1);
 	print_stack(stack_a);
 	print_stack(stack_b);
@@ -38,11 +38,11 @@ void	test_move_stack(void)
 	ft_putstr_fd("After swap A:\n", 1);
 	print_stack(stack_a);
 
-	rotate(&stack_a, &stack_b, 'a');
+	rotate(&stack_a, &stack_b, 'a', 1);
 	ft_putstr_fd("After rotate A:\n", 1);
 	print_stack(stack_a);
 
-	rotate_reverse(&stack_a, &stack_b, 'a');
+	rotate_reverse(&stack_a, &stack_b, 'a', 1);
 	ft_putstr_fd("After reverse rotate A:\n", 1);
 	print_stack(stack_a);
 

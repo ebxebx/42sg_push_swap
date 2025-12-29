@@ -1,6 +1,8 @@
 *.out
 push_swap
 checker*
+pro_checker
 *.o
 *.d
 *.txt
+*.sh

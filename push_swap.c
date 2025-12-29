@@ -6,7 +6,7 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/26 12:33:51 by zchoo             #+#    #+#             */
-/*   Updated: 2025/12/29 22:20:04 by zchoo            ###   ########.fr       */
+/*   Updated: 2025/12/29 23:01:05 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -192,9 +192,21 @@ int read_input(int ac, char **av, t_list **stack)
 		temp = ft_atoi(av[offset]);
 		if (temp == 0 && av[offset][0] != '0')
 		{
-			/* ft_putstr_fd("Error, invalid input: ", 2);
+			ft_putstr_fd("Error, invalid input: ", 2);
 			ft_putstr_fd(av[offset], 2);
-			ft_putstr_fd("\n", 2); */
+			ft_putstr_fd("\n", 2);
+
+			if (av_backup)
+			{
+				temp = 0;
+				while (av_backup[temp])
+				{
+					free(av_backup[temp]);
+					temp++;
+				}
+				free(av_backup);
+			}
+
 			return (1);
 		}
 		data = ft_calloc(1, sizeof(t_data));
@@ -370,46 +382,47 @@ void	get_longest_increasing_subsequence(t_list *stack, int stack_size, int *lis_
 
 int	main(int ac, char **av)
 {
-	t_list *stack_a;
-	t_list *stack_b;
+	// t_list *stack_a;
+	// t_list *stack_b;
 	int		result;
 	t_ctx	ctx;
 
-	stack_a = NULL;
-	stack_b = NULL;
+	// stack_a = NULL;
+	// stack_b = NULL;
+	ctx.a = NULL;
+	ctx.b = NULL;
 
-	result = read_input(ac, av, &stack_a);
+	result = read_input(ac, av, &(ctx.a));
 	if (result != 0)
 		return (1);
 
-	compute_rank(stack_a);
+	compute_rank(ctx.a);
 	// test_move_stack();
 
 	if (ac > 1)
 	{
-		ctx.a = stack_a;
-		ctx.b = stack_b;
+		// radix_sort(&(ctx.a));
 		// radix_sort(&stack_a);
 		// Phase 1, Reduce Stage (push to B to reduce A)
 		int lis_size = 0;
 		int *lis_arr = NULL;
-		get_longest_increasing_subsequence(stack_a, calc_stack_size(stack_a), &lis_size, &lis_arr);
+		get_longest_increasing_subsequence(ctx.a, calc_stack_size(ctx.a), &lis_size, &lis_arr);
 
 		int	i;
-		while (calc_stack_size(stack_a) != lis_size)
+		while (calc_stack_size(ctx.a) != lis_size)
 		{
 			i = 0;
 			while (i < lis_size)
 			{
-				if (((t_data *)stack_a->content)->rank == lis_arr[i])
+				if (((t_data *)ctx.a->content)->rank == lis_arr[i])
 				{
-					rotate(&stack_a, &stack_b, 'a', 1);
+					rotate(&(ctx.a), &(ctx.b), 'a', 1);
 					continue;
 				}
 				i++;
 			}
 			// printf("LIS Rank: %d\n", lis_arr[i]);
-			push(&stack_a, &stack_b, 'b', 1);
+			push(&(ctx.a), &(ctx.b), 'b', 1);
 		}
 		// printf("Stack A after extracting LIS:\n");
 		// print_stack(stack_a);

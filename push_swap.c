@@ -6,12 +6,19 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/26 12:33:51 by zchoo             #+#    #+#             */
-/*   Updated: 2025/12/29 23:01:05 by zchoo            ###   ########.fr       */
+/*   Updated: 2025/12/30 19:38:27 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <limits.h>
+
+void print_stack2(t_list *stack, char *label)
+{
+	if (label && *label)
+		printf("%s", label);
+	print_stack(stack);
+}
 
 void print_stack(t_list *stack)
 {
@@ -56,6 +63,36 @@ int check_rank(t_list *stack)
 				// ((t_data *)stack->content)->rank);
 			if (!compare_rank(data, (t_data *)stack->content))
 				return (0);
+		}
+        current = current->next;
+	}
+	return (1);
+}
+
+// circular list have max drop_count == 1
+int check_circular_list(t_list *stack)
+{
+	t_list *current;
+	t_data *data;
+	int		drop_count;
+
+	drop_count = 0;
+	current = stack;
+	while (current)
+	{
+		data = (t_data *)current->content;
+		// printf("Checking node with Value: %d, Rank: %d\n",data->value, data->rank);
+		if (current->next)
+		{
+			// printf("Next node's Value: %d, Rank: %d\n",
+				// ((t_data *)current->next->content)->value,
+				// ((t_data *)current->next->content)->rank);
+			if (data->value > ((t_data *)current->next->content)->value)
+			{
+				drop_count++;
+				if (drop_count > 1)
+					return (0);
+			}
 		}
         current = current->next;
 	}
@@ -401,9 +438,11 @@ int	calc_chunks(t_ctx *ctx)
 {
 	if (ctx->size_a < 100)
 	{
-		if (50 < ctx->size_a && ctx->size_a < 80)
+		if (80 < ctx->size_a)
 			return (4);
-		else if (ctx->size_a < 50)
+		else if (50 < ctx->size_a && ctx->size_a < 80)
+			return (3);
+		else
 			return (2);
 	}
 	else if (ctx->size_a < 150)
@@ -420,12 +459,37 @@ int	calc_chunks(t_ctx *ctx)
 		return (10);
 	else
 		return (11);
-	return (0);
+	return (1);
+}
+
+t_data	*getData(void *ptr)
+{
+	return (t_data *)ptr;
 }
 
 void sort_small(t_ctx *ctx)
 {
-
+	t_data	*data1;
+	t_data	*data2;
+	t_data	*data3;
+	if (ctx->size_a == 3)
+	{
+		// print_stack2(ctx->a, "Sort small start:\n");
+		data1 = getData(ctx->a->content);
+		data2 = getData(ctx->a->next->content);
+		data3 = getData(ctx->a->next->next->content);
+		// 2 -> 1 -> 3
+		if (data1->rank > data2->rank)
+			swap(&(ctx->a), 'a');
+		else if (data2->rank > data3->rank)
+		{
+			// 1 -> 3 -> 2
+			rotate(&(ctx->a), &(ctx->b), 'a', 1);
+			swap(&(ctx->a), 'a');
+			rotate_reverse(&(ctx->a), &(ctx->b), 'a', 1);
+		}
+		// print_stack2(ctx->a, "Sort small end:\n");
+	}
 }
 
 // pb by chunk
@@ -510,11 +574,38 @@ int	main(int ac, char **av)
 	init_cache_a(&ctx);
 	init_cache_b(&ctx);
 
+	if (check_circular_list(ctx.a))
+	{
+		int	cost_a = calc_rot_cost(calc_index_of_node(ctx.a, find_min_rank(ctx.a)), ctx.size_a);
+		if (cost_a > 0)
+		{
+			rotate(&(ctx.a), &(ctx.b), 'a', cost_a);
+		}
+		else if (cost_a < 0)
+		{
+			rotate_reverse(&(ctx.a), &(ctx.b), 'a', -cost_a);
+		}
+
+		if (check_order(ctx.a))
+		{
+			// print_stack2(ctx.a, "Done!\n");
+			return (0);
+		}
+	}
+
+	sort_small(&ctx);
+	if (check_order(ctx.a))
+	{
+		// print_stack2(ctx.a, "Done!\n");
+		return (0);
+	}
+
+	int sort = 1;
 	if (ac > 1 && ctx.size_a > 0)
 	{
 		// printf("ccc\n");
-		// radix_sort(&(ctx.a));
-		// radix_sort(&stack_a);
+		if (sort == 0) radix_sort(&(ctx.a));
+		else if (sort == 1) {
 		// Phase 1, Reduce Stage (push to B to reduce A)
 		int lis_size = 0;
 		int *lis_arr = NULL;
@@ -576,6 +667,8 @@ int	main(int ac, char **av)
 		rotate(&(ctx.a), &(ctx.b), 'a', final_rotate);
 		// printf("Stack A after final rotate:\n");
 		// print_stack(ctx.a);
+
+		} // end sort == 1
 	}
 	else
 		ft_putstr_fd("Error\n", 2);

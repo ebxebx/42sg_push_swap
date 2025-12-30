@@ -1,0 +1,3579 @@
+-------------------------------------------------------------
+
+                TEST CREATED BY: GEMARTIN
+
+-------------------------------------------------------------
+./push_swap_test_linux.sh: line 36: [: ==: unary operator expected
+./push_swap_test_linux.sh: line 46: [: ==: unary operator expected
+
+-------------------------------------------------------------
+
+                        CONTROL ERRORS
+
+-------------------------------------------------------------
+
+1.[OK]
+2.[KO]
+3.[OK]
+4.[OK]
+5.[OK]
+6.[OK]
+7.[KO]
+8.[OK]
+9.[OK]
+10.[KO]
+11.[KO]
+12.[KO]
+13.[OK]
+14.[OK]
+15.[OK]
+16.[KO]
+17.[KO]
+18.[OK]
+19.[KO]
+20.[KO]
+21.[OK]
+22.[OK]
+23.[KO]
+24.[OK]
+25.[OK]
+26.[KO]
+27.[KO]
+28.[KO]
+29.[OK]
+30.[OK]
+31.[KO]
+32.[OK]
+33.[OK]
+34.[OK]
+35.[OK]
+36.[OK]
+37.[OK]
+38.[OK]
+39.[OK]
+40.[OK]
+41.[OK]
+42.[OK]
+43.[OK]
+44.[OK]
+45.[OK]
+
+-------------------------------------------------------------
+
+                        Basic input
+
+-------------------------------------------------------------
+
+1.[OK] 2.[OK] 3.[OK] 4.[OK] 5.[KO] TEST: 2 3 1 6.[OK] 7.[KO] TEST: 2 1 3 8.[OK] 9.[KO] TEST: 3 1 2 10.[OK] 11.[KO] TEST: 3 2 1 12.[OK] 13.[OK] 14.[OK] 15.[OK] 16.[OK] 17.[OK] 18.[OK] 19.[OK] 20.[OK] 21.[OK] 22.[OK] 23.[OK] 24.[OK] 25.[OK] 26.[OK] 27.[OK] 28.[OK] 29.[OK] 30.[OK] 31.[OK] 32.[OK] 33.[OK] 34.[OK] 35.[OK] 36.[OK] 37.[OK] 38.[OK] 39.[OK] 40.[OK] 41.[OK] 42.[OK] 43.[OK] 44.[OK] 45.[OK] 46.[OK] 47.[OK] 48.[OK] 49.[OK] 50.[OK] 51.[OK] 52.[OK] 53.[OK] 54.[OK] 55.[OK] 56.[OK] 57.[OK] 58.[OK] 59.[OK] 60.[OK]
+
+-------------------------------------------------------------
+
+
+                        Size 5
+
+-------------------------------------------------------------
+
+1.[KO] TEST: 1 2 3 5 4 2.[OK] 3.[KO] TEST: 1 2 4 3 5 4.[OK] 5.[KO] TEST: 1 2 4 5 3 6.[OK] 7.[KO] TEST: 1 2 5 3 4 8.[OK] 9.[KO] TEST: 1 2 5 4 3 10.[OK] 11.[KO] TEST: 1 3 2 4 5 12.[OK] 13.[KO] TEST: 1 3 2 5 4 14.[OK] 15.[KO] TEST: 1 3 4 2 5 16.[OK] 17.[KO] TEST: 1 3 4 5 2 18.[OK] 19.[KO] TEST: 1 3 5 2 4 20.[OK] 21.[KO] TEST: 1 3 5 4 2 22.[OK] 23.[KO] TEST: 1 4 2 3 5 24.[OK] 25.[KO] TEST: 1 4 2 5 3 26.[OK] 27.[KO] TEST: 1 4 3 2 5 28.[OK] 29.[KO] TEST: 1 4 3 5 2 30.[OK] 31.[KO] TEST: 1 4 5 2 3 32.[OK] 33.[KO] TEST: 1 4 5 3 2 34.[OK] 35.[KO] TEST: 1 5 2 3 4 36.[OK] 37.[KO] TEST: 1 5 2 4 3 38.[OK] 39.[KO] TEST: 1 5 3 2 4 40.[OK] 41.[KO] TEST: 1 5 3 4 2 42.[OK] 43.[KO] TEST: 1 5 3 4 2 44.[OK] 45.[KO] TEST: 1 5 4 2 3 46.[OK] 47.[KO] TEST: 1 5 4 3 2 48.[OK] 49.[KO] TEST: 2 1 3 4 5 50.[OK] 51.[KO] TEST: 2 1 3 5 4 52.[OK] 53.[KO] TEST: 2 1 4 3 5 54.[OK] 55.[KO] TEST: 2 1 4 5 3 56.[OK] 57.[KO] TEST: 2 1 5 3 4 58.[OK] 59.[KO] TEST: 2 1 5 4 3 60.[OK] 61.[KO] TEST: 2 3 1 4 5 62.[OK] 63.[KO] TEST: 2 3 1 5 4 64.[OK] 65.[KO] TEST: 2 3 4 1 5 66.[OK] 67.[KO] TEST: 2 3 4 5 1 68.[OK] 69.[KO] TEST: 2 3 5 1 4 70.[OK] 71.[KO] TEST: 2 3 5 4 1 72.[OK] 73.[KO] TEST: 2 4 1 3 5 74.[OK] 75.[KO] TEST: 2 4 1 5 3 76.[OK] 77.[KO] TEST: 2 4 3 1 5 78.[OK] 79.[KO] TEST: 2 4 3 5 1 80.[OK] 81.[KO] TEST: 2 4 5 1 3 82.[OK] 83.[KO] TEST: 2 4 5 3 1 84.[OK] 85.[KO] TEST: 2 5 1 3 4 86.[OK] 87.[KO] TEST: 2 5 1 4 3 88.[OK] 89.[KO] TEST: 2 5 3 1 4 90.[OK] 91.[KO] TEST: 2 5 3 4 1 92.[OK] 93.[KO] TEST: 2 5 4 1 3 94.[OK] 95.[KO] TEST: 2 5 4 3 1 96.[OK] 97.[KO] TEST: 3 1 2 4 5 98.[OK] 99.[KO] TEST: 3 1 2 5 4 100.[OK] 101.[KO] TEST: 3 1 4 2 5 102.[OK] 103.[KO] TEST: 3 1 4 5 2 104.[OK] 105.[KO] TEST: 3 1 5 2 4 106.[OK] 107.[KO] TEST: 3 1 5 4 2 108.[OK] 109.[KO] TEST: 3 2 1 4 5 110.[OK] 111.[KO] TEST: 3 2 1 5 4 112.[OK] 113.[KO] TEST: 3 2 4 1 5 114.[OK] 115.[KO] TEST: 3 2 4 5 1 116.[OK] 117.[KO] TEST: 3 2 5 1 4 118.[OK] 119.[KO] TEST: 3 2 5 4 1 120.[OK] 121.[KO] TEST: 3 4 1 2 5 122.[OK] 123.[KO] TEST: 3 4 1 5 2 124.[OK] 125.[KO] TEST: 3 4 2 1 5 126.[OK] 127.[KO] TEST: 3 4 2 5 1 128.[OK] 129.[KO] TEST: 3 4 5 1 2 130.[OK] 131.[KO] TEST: 3 4 5 2 1 132.[OK] 133.[KO] TEST: 3 5 1 2 4 134.[OK] 135.[KO] TEST: 3 5 1 4 2 136.[OK] 137.[KO] TEST: 3 5 2 1 4 138.[OK] 139.[KO] TEST: 3 5 2 4 1 140.[OK] 141.[KO] TEST: 3 5 4 1 2 142.[OK] 143.[KO] TEST: 3 5 4 2 1 144.[OK] 145.[KO] TEST: 4 1 2 3 5 146.[OK] 147.[KO] TEST: 4 1 2 5 3 148.[OK] 149.[KO] TEST: 4 1 3 2 5 150.[OK] 151.[KO] TEST: 4 1 3 5 2 152.[OK] 153.[KO] TEST: 4 1 5 2 3 154.[OK] 155.[KO] TEST: 4 1 5 3 2 156.[OK] 157.[KO] TEST: 4 2 1 3 5 158.[OK] 159.[KO] TEST: 4 2 1 5 3 160.[OK] 161.[KO] TEST: 4 2 3 1 5 162.[OK] 163.[KO] TEST: 4 2 3 5 1 164.[OK] 165.[KO] TEST: 4 2 5 1 3 166.[OK] 167.[KO] TEST: 4 2 5 3 1 168.[OK] 169.[KO] TEST: 4 3 1 2 5 170.[OK] 171.[KO] TEST: 4 3 1 5 2 172.[OK] 173.[KO] TEST: 4 3 2 1 5 174.[OK] 175.[KO] TEST: 4 3 2 5 1 176.[OK] 177.[KO] TEST: 4 3 5 1 2 178.[OK] 179.[KO] TEST: 4 3 5 2 1 180.[OK] 181.[KO] TEST: 4 5 1 2 3 182.[OK] 183.[KO] TEST: 4 5 1 3 2 184.[OK] 185.[KO] TEST: 4 5 2 1 3 186.[OK] 187.[KO] TEST: 4 5 2 3 1 188.[OK] 189.[KO] TEST: 4 5 3 1 2 190.[OK] 191.[KO] TEST: 4 5 3 2 1 192.[OK] 193.[KO] TEST: 5 1 2 3 4 194.[OK] 195.[KO] TEST: 5 1 2 4 3 196.[OK] 197.[KO] TEST: 5 1 3 2 4 198.[OK] 199.[KO] TEST: 5 1 3 4 2 200.[OK] 201.[KO] TEST: 5 1 4 2 3 202.[OK] 203.[KO] TEST: 5 1 4 3 2 204.[OK] 205.[KO] TEST: 5 1 4 3 2 206.[OK] 207.[KO] TEST: 5 1 4 3 2 208.[OK] 209.[KO] TEST: 5 2 3 1 4 210.[OK] 211.[KO] TEST: 5 2 3 4 1 212.[OK] 213.[KO] TEST: 5 2 4 1 3 214.[OK] 215.[KO] TEST: 5 2 4 3 1 216.[OK] 217.[KO] TEST: 5 3 1 2 4 218.[OK] 219.[KO] TEST: 5 3 1 4 2 220.[OK] 221.[KO] TEST: 5 3 2 1 4 222.[OK] 223.[KO] TEST: 5 3 2 4 1 224.[OK] 225.[KO] TEST: 5 3 4 1 2 226.[OK] 227.[KO] TEST: 5 3 4 2 1 228.[OK] 229.[KO] TEST: 5 4 1 2 3 230.[OK] 231.[KO] TEST: 5 4 1 3 2 232.[OK] 233.[KO] TEST: 5 4 2 1 3 234.[OK] 235.[KO] TEST: 5 4 2 3 1 236.[OK] 237.[KO] TEST: 5 4 3 1 2 238.[OK] 239.[KO] TEST: 5 4 3 2 1 240.[OK]
+-------------------------------------------------------------
+
+
+                  Multiple size <= 100
+
+-------------------------------------------------------------
+
+1 .[OK][KO][3/5] Moves:1084
+2 .[OK][KO][3/5] Moves:1084
+3 .[OK][KO][3/5] Moves:1084
+4 .[OK][KO][3/5] Moves:1084
+5 .[OK][KO][3/5] Moves:1084
+6 .[OK][KO][3/5] Moves:1084
+7 .[OK][KO][3/5] Moves:1084
+8 .[OK][KO][3/5] Moves:1084
+9 .[OK][KO][3/5] Moves:1084
+10 .[OK][KO][3/5] Moves:1084
+11 .[OK][KO][3/5] Moves:1084
+12 .[OK][KO][3/5] Moves:1084
+13 .[OK][KO][3/5] Moves:1084
+14 .[OK][KO][3/5] Moves:1084
+15 .[OK][KO][3/5] Moves:1084
+16 .[OK][KO][3/5] Moves:1084
+17 .[OK][KO][3/5] Moves:1084
+18 .[OK][KO][3/5] Moves:1084
+19 .[OK][KO][3/5] Moves:1084
+20 .[OK][KO][3/5] Moves:1084
+21 .[OK][KO][3/5] Moves:1084
+22 .[OK][KO][3/5] Moves:1084
+23 .[OK][KO][3/5] Moves:1084
+24 .[OK][KO][3/5] Moves:1084
+25 .[OK][KO][3/5] Moves:1084
+26 .[OK][KO][3/5] Moves:1084
+27 .[OK][KO][3/5] Moves:1084
+28 .[OK][KO][3/5] Moves:1084
+29 .[OK][KO][3/5] Moves:1084
+30 .[OK][KO][3/5] Moves:1084
+31 .[OK][KO][3/5] Moves:1084
+32 .[OK][KO][3/5] Moves:1084
+33 .[OK][KO][3/5] Moves:1084
+34 .[OK][KO][3/5] Moves:1084
+35 .[OK][KO][3/5] Moves:1084
+36 .[OK][KO][3/5] Moves:1084
+37 .[OK][KO][3/5] Moves:1084
+38 .[OK][KO][3/5] Moves:1084
+39 .[OK][KO][3/5] Moves:1084
+40 .[OK][KO][3/5] Moves:1084
+41 .[OK][KO][3/5] Moves:1084
+42 .[OK][KO][3/5] Moves:1084
+43 .[OK][KO][3/5] Moves:1084
+44 .[OK][KO][3/5] Moves:1084
+45 .[OK][KO][3/5] Moves:1084
+46 .[OK][KO][3/5] Moves:1084
+47 .[OK][KO][3/5] Moves:1084
+48 .[OK][KO][3/5] Moves:1084
+49 .[OK][KO][3/5] Moves:1084
+50 .[OK][KO][3/5] Moves:1084
+51 .[OK][KO][3/5] Moves:1084
+52 .[OK][KO][3/5] Moves:1084
+53 .[OK][KO][3/5] Moves:1084
+54 .[OK][KO][3/5] Moves:1084
+55 .[OK][KO][3/5] Moves:1084
+56 .[OK][KO][3/5] Moves:1084
+57 .[OK][KO][3/5] Moves:1084
+58 .[OK][KO][3/5] Moves:1084
+59 .[OK][KO][3/5] Moves:1084
+60 .[OK][KO][3/5] Moves:1084
+61 .[OK][KO][3/5] Moves:1084
+62 .[OK][KO][3/5] Moves:1084
+63 .[OK][KO][3/5] Moves:1084
+64 .[OK][KO][3/5] Moves:1084
+65 .[OK][KO][3/5] Moves:1084
+66 .[OK][KO][3/5] Moves:1084
+67 .[OK][KO][3/5] Moves:1084
+68 .[OK][KO][3/5] Moves:1084
+69 .[OK][KO][3/5] Moves:1084
+70 .[OK][KO][3/5] Moves:1084
+71 .[OK][KO][3/5] Moves:1084
+72 .[OK][KO][3/5] Moves:1084
+73 .[OK][KO][3/5] Moves:1084
+74 .[OK][KO][3/5] Moves:1084
+75 .[OK][KO][3/5] Moves:1084
+76 .[OK][KO][3/5] Moves:1084
+77 .[OK][KO][3/5] Moves:1084
+78 .[OK][KO][3/5] Moves:1084
+79 .[OK][KO][3/5] Moves:1084
+80 .[OK][KO][3/5] Moves:1084
+81 .[OK][KO][3/5] Moves:1084
+82 .[OK][KO][3/5] Moves:1084
+83 .[OK][KO][3/5] Moves:1084
+84 .[OK][KO][3/5] Moves:1084
+85 .[OK][KO][3/5] Moves:1084
+86 .[OK][KO][3/5] Moves:1084
+87 .[OK][KO][3/5] Moves:1084
+88 .[OK][KO][3/5] Moves:1084
+89 .[OK][KO][3/5] Moves:1084
+90 .[OK][KO][3/5] Moves:1084
+91 .[OK][KO][3/5] Moves:1084
+92 .[OK][KO][3/5] Moves:1084
+93 .[OK][KO][3/5] Moves:1084
+94 .[OK][KO][3/5] Moves:1084
+95 .[OK][KO][3/5] Moves:1084
+96 .[OK][KO][3/5] Moves:1084
+97 .[OK][KO][3/5] Moves:1084
+98 .[OK][KO][3/5] Moves:1084
+99 .[OK][KO][3/5] Moves:1084
+100 .[OK][KO][3/5] Moves:1084
+101 .[OK][KO][3/5] Moves:1084
+102 .[OK][KO][3/5] Moves:1084
+103 .[OK][KO][3/5] Moves:1084
+104 .[OK][KO][3/5] Moves:1084
+105 .[OK][KO][3/5] Moves:1084
+106 .[OK][KO][3/5] Moves:1084
+107 .[OK][KO][3/5] Moves:1084
+108 .[OK][KO][3/5] Moves:1084
+109 .[OK][KO][3/5] Moves:1084
+110 .[OK][KO][3/5] Moves:1084
+111 .[OK][KO][3/5] Moves:1084
+112 .[OK][KO][3/5] Moves:1084
+113 .[OK][KO][3/5] Moves:1084
+114 .[OK][KO][3/5] Moves:1084
+115 .[OK][KO][3/5] Moves:1084
+116 .[OK][KO][3/5] Moves:1084
+117 .[OK][KO][3/5] Moves:1084
+118 .[OK][KO][3/5] Moves:1084
+119 .[OK][KO][3/5] Moves:1084
+120 .[OK][KO][3/5] Moves:1084
+121 .[OK][KO][3/5] Moves:1084
+122 .[OK][KO][3/5] Moves:1084
+123 .[OK][KO][3/5] Moves:1084
+124 .[OK][KO][3/5] Moves:1084
+125 .[OK][KO][3/5] Moves:1084
+126 .[OK][KO][3/5] Moves:1084
+127 .[OK][KO][3/5] Moves:1084
+128 .[OK][KO][3/5] Moves:1084
+129 .[OK][KO][3/5] Moves:1084
+130 .[OK][KO][3/5] Moves:1084
+131 .[OK][KO][3/5] Moves:1084
+132 .[OK][KO][3/5] Moves:1084
+133 .[OK][KO][3/5] Moves:1084
+134 .[OK][KO][3/5] Moves:1084
+135 .[OK][KO][3/5] Moves:1084
+136 .[OK][KO][3/5] Moves:1084
+137 .[OK][KO][3/5] Moves:1084
+138 .[OK][KO][3/5] Moves:1084
+139 .[OK][KO][3/5] Moves:1084
+140 .[OK][KO][3/5] Moves:1084
+141 .[OK][KO][3/5] Moves:1084
+142 .[OK][KO][3/5] Moves:1084
+143 .[OK][KO][3/5] Moves:1084
+144 .[OK][KO][3/5] Moves:1084
+145 .[OK][KO][3/5] Moves:1084
+146 .[OK][KO][3/5] Moves:1084
+147 .[OK][KO][3/5] Moves:1084
+148 .[OK][KO][3/5] Moves:1084
+149 .[OK][KO][3/5] Moves:1084
+150 .[OK][KO][3/5] Moves:1084
+151 .[OK][KO][3/5] Moves:1084
+152 .[OK][KO][3/5] Moves:1084
+153 .[OK][KO][3/5] Moves:1084
+154 .[OK][KO][3/5] Moves:1084
+155 .[OK][KO][3/5] Moves:1084
+156 .[OK][KO][3/5] Moves:1084
+157 .[OK][KO][3/5] Moves:1084
+158 .[OK][KO][3/5] Moves:1084
+159 .[OK][KO][3/5] Moves:1084
+160 .[OK][KO][3/5] Moves:1084
+161 .[OK][KO][3/5] Moves:1084
+162 .[OK][KO][3/5] Moves:1084
+163 .[OK][KO][3/5] Moves:1084
+164 .[OK][KO][3/5] Moves:1084
+165 .[OK][KO][3/5] Moves:1084
+166 .[OK][KO][3/5] Moves:1084
+167 .[OK][KO][3/5] Moves:1084
+168 .[OK][KO][3/5] Moves:1084
+169 .[OK][KO][3/5] Moves:1084
+170 .[OK][KO][3/5] Moves:1084
+171 .[OK][KO][3/5] Moves:1084
+172 .[OK][KO][3/5] Moves:1084
+173 .[OK][KO][3/5] Moves:1084
+174 .[OK][KO][3/5] Moves:1084
+175 .[OK][KO][3/5] Moves:1084
+176 .[OK][KO][3/5] Moves:1084
+177 .[OK][KO][3/5] Moves:1084
+178 .[OK][KO][3/5] Moves:1084
+179 .[OK][KO][3/5] Moves:1084
+180 .[OK][KO][3/5] Moves:1084
+181 .[OK][KO][3/5] Moves:1084
+182 .[OK][KO][3/5] Moves:1084
+183 .[OK][KO][3/5] Moves:1084
+184 .[OK][KO][3/5] Moves:1084
+185 .[OK][KO][3/5] Moves:1084
+186 .[OK][KO][3/5] Moves:1084
+187 .[OK][KO][3/5] Moves:1084
+188 .[OK][KO][3/5] Moves:1084
+189 .[OK][KO][3/5] Moves:1084
+190 .[OK][KO][3/5] Moves:1084
+191 .[OK][KO][3/5] Moves:1084
+192 .[OK][KO][3/5] Moves:1084
+193 .[OK][KO][3/5] Moves:1084
+194 .[OK][KO][3/5] Moves:1084
+195 .[OK][KO][3/5] Moves:1084
+196 .[OK][KO][3/5] Moves:1084
+197 .[OK][KO][3/5] Moves:1084
+198 .[OK][KO][3/5] Moves:1084
+199 .[OK][KO][3/5] Moves:1084
+200 .[OK][KO][3/5] Moves:1084
+201 .[OK][KO][3/5] Moves:1084
+
+
+Max: 1084
+Min: 1084
+Average: 1084
+
+
+Test [5/5] 0/201
+Test [3/5] 201/201
+Check traces /mnt/c/temp/#42 Singapore/42sg_push_swap/traces.txt
+
+-------------------------------------------------------------
+
+
+                  Multiple size <= 500
+
+-------------------------------------------------------------
+
+1 .[OK][OK][4/5] Moves:6784
+2 .[OK][OK][4/5] Moves:6784
+3 .[OK][OK][4/5] Moves:6784
+4 .[OK][OK][4/5] Moves:6784
+5 .[OK][OK][4/5] Moves:6784
+6 .[OK][OK][4/5] Moves:6784
+7 .[OK][OK][4/5] Moves:6784
+8 .[OK][OK][4/5] Moves:6784
+9 .[OK][OK][4/5] Moves:6784
+10 .[OK][OK][4/5] Moves:6784
+11 .[OK][OK][4/5] Moves:6784
+12 .[OK][OK][4/5] Moves:6784
+13 .[OK][OK][4/5] Moves:6784
+14 .[OK][OK][4/5] Moves:6784
+15 .[OK][OK][4/5] Moves:6784
+16 .[OK][OK][4/5] Moves:6784
+17 .[OK][OK][4/5] Moves:6784
+18 .[OK][OK][4/5] Moves:6784
+19 .[OK][OK][4/5] Moves:6784
+20 .[OK][OK][4/5] Moves:6784
+21 .[OK][OK][4/5] Moves:6784
+22 .[OK][OK][4/5] Moves:6784
+23 .[OK][OK][4/5] Moves:6784
+24 .[OK][OK][4/5] Moves:6784
+25 .[OK][OK][4/5] Moves:6784
+26 .[OK][OK][4/5] Moves:6784
+27 .[OK][OK][4/5] Moves:6784
+28 .[OK][OK][4/5] Moves:6784
+29 .[OK][OK][4/5] Moves:6784
+30 .[OK][OK][4/5] Moves:6784
+31 .[OK][OK][4/5] Moves:6784
+32 .[OK][OK][4/5] Moves:6784
+33 .[OK][OK][4/5] Moves:6784
+34 .[OK][OK][4/5] Moves:6784
+35 .[OK][OK][4/5] Moves:6784
+36 .[OK][OK][4/5] Moves:6784
+37 .[OK][OK][4/5] Moves:6784
+38 .[OK][OK][4/5] Moves:6784
+39 .[OK][OK][4/5] Moves:6784
+40 .[OK][OK][4/5] Moves:6784
+41 .[OK][OK][4/5] Moves:6784
+42 .[OK][OK][4/5] Moves:6784
+43 .[OK][OK][4/5] Moves:6784
+44 .[OK][OK][4/5] Moves:6784
+45 .[OK][OK][4/5] Moves:6784
+46 .[OK][OK][4/5] Moves:6784
+47 .[OK][OK][4/5] Moves:6784
+48 .[OK][OK][4/5] Moves:6784
+49 .[OK][OK][4/5] Moves:6784
+50 .[OK][OK][4/5] Moves:6784
+51 .[OK][OK][4/5] Moves:6784
+52 .[OK][OK][4/5] Moves:6784
+53 .[OK][OK][4/5] Moves:6784
+54 .[OK][OK][4/5] Moves:6784
+55 .[OK][OK][4/5] Moves:6784
+56 .[OK][OK][4/5] Moves:6784
+57 .[OK][OK][4/5] Moves:6784
+58 .[OK][OK][4/5] Moves:6784
+59 .[OK][OK][4/5] Moves:6784
+60 .[OK][OK][4/5] Moves:6784
+61 .[OK][OK][4/5] Moves:6784
+62 .[OK][OK][4/5] Moves:6784
+63 .[OK][OK][4/5] Moves:6784
+64 .[OK][OK][4/5] Moves:6784
+65 .[OK][OK][4/5] Moves:6784
+66 .[OK][OK][4/5] Moves:6784
+67 .[OK][OK][4/5] Moves:6784
+68 .[OK][OK][4/5] Moves:6784
+69 .[OK][OK][4/5] Moves:6784
+70 .[OK][OK][4/5] Moves:6784
+71 .[OK][OK][4/5] Moves:6784
+72 .[OK][OK][4/5] Moves:6784
+73 .[OK][OK][4/5] Moves:6784
+74 .[OK][OK][4/5] Moves:6784
+75 .[OK][OK][4/5] Moves:6784
+76 .[OK][OK][4/5] Moves:6784
+77 .[OK][OK][4/5] Moves:6784
+78 .[OK][OK][4/5] Moves:6784
+79 .[OK][OK][4/5] Moves:6784
+80 .[OK][OK][4/5] Moves:6784
+81 .[OK][OK][4/5] Moves:6784
+82 .[OK][OK][4/5] Moves:6784
+83 .[OK][OK][4/5] Moves:6784
+84 .[OK][OK][4/5] Moves:6784
+85 .[OK][OK][4/5] Moves:6784
+86 .[OK][OK][4/5] Moves:6784
+87 .[OK][OK][4/5] Moves:6784
+88 .[OK][OK][4/5] Moves:6784
+89 .[OK][OK][4/5] Moves:6784
+90 .[OK][OK][4/5] Moves:6784
+91 .[OK][OK][4/5] Moves:6784
+92 .[OK][OK][4/5] Moves:6784
+93 .[OK][OK][4/5] Moves:6784
+94 .[OK][OK][4/5] Moves:6784
+95 .[OK][OK][4/5] Moves:6784
+96 .[OK][OK][4/5] Moves:6784
+97 .[OK][OK][4/5] Moves:6784
+98 .[OK][OK][4/5] Moves:6784
+99 .[OK][OK][4/5] Moves:6784
+100 .[OK][OK][4/5] Moves:6784
+101 .[OK][OK][4/5] Moves:6784
+102 .[OK][OK][4/5] Moves:6784
+103 .[OK][OK][4/5] Moves:6784
+104 .[OK][OK][4/5] Moves:6784
+105 .[OK][OK][4/5] Moves:6784
+106 .[OK][OK][4/5] Moves:6784
+107 .[OK][OK][4/5] Moves:6784
+108 .[OK][OK][4/5] Moves:6784
+109 .[OK][OK][4/5] Moves:6784
+110 .[OK][OK][4/5] Moves:6784
+111 .[OK][OK][4/5] Moves:6784
+112 .[OK][OK][4/5] Moves:6784
+113 .[OK][OK][4/5] Moves:6784
+114 .[OK][OK][4/5] Moves:6784
+115 .[OK][OK][4/5] Moves:6784
+116 .[OK][OK][4/5] Moves:6784
+117 .[OK][OK][4/5] Moves:6784
+118 .[OK][OK][4/5] Moves:6784
+119 .[OK][OK][4/5] Moves:6784
+120 .[OK][OK][4/5] Moves:6784
+121 .[OK][OK][4/5] Moves:6784
+122 .[OK][OK][4/5] Moves:6784
+123 .[OK][OK][4/5] Moves:6784
+124 .[OK][OK][4/5] Moves:6784
+125 .[OK][OK][4/5] Moves:6784
+126 .[OK][OK][4/5] Moves:6784
+127 .[OK][OK][4/5] Moves:6784
+128 .[OK][OK][4/5] Moves:6784
+129 .[OK][OK][4/5] Moves:6784
+130 .[OK][OK][4/5] Moves:6784
+131 .[OK][OK][4/5] Moves:6784
+132 .[OK][OK][4/5] Moves:6784
+133 .[OK][OK][4/5] Moves:6784
+134 .[OK][OK][4/5] Moves:6784
+135 .[OK][OK][4/5] Moves:6784
+136 .[OK][OK][4/5] Moves:6784
+137 .[OK][OK][4/5] Moves:6784
+138 .[OK][OK][4/5] Moves:6784
+139 .[OK][OK][4/5] Moves:6784
+140 .[OK][OK][4/5] Moves:6784
+141 .[OK][OK][4/5] Moves:6784
+142 .[OK][OK][4/5] Moves:6784
+143 .[OK][OK][4/5] Moves:6784
+144 .[OK][OK][4/5] Moves:6784
+145 .[OK][OK][4/5] Moves:6784
+146 .[OK][OK][4/5] Moves:6784
+147 .[OK][OK][4/5] Moves:6784
+148 .[OK][OK][4/5] Moves:6784
+149 .[OK][OK][4/5] Moves:6784
+150 .[OK][OK][4/5] Moves:6784
+151 .[OK][OK][4/5] Moves:6784
+152 .[OK][OK][4/5] Moves:6784
+153 .[OK][OK][4/5] Moves:6784
+154 .[OK][OK][4/5] Moves:6784
+155 .[OK][OK][4/5] Moves:6784
+156 .[OK][OK][4/5] Moves:6784
+157 .[OK][OK][4/5] Moves:6784
+158 .[OK][OK][4/5] Moves:6784
+159 .[OK][OK][4/5] Moves:6784
+160 .[OK][OK][4/5] Moves:6784
+161 .[OK][OK][4/5] Moves:6784
+162 .[OK][OK][4/5] Moves:6784
+163 .[OK][OK][4/5] Moves:6784
+164 .[OK][OK][4/5] Moves:6784
+165 .[OK][OK][4/5] Moves:6784
+166 .[OK][OK][4/5] Moves:6784
+167 .[OK][OK][4/5] Moves:6784
+168 .[OK][OK][4/5] Moves:6784
+169 .[OK][OK][4/5] Moves:6784
+170 .[OK][OK][4/5] Moves:6784
+171 .[OK][OK][4/5] Moves:6784
+172 .[OK][OK][4/5] Moves:6784
+173 .[OK][OK][4/5] Moves:6784
+174 .[OK][OK][4/5] Moves:6784
+175 .[OK][OK][4/5] Moves:6784
+176 .[OK][OK][4/5] Moves:6784
+177 .[OK][OK][4/5] Moves:6784
+178 .[OK][OK][4/5] Moves:6784
+179 .[OK][OK][4/5] Moves:6784
+180 .[OK][OK][4/5] Moves:6784
+181 .[OK][OK][4/5] Moves:6784
+182 .[OK][OK][4/5] Moves:6784
+183 .[OK][OK][4/5] Moves:6784
+184 .[OK][OK][4/5] Moves:6784
+185 .[OK][OK][4/5] Moves:6784
+186 .[OK][OK][4/5] Moves:6784
+187 .[OK][OK][4/5] Moves:6784
+188 .[OK][OK][4/5] Moves:6784
+189 .[OK][OK][4/5] Moves:6784
+190 .[OK][OK][4/5] Moves:6784
+191 .[OK][OK][4/5] Moves:6784
+192 .[OK][OK][4/5] Moves:6784
+193 .[OK][OK][4/5] Moves:6784
+194 .[OK][OK][4/5] Moves:6784
+195 .[OK][OK][4/5] Moves:6784
+196 .[OK][OK][4/5] Moves:6784
+197 .[OK][OK][4/5] Moves:6784
+198 .[OK][OK][4/5] Moves:6784
+199 .[OK][OK][4/5] Moves:6784
+200 .[OK][OK][4/5] Moves:6784
+201 .[OK][OK][4/5] Moves:6784
+
+
+Max move: 6784
+Min move: 6784
+Average: 6784
+
+
+Test [5/5] 0/201
+Test [4/5] 201/201
+Check traces /mnt/c/temp/#42 Singapore/42sg_push_swap/traces.txt
+
+-------------------------------------------------------------
+
+
+                  Order nums
+
+-------------------------------------------------------------
+
+Error
+1. [OK]Error
+[MOK]
+2. [KO][MOK]
+3. [KO][MOK]
+4. [OK][MOK]
+5. [KO][MOK]
+6. [KO][MOK]
+7. [KO][MOK]
+8. [KO][MOK]
+9. [KO][MOK]
+10. [KO][MOK]
+11. [KO][MOK]
+12. [KO][MOK]
+
+-------------------------------------------------------------
+
+
+                  Random test with big nums
+
+-------------------------------------------------------------
+
+[OK][4/5] [OK]
+[OK][4/5] [OK]
+[OK][4/5] [OK]
+[OK][4/5] [OK]
+[OK][4/5] [OK]
+[OK][4/5] [OK]
+[OK][4/5] [OK]
+[OK][4/5] [OK]
+[OK][4/5] [OK]
+[OK][4/5] [OK]
+[OK][4/5] [OK]
+[OK][4/5] [OK]
+[OK][4/5] [OK]
+[OK][4/5] [OK]
+[OK][4/5] [OK]
+[OK][4/5] [OK]
+[OK][4/5] [OK]
+[OK][4/5] [OK]
+[OK][5/5] [OK]
+[OK][4/5] [OK]
+[OK][4/5] [OK]
+[OK][4/5] [OK]
+
+-------------------------------------------------------------
+
+
+                  All size test + leaks check
+
+-------------------------------------------------------------
+
+
+⚠️ This test is very long. It is recommended to use it only when the project is finished or in an evaluation ⚠️
+
+
+1 .[OK] Num args: 2  Moves:3
+2 .[OK] Num args: 2  Moves:3
+3 .[OK] Num args: 2  Moves:3
+4 .[OK] Num args: 2  Moves:3
+5 .[OK] Num args: 2  Moves:2
+5 [MEMORY OK]
+6 .[OK] Num args: 3  Moves:10
+7 .[OK] Num args: 3  Moves:9
+8 .[OK] Num args: 3  Moves:10
+9 .[OK] Num args: 3  Moves:10
+10 .[OK] Num args: 3  Moves:9
+10 [MEMORY OK]
+11 .[OK] Num args: 4  Moves:12
+12 .[OK] Num args: 4  Moves:12
+13 .[OK] Num args: 4  Moves:12
+14 .[OK] Num args: 4  Moves:12
+15 .[OK] Num args: 4  Moves:12
+15 [MEMORY OK]
+16 .[OK] Num args: 5  Moves:25
+17 .[OK] Num args: 5  Moves:25
+18 .[OK] Num args: 5  Moves:25
+19 .[OK] Num args: 5  Moves:25
+20 .[OK] Num args: 5  Moves:25
+20 [MEMORY OK]
+21 .[OK] Num args: 6  Moves:29
+22 .[OK] Num args: 6  Moves:29
+23 .[OK] Num args: 6  Moves:29
+24 .[OK] Num args: 6  Moves:29
+25 .[OK] Num args: 6  Moves:29
+25 [MEMORY OK]
+26 .[OK] Num args: 7  Moves:33
+27 .[OK] Num args: 7  Moves:33
+28 .[OK] Num args: 7  Moves:33
+29 .[OK] Num args: 7  Moves:33
+30 .[OK] Num args: 7  Moves:33
+30 [MEMORY OK]
+31 .[OK] Num args: 8  Moves:36
+32 .[OK] Num args: 8  Moves:36
+33 .[OK] Num args: 8  Moves:36
+34 .[OK] Num args: 8  Moves:36
+35 .[OK] Num args: 8  Moves:36
+35 [MEMORY OK]
+36 .[OK] Num args: 9  Moves:59
+37 .[OK] Num args: 9  Moves:59
+38 .[OK] Num args: 9  Moves:59
+39 .[OK] Num args: 9  Moves:59
+40 .[OK] Num args: 9  Moves:59
+40 [MEMORY OK]
+41 .[OK] Num args: 10  Moves:65
+42 .[OK] Num args: 10  Moves:65
+43 .[OK] Num args: 10  Moves:65
+44 .[OK] Num args: 10  Moves:65
+45 .[OK] Num args: 10  Moves:65
+45 [MEMORY OK]
+46 .[OK] Num args: 11  Moves:71
+47 .[OK] Num args: 11  Moves:71
+48 .[OK] Num args: 11  Moves:71
+49 .[OK] Num args: 11  Moves:71
+50 .[OK] Num args: 11  Moves:71
+50 [MEMORY OK]
+51 .[OK] Num args: 12  Moves:76
+52 .[OK] Num args: 12  Moves:76
+53 .[OK] Num args: 12  Moves:76
+54 .[OK] Num args: 12  Moves:76
+55 .[OK] Num args: 12  Moves:76
+55 [MEMORY OK]
+56 .[OK] Num args: 13  Moves:82
+57 .[OK] Num args: 13  Moves:82
+58 .[OK] Num args: 13  Moves:82
+59 .[OK] Num args: 13  Moves:82
+60 .[OK] Num args: 13  Moves:82
+60 [MEMORY OK]
+61 .[OK] Num args: 14  Moves:87
+62 .[OK] Num args: 14  Moves:87
+63 .[OK] Num args: 14  Moves:87
+64 .[OK] Num args: 14  Moves:87
+65 .[OK] Num args: 14  Moves:87
+65 [MEMORY OK]
+66 .[OK] Num args: 15  Moves:92
+67 .[OK] Num args: 15  Moves:92
+68 .[OK] Num args: 15  Moves:92
+69 .[OK] Num args: 15  Moves:92
+70 .[OK] Num args: 15  Moves:92
+70 [MEMORY OK]
+71 .[OK] Num args: 16  Moves:96
+72 .[OK] Num args: 16  Moves:96
+73 .[OK] Num args: 16  Moves:96
+74 .[OK] Num args: 16  Moves:96
+75 .[OK] Num args: 16  Moves:96
+75 [MEMORY OK]
+76 .[OK] Num args: 17  Moves:137
+77 .[OK] Num args: 17  Moves:137
+78 .[OK] Num args: 17  Moves:137
+79 .[OK] Num args: 17  Moves:137
+80 .[OK] Num args: 17  Moves:137
+80 [MEMORY OK]
+81 .[OK] Num args: 18  Moves:145
+82 .[OK] Num args: 18  Moves:145
+83 .[OK] Num args: 18  Moves:145
+84 .[OK] Num args: 18  Moves:145
+85 .[OK] Num args: 18  Moves:145
+85 [MEMORY OK]
+86 .[OK] Num args: 19  Moves:153
+87 .[OK] Num args: 19  Moves:153
+88 .[OK] Num args: 19  Moves:153
+89 .[OK] Num args: 19  Moves:153
+90 .[OK] Num args: 19  Moves:153
+90 [MEMORY OK]
+91 .[OK] Num args: 20  Moves:160
+92 .[OK] Num args: 20  Moves:160
+93 .[OK] Num args: 20  Moves:160
+94 .[OK] Num args: 20  Moves:160
+95 .[OK] Num args: 20  Moves:160
+95 [MEMORY OK]
+96 .[OK] Num args: 21  Moves:168
+97 .[OK] Num args: 21  Moves:168
+98 .[OK] Num args: 21  Moves:168
+99 .[OK] Num args: 21  Moves:168
+100 .[OK] Num args: 21  Moves:168
+100 [MEMORY OK]
+101 .[OK] Num args: 22  Moves:175
+102 .[OK] Num args: 22  Moves:175
+103 .[OK] Num args: 22  Moves:175
+104 .[OK] Num args: 22  Moves:175
+105 .[OK] Num args: 22  Moves:175
+105 [MEMORY OK]
+106 .[OK] Num args: 23  Moves:182
+107 .[OK] Num args: 23  Moves:182
+108 .[OK] Num args: 23  Moves:182
+109 .[OK] Num args: 23  Moves:182
+110 .[OK] Num args: 23  Moves:182
+110 [MEMORY OK]
+111 .[OK] Num args: 24  Moves:188
+112 .[OK] Num args: 24  Moves:188
+113 .[OK] Num args: 24  Moves:188
+114 .[OK] Num args: 24  Moves:188
+115 .[OK] Num args: 24  Moves:188
+115 [MEMORY OK]
+116 .[OK] Num args: 25  Moves:196
+117 .[OK] Num args: 25  Moves:196
+118 .[OK] Num args: 25  Moves:196
+119 .[OK] Num args: 25  Moves:196
+120 .[OK] Num args: 25  Moves:196
+120 [MEMORY OK]
+121 .[OK] Num args: 26  Moves:203
+122 .[OK] Num args: 26  Moves:203
+123 .[OK] Num args: 26  Moves:203
+124 .[OK] Num args: 26  Moves:203
+125 .[OK] Num args: 26  Moves:203
+125 [MEMORY OK]
+126 .[OK] Num args: 27  Moves:210
+127 .[OK] Num args: 27  Moves:210
+128 .[OK] Num args: 27  Moves:210
+129 .[OK] Num args: 27  Moves:210
+130 .[OK] Num args: 27  Moves:210
+130 [MEMORY OK]
+131 .[OK] Num args: 28  Moves:216
+132 .[OK] Num args: 28  Moves:216
+133 .[OK] Num args: 28  Moves:216
+134 .[OK] Num args: 28  Moves:216
+135 .[OK] Num args: 28  Moves:216
+135 [MEMORY OK]
+136 .[OK] Num args: 29  Moves:223
+137 .[OK] Num args: 29  Moves:223
+138 .[OK] Num args: 29  Moves:223
+139 .[OK] Num args: 29  Moves:223
+140 .[OK] Num args: 29  Moves:223
+140 [MEMORY OK]
+141 .[OK] Num args: 30  Moves:229
+142 .[OK] Num args: 30  Moves:229
+143 .[OK] Num args: 30  Moves:229
+144 .[OK] Num args: 30  Moves:229
+145 .[OK] Num args: 30  Moves:229
+145 [MEMORY OK]
+146 .[OK] Num args: 31  Moves:235
+147 .[OK] Num args: 31  Moves:235
+148 .[OK] Num args: 31  Moves:235
+149 .[OK] Num args: 31  Moves:235
+150 .[OK] Num args: 31  Moves:235
+150 [MEMORY OK]
+151 .[OK] Num args: 32  Moves:240
+152 .[OK] Num args: 32  Moves:240
+153 .[OK] Num args: 32  Moves:240
+154 .[OK] Num args: 32  Moves:240
+155 .[OK] Num args: 32  Moves:240
+155 [MEMORY OK]
+156 .[OK] Num args: 33  Moves:315
+157 .[OK] Num args: 33  Moves:315
+158 .[OK] Num args: 33  Moves:315
+159 .[OK] Num args: 33  Moves:315
+160 .[OK] Num args: 33  Moves:315
+160 [MEMORY OK]
+161 .[OK] Num args: 34  Moves:325
+162 .[OK] Num args: 34  Moves:325
+163 .[OK] Num args: 34  Moves:325
+164 .[OK] Num args: 34  Moves:325
+165 .[OK] Num args: 34  Moves:325
+165 [MEMORY OK]
+166 .[OK] Num args: 35  Moves:335
+167 .[OK] Num args: 35  Moves:335
+168 .[OK] Num args: 35  Moves:335
+169 .[OK] Num args: 35  Moves:335
+170 .[OK] Num args: 35  Moves:335
+170 [MEMORY OK]
+171 .[OK] Num args: 36  Moves:344
+172 .[OK] Num args: 36  Moves:344
+173 .[OK] Num args: 36  Moves:344
+174 .[OK] Num args: 36  Moves:344
+175 .[OK] Num args: 36  Moves:344
+175 [MEMORY OK]
+176 .[OK] Num args: 37  Moves:354
+177 .[OK] Num args: 37  Moves:354
+178 .[OK] Num args: 37  Moves:354
+179 .[OK] Num args: 37  Moves:354
+180 .[OK] Num args: 37  Moves:354
+180 [MEMORY OK]
+181 .[OK] Num args: 38  Moves:363
+182 .[OK] Num args: 38  Moves:363
+183 .[OK] Num args: 38  Moves:363
+184 .[OK] Num args: 38  Moves:363
+185 .[OK] Num args: 38  Moves:363
+185 [MEMORY OK]
+186 .[OK] Num args: 39  Moves:372
+187 .[OK] Num args: 39  Moves:372
+188 .[OK] Num args: 39  Moves:372
+189 .[OK] Num args: 39  Moves:372
+190 .[OK] Num args: 39  Moves:372
+190 [MEMORY OK]
+191 .[OK] Num args: 40  Moves:380
+192 .[OK] Num args: 40  Moves:380
+193 .[OK] Num args: 40  Moves:380
+194 .[OK] Num args: 40  Moves:380
+195 .[OK] Num args: 40  Moves:380
+195 [MEMORY OK]
+196 .[OK] Num args: 41  Moves:390
+197 .[OK] Num args: 41  Moves:390
+198 .[OK] Num args: 41  Moves:390
+199 .[OK] Num args: 41  Moves:390
+200 .[OK] Num args: 41  Moves:390
+200 [MEMORY OK]
+201 .[OK] Num args: 42  Moves:399
+202 .[OK] Num args: 42  Moves:399
+203 .[OK] Num args: 42  Moves:399
+204 .[OK] Num args: 42  Moves:399
+205 .[OK] Num args: 42  Moves:399
+205 [MEMORY OK]
+206 .[OK] Num args: 43  Moves:408
+207 .[OK] Num args: 43  Moves:408
+208 .[OK] Num args: 43  Moves:408
+209 .[OK] Num args: 43  Moves:408
+210 .[OK] Num args: 43  Moves:408
+210 [MEMORY OK]
+211 .[OK] Num args: 44  Moves:416
+212 .[OK] Num args: 44  Moves:416
+213 .[OK] Num args: 44  Moves:416
+214 .[OK] Num args: 44  Moves:416
+215 .[OK] Num args: 44  Moves:416
+215 [MEMORY OK]
+216 .[OK] Num args: 45  Moves:425
+217 .[OK] Num args: 45  Moves:425
+218 .[OK] Num args: 45  Moves:425
+219 .[OK] Num args: 45  Moves:425
+220 .[OK] Num args: 45  Moves:425
+220 [MEMORY OK]
+221 .[OK] Num args: 46  Moves:433
+222 .[OK] Num args: 46  Moves:433
+223 .[OK] Num args: 46  Moves:433
+224 .[OK] Num args: 46  Moves:433
+225 .[OK] Num args: 46  Moves:433
+225 [MEMORY OK]
+226 .[OK] Num args: 47  Moves:441
+227 .[OK] Num args: 47  Moves:441
+228 .[OK] Num args: 47  Moves:441
+229 .[OK] Num args: 47  Moves:441
+230 .[OK] Num args: 47  Moves:441
+230 [MEMORY OK]
+231 .[OK] Num args: 48  Moves:448
+232 .[OK] Num args: 48  Moves:448
+233 .[OK] Num args: 48  Moves:448
+234 .[OK] Num args: 48  Moves:448
+235 .[OK] Num args: 48  Moves:448
+235 [MEMORY OK]
+236 .[OK] Num args: 49  Moves:458
+237 .[OK] Num args: 49  Moves:458
+238 .[OK] Num args: 49  Moves:458
+239 .[OK] Num args: 49  Moves:458
+240 .[OK] Num args: 49  Moves:458
+240 [MEMORY OK]
+241 .[OK] Num args: 50  Moves:467
+242 .[OK] Num args: 50  Moves:467
+243 .[OK] Num args: 50  Moves:467
+244 .[OK] Num args: 50  Moves:467
+245 .[OK] Num args: 50  Moves:467
+245 [MEMORY OK]
+246 .[OK] Num args: 51  Moves:476
+247 .[OK] Num args: 51  Moves:476
+248 .[OK] Num args: 51  Moves:476
+249 .[OK] Num args: 51  Moves:476
+250 .[OK] Num args: 51  Moves:476
+250 [MEMORY OK]
+251 .[OK] Num args: 52  Moves:484
+252 .[OK] Num args: 52  Moves:484
+253 .[OK] Num args: 52  Moves:484
+254 .[OK] Num args: 52  Moves:484
+255 .[OK] Num args: 52  Moves:484
+255 [MEMORY OK]
+256 .[OK] Num args: 53  Moves:493
+257 .[OK] Num args: 53  Moves:493
+258 .[OK] Num args: 53  Moves:493
+259 .[OK] Num args: 53  Moves:493
+260 .[OK] Num args: 53  Moves:493
+260 [MEMORY OK]
+261 .[OK] Num args: 54  Moves:501
+262 .[OK] Num args: 54  Moves:501
+263 .[OK] Num args: 54  Moves:501
+264 .[OK] Num args: 54  Moves:501
+265 .[OK] Num args: 54  Moves:501
+265 [MEMORY OK]
+266 .[OK] Num args: 55  Moves:509
+267 .[OK] Num args: 55  Moves:509
+268 .[OK] Num args: 55  Moves:509
+269 .[OK] Num args: 55  Moves:509
+270 .[OK] Num args: 55  Moves:509
+270 [MEMORY OK]
+271 .[OK] Num args: 56  Moves:516
+272 .[OK] Num args: 56  Moves:516
+273 .[OK] Num args: 56  Moves:516
+274 .[OK] Num args: 56  Moves:516
+275 .[OK] Num args: 56  Moves:516
+275 [MEMORY OK]
+276 .[OK] Num args: 57  Moves:525
+277 .[OK] Num args: 57  Moves:525
+278 .[OK] Num args: 57  Moves:525
+279 .[OK] Num args: 57  Moves:525
+280 .[OK] Num args: 57  Moves:525
+280 [MEMORY OK]
+281 .[OK] Num args: 58  Moves:533
+282 .[OK] Num args: 58  Moves:533
+283 .[OK] Num args: 58  Moves:533
+284 .[OK] Num args: 58  Moves:533
+285 .[OK] Num args: 58  Moves:533
+285 [MEMORY OK]
+286 .[OK] Num args: 59  Moves:541
+287 .[OK] Num args: 59  Moves:541
+288 .[OK] Num args: 59  Moves:541
+289 .[OK] Num args: 59  Moves:541
+290 .[OK] Num args: 59  Moves:541
+290 [MEMORY OK]
+291 .[OK] Num args: 60  Moves:548
+292 .[OK] Num args: 60  Moves:548
+293 .[OK] Num args: 60  Moves:548
+294 .[OK] Num args: 60  Moves:548
+295 .[OK] Num args: 60  Moves:548
+295 [MEMORY OK]
+296 .[OK] Num args: 61  Moves:556
+297 .[OK] Num args: 61  Moves:556
+298 .[OK] Num args: 61  Moves:556
+299 .[OK] Num args: 61  Moves:556
+300 .[OK] Num args: 61  Moves:556
+300 [MEMORY OK]
+301 .[OK] Num args: 62  Moves:563
+302 .[OK] Num args: 62  Moves:563
+303 .[OK] Num args: 62  Moves:563
+304 .[OK] Num args: 62  Moves:563
+305 .[OK] Num args: 62  Moves:563
+305 [MEMORY OK]
+306 .[OK] Num args: 63  Moves:570
+307 .[OK] Num args: 63  Moves:570
+308 .[OK] Num args: 63  Moves:570
+309 .[OK] Num args: 63  Moves:570
+310 .[OK] Num args: 63  Moves:570
+310 [MEMORY OK]
+311 .[OK] Num args: 64  Moves:576
+312 .[OK] Num args: 64  Moves:576
+313 .[OK] Num args: 64  Moves:576
+314 .[OK] Num args: 64  Moves:576
+315 .[OK] Num args: 64  Moves:576
+315 [MEMORY OK]
+316 .[OK] Num args: 65  Moves:717
+317 .[OK] Num args: 65  Moves:717
+318 .[OK] Num args: 65  Moves:717
+319 .[OK] Num args: 65  Moves:717
+320 .[OK] Num args: 65  Moves:717
+320 [MEMORY OK]
+321 .[OK] Num args: 66  Moves:729
+322 .[OK] Num args: 66  Moves:729
+323 .[OK] Num args: 66  Moves:729
+324 .[OK] Num args: 66  Moves:729
+325 .[OK] Num args: 66  Moves:729
+325 [MEMORY OK]
+326 .[OK] Num args: 67  Moves:741
+327 .[OK] Num args: 67  Moves:741
+328 .[OK] Num args: 67  Moves:741
+329 .[OK] Num args: 67  Moves:741
+330 .[OK] Num args: 67  Moves:741
+330 [MEMORY OK]
+331 .[OK] Num args: 68  Moves:752
+332 .[OK] Num args: 68  Moves:752
+333 .[OK] Num args: 68  Moves:752
+334 .[OK] Num args: 68  Moves:752
+335 .[OK] Num args: 68  Moves:752
+335 [MEMORY OK]
+336 .[OK] Num args: 69  Moves:764
+337 .[OK] Num args: 69  Moves:764
+338 .[OK] Num args: 69  Moves:764
+339 .[OK] Num args: 69  Moves:764
+340 .[OK] Num args: 69  Moves:764
+340 [MEMORY OK]
+341 .[OK] Num args: 70  Moves:775
+342 .[OK] Num args: 70  Moves:775
+343 .[OK] Num args: 70  Moves:775
+344 .[OK] Num args: 70  Moves:775
+345 .[OK] Num args: 70  Moves:775
+345 [MEMORY OK]
+346 .[OK] Num args: 71  Moves:786
+347 .[OK] Num args: 71  Moves:786
+348 .[OK] Num args: 71  Moves:786
+349 .[OK] Num args: 71  Moves:786
+350 .[OK] Num args: 71  Moves:786
+350 [MEMORY OK]
+351 .[OK] Num args: 72  Moves:796
+352 .[OK] Num args: 72  Moves:796
+353 .[OK] Num args: 72  Moves:796
+354 .[OK] Num args: 72  Moves:796
+355 .[OK] Num args: 72  Moves:796
+355 [MEMORY OK]
+356 .[OK] Num args: 73  Moves:808
+357 .[OK] Num args: 73  Moves:808
+358 .[OK] Num args: 73  Moves:808
+359 .[OK] Num args: 73  Moves:808
+360 .[OK] Num args: 73  Moves:808
+360 [MEMORY OK]
+361 .[OK] Num args: 74  Moves:819
+362 .[OK] Num args: 74  Moves:819
+363 .[OK] Num args: 74  Moves:819
+364 .[OK] Num args: 74  Moves:819
+365 .[OK] Num args: 74  Moves:819
+365 [MEMORY OK]
+366 .[OK] Num args: 75  Moves:830
+367 .[OK] Num args: 75  Moves:830
+368 .[OK] Num args: 75  Moves:830
+369 .[OK] Num args: 75  Moves:830
+370 .[OK] Num args: 75  Moves:830
+370 [MEMORY OK]
+371 .[OK] Num args: 76  Moves:840
+372 .[OK] Num args: 76  Moves:840
+373 .[OK] Num args: 76  Moves:840
+374 .[OK] Num args: 76  Moves:840
+375 .[OK] Num args: 76  Moves:840
+375 [MEMORY OK]
+376 .[OK] Num args: 77  Moves:851
+377 .[OK] Num args: 77  Moves:851
+378 .[OK] Num args: 77  Moves:851
+379 .[OK] Num args: 77  Moves:851
+380 .[OK] Num args: 77  Moves:851
+380 [MEMORY OK]
+381 .[OK] Num args: 78  Moves:861
+382 .[OK] Num args: 78  Moves:861
+383 .[OK] Num args: 78  Moves:861
+384 .[OK] Num args: 78  Moves:861
+385 .[OK] Num args: 78  Moves:861
+385 [MEMORY OK]
+386 .[OK] Num args: 79  Moves:871
+387 .[OK] Num args: 79  Moves:871
+388 .[OK] Num args: 79  Moves:871
+389 .[OK] Num args: 79  Moves:871
+390 .[OK] Num args: 79  Moves:871
+390 [MEMORY OK]
+391 .[OK] Num args: 80  Moves:880
+392 .[OK] Num args: 80  Moves:880
+393 .[OK] Num args: 80  Moves:880
+394 .[OK] Num args: 80  Moves:880
+395 .[OK] Num args: 80  Moves:880
+395 [MEMORY OK]
+396 .[OK] Num args: 81  Moves:892
+397 .[OK] Num args: 81  Moves:892
+398 .[OK] Num args: 81  Moves:892
+399 .[OK] Num args: 81  Moves:892
+400 .[OK] Num args: 81  Moves:892
+400 [MEMORY OK]
+401 .[OK] Num args: 82  Moves:903
+402 .[OK] Num args: 82  Moves:903
+403 .[OK] Num args: 82  Moves:903
+404 .[OK] Num args: 82  Moves:903
+405 .[OK] Num args: 82  Moves:903
+405 [MEMORY OK]
+406 .[OK] Num args: 83  Moves:914
+407 .[OK] Num args: 83  Moves:914
+408 .[OK] Num args: 83  Moves:914
+409 .[OK] Num args: 83  Moves:914
+410 .[OK] Num args: 83  Moves:914
+410 [MEMORY OK]
+411 .[OK] Num args: 84  Moves:924
+412 .[OK] Num args: 84  Moves:924
+413 .[OK] Num args: 84  Moves:924
+414 .[OK] Num args: 84  Moves:924
+415 .[OK] Num args: 84  Moves:924
+415 [MEMORY OK]
+416 .[OK] Num args: 85  Moves:935
+417 .[OK] Num args: 85  Moves:935
+418 .[OK] Num args: 85  Moves:935
+419 .[OK] Num args: 85  Moves:935
+420 .[OK] Num args: 85  Moves:935
+420 [MEMORY OK]
+421 .[OK] Num args: 86  Moves:945
+422 .[OK] Num args: 86  Moves:945
+423 .[OK] Num args: 86  Moves:945
+424 .[OK] Num args: 86  Moves:945
+425 .[OK] Num args: 86  Moves:945
+425 [MEMORY OK]
+426 .[OK] Num args: 87  Moves:955
+427 .[OK] Num args: 87  Moves:955
+428 .[OK] Num args: 87  Moves:955
+429 .[OK] Num args: 87  Moves:955
+430 .[OK] Num args: 87  Moves:955
+430 [MEMORY OK]
+431 .[OK] Num args: 88  Moves:964
+432 .[OK] Num args: 88  Moves:964
+433 .[OK] Num args: 88  Moves:964
+434 .[OK] Num args: 88  Moves:964
+435 .[OK] Num args: 88  Moves:964
+435 [MEMORY OK]
+436 .[OK] Num args: 89  Moves:975
+437 .[OK] Num args: 89  Moves:975
+438 .[OK] Num args: 89  Moves:975
+439 .[OK] Num args: 89  Moves:975
+440 .[OK] Num args: 89  Moves:975
+440 [MEMORY OK]
+441 .[OK] Num args: 90  Moves:985
+442 .[OK] Num args: 90  Moves:985
+443 .[OK] Num args: 90  Moves:985
+444 .[OK] Num args: 90  Moves:985
+445 .[OK] Num args: 90  Moves:985
+445 [MEMORY OK]
+446 .[OK] Num args: 91  Moves:995
+447 .[OK] Num args: 91  Moves:995
+448 .[OK] Num args: 91  Moves:995
+449 .[OK] Num args: 91  Moves:995
+450 .[OK] Num args: 91  Moves:995
+450 [MEMORY OK]
+451 .[OK] Num args: 92  Moves:1004
+452 .[OK] Num args: 92  Moves:1004
+453 .[OK] Num args: 92  Moves:1004
+454 .[OK] Num args: 92  Moves:1004
+455 .[OK] Num args: 92  Moves:1004
+455 [MEMORY OK]
+456 .[OK] Num args: 93  Moves:1014
+457 .[OK] Num args: 93  Moves:1014
+458 .[OK] Num args: 93  Moves:1014
+459 .[OK] Num args: 93  Moves:1014
+460 .[OK] Num args: 93  Moves:1014
+460 [MEMORY OK]
+461 .[OK] Num args: 94  Moves:1023
+462 .[OK] Num args: 94  Moves:1023
+463 .[OK] Num args: 94  Moves:1023
+464 .[OK] Num args: 94  Moves:1023
+465 .[OK] Num args: 94  Moves:1023
+465 [MEMORY OK]
+466 .[OK] Num args: 95  Moves:1032
+467 .[OK] Num args: 95  Moves:1032
+468 .[OK] Num args: 95  Moves:1032
+469 .[OK] Num args: 95  Moves:1032
+470 .[OK] Num args: 95  Moves:1032
+470 [MEMORY OK]
+471 .[OK] Num args: 96  Moves:1040
+472 .[OK] Num args: 96  Moves:1040
+473 .[OK] Num args: 96  Moves:1040
+474 .[OK] Num args: 96  Moves:1040
+475 .[OK] Num args: 96  Moves:1040
+475 [MEMORY OK]
+476 .[OK] Num args: 97  Moves:1052
+477 .[OK] Num args: 97  Moves:1052
+478 .[OK] Num args: 97  Moves:1052
+479 .[OK] Num args: 97  Moves:1052
+480 .[OK] Num args: 97  Moves:1052
+480 [MEMORY OK]
+481 .[OK] Num args: 98  Moves:1063
+482 .[OK] Num args: 98  Moves:1063
+483 .[OK] Num args: 98  Moves:1063
+484 .[OK] Num args: 98  Moves:1063
+485 .[OK] Num args: 98  Moves:1063
+485 [MEMORY OK]
+486 .[OK] Num args: 99  Moves:1074
+487 .[OK] Num args: 99  Moves:1074
+488 .[OK] Num args: 99  Moves:1074
+489 .[OK] Num args: 99  Moves:1074
+490 .[OK] Num args: 99  Moves:1074
+490 [MEMORY OK]
+491 .[OK] Num args: 100  Moves:1084
+492 .[OK] Num args: 100  Moves:1084
+493 .[OK] Num args: 100  Moves:1084
+494 .[OK] Num args: 100  Moves:1084
+495 .[OK] Num args: 100  Moves:1084
+495 [MEMORY OK]
+496 .[OK] Num args: 101  Moves:1095
+497 .[OK] Num args: 101  Moves:1095
+498 .[OK] Num args: 101  Moves:1095
+499 .[OK] Num args: 101  Moves:1095
+500 .[OK] Num args: 101  Moves:1095
+500 [MEMORY OK]
+501 .[OK] Num args: 102  Moves:1105
+502 .[OK] Num args: 102  Moves:1105
+503 .[OK] Num args: 102  Moves:1105
+504 .[OK] Num args: 102  Moves:1105
+505 .[OK] Num args: 102  Moves:1105
+505 [MEMORY OK]
+506 .[OK] Num args: 103  Moves:1115
+507 .[OK] Num args: 103  Moves:1115
+508 .[OK] Num args: 103  Moves:1115
+509 .[OK] Num args: 103  Moves:1115
+510 .[OK] Num args: 103  Moves:1115
+510 [MEMORY OK]
+511 .[OK] Num args: 104  Moves:1124
+512 .[OK] Num args: 104  Moves:1124
+513 .[OK] Num args: 104  Moves:1124
+514 .[OK] Num args: 104  Moves:1124
+515 .[OK] Num args: 104  Moves:1124
+515 [MEMORY OK]
+516 .[OK] Num args: 105  Moves:1135
+517 .[OK] Num args: 105  Moves:1135
+518 .[OK] Num args: 105  Moves:1135
+519 .[OK] Num args: 105  Moves:1135
+520 .[OK] Num args: 105  Moves:1135
+520 [MEMORY OK]
+521 .[OK] Num args: 106  Moves:1145
+522 .[OK] Num args: 106  Moves:1145
+523 .[OK] Num args: 106  Moves:1145
+524 .[OK] Num args: 106  Moves:1145
+525 .[OK] Num args: 106  Moves:1145
+525 [MEMORY OK]
+526 .[OK] Num args: 107  Moves:1155
+527 .[OK] Num args: 107  Moves:1155
+528 .[OK] Num args: 107  Moves:1155
+529 .[OK] Num args: 107  Moves:1155
+530 .[OK] Num args: 107  Moves:1155
+530 [MEMORY OK]
+531 .[OK] Num args: 108  Moves:1164
+532 .[OK] Num args: 108  Moves:1164
+533 .[OK] Num args: 108  Moves:1164
+534 .[OK] Num args: 108  Moves:1164
+535 .[OK] Num args: 108  Moves:1164
+535 [MEMORY OK]
+536 .[OK] Num args: 109  Moves:1174
+537 .[OK] Num args: 109  Moves:1174
+538 .[OK] Num args: 109  Moves:1174
+539 .[OK] Num args: 109  Moves:1174
+540 .[OK] Num args: 109  Moves:1174
+540 [MEMORY OK]
+541 .[OK] Num args: 110  Moves:1183
+542 .[OK] Num args: 110  Moves:1183
+543 .[OK] Num args: 110  Moves:1183
+544 .[OK] Num args: 110  Moves:1183
+545 .[OK] Num args: 110  Moves:1183
+545 [MEMORY OK]
+546 .[OK] Num args: 111  Moves:1192
+547 .[OK] Num args: 111  Moves:1192
+548 .[OK] Num args: 111  Moves:1192
+549 .[OK] Num args: 111  Moves:1192
+550 .[OK] Num args: 111  Moves:1192
+550 [MEMORY OK]
+551 .[OK] Num args: 112  Moves:1200
+552 .[OK] Num args: 112  Moves:1200
+553 .[OK] Num args: 112  Moves:1200
+554 .[OK] Num args: 112  Moves:1200
+555 .[OK] Num args: 112  Moves:1200
+555 [MEMORY OK]
+556 .[OK] Num args: 113  Moves:1211
+557 .[OK] Num args: 113  Moves:1211
+558 .[OK] Num args: 113  Moves:1211
+559 .[OK] Num args: 113  Moves:1211
+560 .[OK] Num args: 113  Moves:1211
+560 [MEMORY OK]
+561 .[OK] Num args: 114  Moves:1221
+562 .[OK] Num args: 114  Moves:1221
+563 .[OK] Num args: 114  Moves:1221
+564 .[OK] Num args: 114  Moves:1221
+565 .[OK] Num args: 114  Moves:1221
+565 [MEMORY OK]
+566 .[OK] Num args: 115  Moves:1231
+567 .[OK] Num args: 115  Moves:1231
+568 .[OK] Num args: 115  Moves:1231
+569 .[OK] Num args: 115  Moves:1231
+570 .[OK] Num args: 115  Moves:1231
+570 [MEMORY OK]
+571 .[OK] Num args: 116  Moves:1240
+572 .[OK] Num args: 116  Moves:1240
+573 .[OK] Num args: 116  Moves:1240
+574 .[OK] Num args: 116  Moves:1240
+575 .[OK] Num args: 116  Moves:1240
+575 [MEMORY OK]
+576 .[OK] Num args: 117  Moves:1250
+577 .[OK] Num args: 117  Moves:1250
+578 .[OK] Num args: 117  Moves:1250
+579 .[OK] Num args: 117  Moves:1250
+580 .[OK] Num args: 117  Moves:1250
+580 [MEMORY OK]
+581 .[OK] Num args: 118  Moves:1259
+582 .[OK] Num args: 118  Moves:1259
+583 .[OK] Num args: 118  Moves:1259
+584 .[OK] Num args: 118  Moves:1259
+585 .[OK] Num args: 118  Moves:1259
+585 [MEMORY OK]
+586 .[OK] Num args: 119  Moves:1268
+587 .[OK] Num args: 119  Moves:1268
+588 .[OK] Num args: 119  Moves:1268
+589 .[OK] Num args: 119  Moves:1268
+590 .[OK] Num args: 119  Moves:1268
+590 [MEMORY OK]
+591 .[OK] Num args: 120  Moves:1276
+592 .[OK] Num args: 120  Moves:1276
+593 .[OK] Num args: 120  Moves:1276
+594 .[OK] Num args: 120  Moves:1276
+595 .[OK] Num args: 120  Moves:1276
+595 [MEMORY OK]
+596 .[OK] Num args: 121  Moves:1286
+597 .[OK] Num args: 121  Moves:1286
+598 .[OK] Num args: 121  Moves:1286
+599 .[OK] Num args: 121  Moves:1286
+600 .[OK] Num args: 121  Moves:1286
+600 [MEMORY OK]
+601 .[OK] Num args: 122  Moves:1295
+602 .[OK] Num args: 122  Moves:1295
+603 .[OK] Num args: 122  Moves:1295
+604 .[OK] Num args: 122  Moves:1295
+605 .[OK] Num args: 122  Moves:1295
+605 [MEMORY OK]
+606 .[OK] Num args: 123  Moves:1304
+607 .[OK] Num args: 123  Moves:1304
+608 .[OK] Num args: 123  Moves:1304
+609 .[OK] Num args: 123  Moves:1304
+610 .[OK] Num args: 123  Moves:1304
+610 [MEMORY OK]
+611 .[OK] Num args: 124  Moves:1312
+612 .[OK] Num args: 124  Moves:1312
+613 .[OK] Num args: 124  Moves:1312
+614 .[OK] Num args: 124  Moves:1312
+615 .[OK] Num args: 124  Moves:1312
+615 [MEMORY OK]
+616 .[OK] Num args: 125  Moves:1321
+617 .[OK] Num args: 125  Moves:1321
+618 .[OK] Num args: 125  Moves:1321
+619 .[OK] Num args: 125  Moves:1321
+620 .[OK] Num args: 125  Moves:1321
+620 [MEMORY OK]
+621 .[OK] Num args: 126  Moves:1329
+622 .[OK] Num args: 126  Moves:1329
+623 .[OK] Num args: 126  Moves:1329
+624 .[OK] Num args: 126  Moves:1329
+625 .[OK] Num args: 126  Moves:1329
+625 [MEMORY OK]
+626 .[OK] Num args: 127  Moves:1337
+627 .[OK] Num args: 127  Moves:1337
+628 .[OK] Num args: 127  Moves:1337
+629 .[OK] Num args: 127  Moves:1337
+630 .[OK] Num args: 127  Moves:1337
+630 [MEMORY OK]
+631 .[OK] Num args: 128  Moves:1344
+632 .[OK] Num args: 128  Moves:1344
+633 .[OK] Num args: 128  Moves:1344
+634 .[OK] Num args: 128  Moves:1344
+635 .[OK] Num args: 128  Moves:1344
+635 [MEMORY OK]
+636 .[OK] Num args: 129  Moves:1615
+637 .[OK] Num args: 129  Moves:1615
+638 .[OK] Num args: 129  Moves:1615
+639 .[OK] Num args: 129  Moves:1615
+640 .[OK] Num args: 129  Moves:1615
+640 [MEMORY OK]
+641 .[OK] Num args: 130  Moves:1629
+642 .[OK] Num args: 130  Moves:1629
+643 .[OK] Num args: 130  Moves:1629
+644 .[OK] Num args: 130  Moves:1629
+645 .[OK] Num args: 130  Moves:1629
+645 [MEMORY OK]
+646 .[OK] Num args: 131  Moves:1643
+647 .[OK] Num args: 131  Moves:1643
+648 .[OK] Num args: 131  Moves:1643
+649 .[OK] Num args: 131  Moves:1643
+650 .[OK] Num args: 131  Moves:1643
+650 [MEMORY OK]
+651 .[OK] Num args: 132  Moves:1656
+652 .[OK] Num args: 132  Moves:1656
+653 .[OK] Num args: 132  Moves:1656
+654 .[OK] Num args: 132  Moves:1656
+655 .[OK] Num args: 132  Moves:1656
+655 [MEMORY OK]
+656 .[OK] Num args: 133  Moves:1670
+657 .[OK] Num args: 133  Moves:1670
+658 .[OK] Num args: 133  Moves:1670
+659 .[OK] Num args: 133  Moves:1670
+660 .[OK] Num args: 133  Moves:1670
+660 [MEMORY OK]
+661 .[OK] Num args: 134  Moves:1683
+662 .[OK] Num args: 134  Moves:1683
+663 .[OK] Num args: 134  Moves:1683
+664 .[OK] Num args: 134  Moves:1683
+665 .[OK] Num args: 134  Moves:1683
+665 [MEMORY OK]
+666 .[OK] Num args: 135  Moves:1696
+667 .[OK] Num args: 135  Moves:1696
+668 .[OK] Num args: 135  Moves:1696
+669 .[OK] Num args: 135  Moves:1696
+670 .[OK] Num args: 135  Moves:1696
+670 [MEMORY OK]
+671 .[OK] Num args: 136  Moves:1708
+672 .[OK] Num args: 136  Moves:1708
+673 .[OK] Num args: 136  Moves:1708
+674 .[OK] Num args: 136  Moves:1708
+675 .[OK] Num args: 136  Moves:1708
+675 [MEMORY OK]
+676 .[OK] Num args: 137  Moves:1722
+677 .[OK] Num args: 137  Moves:1722
+678 .[OK] Num args: 137  Moves:1722
+679 .[OK] Num args: 137  Moves:1722
+680 .[OK] Num args: 137  Moves:1722
+680 [MEMORY OK]
+681 .[OK] Num args: 138  Moves:1735
+682 .[OK] Num args: 138  Moves:1735
+683 .[OK] Num args: 138  Moves:1735
+684 .[OK] Num args: 138  Moves:1735
+685 .[OK] Num args: 138  Moves:1735
+685 [MEMORY OK]
+686 .[OK] Num args: 139  Moves:1748
+687 .[OK] Num args: 139  Moves:1748
+688 .[OK] Num args: 139  Moves:1748
+689 .[OK] Num args: 139  Moves:1748
+690 .[OK] Num args: 139  Moves:1748
+690 [MEMORY OK]
+691 .[OK] Num args: 140  Moves:1760
+692 .[OK] Num args: 140  Moves:1760
+693 .[OK] Num args: 140  Moves:1760
+694 .[OK] Num args: 140  Moves:1760
+695 .[OK] Num args: 140  Moves:1760
+695 [MEMORY OK]
+696 .[OK] Num args: 141  Moves:1773
+697 .[OK] Num args: 141  Moves:1773
+698 .[OK] Num args: 141  Moves:1773
+699 .[OK] Num args: 141  Moves:1773
+700 .[OK] Num args: 141  Moves:1773
+700 [MEMORY OK]
+701 .[OK] Num args: 142  Moves:1785
+702 .[OK] Num args: 142  Moves:1785
+703 .[OK] Num args: 142  Moves:1785
+704 .[OK] Num args: 142  Moves:1785
+705 .[OK] Num args: 142  Moves:1785
+705 [MEMORY OK]
+706 .[OK] Num args: 143  Moves:1797
+707 .[OK] Num args: 143  Moves:1797
+708 .[OK] Num args: 143  Moves:1797
+709 .[OK] Num args: 143  Moves:1797
+710 .[OK] Num args: 143  Moves:1797
+710 [MEMORY OK]
+711 .[OK] Num args: 144  Moves:1808
+712 .[OK] Num args: 144  Moves:1808
+713 .[OK] Num args: 144  Moves:1808
+714 .[OK] Num args: 144  Moves:1808
+715 .[OK] Num args: 144  Moves:1808
+715 [MEMORY OK]
+716 .[OK] Num args: 145  Moves:1822
+717 .[OK] Num args: 145  Moves:1822
+718 .[OK] Num args: 145  Moves:1822
+719 .[OK] Num args: 145  Moves:1822
+720 .[OK] Num args: 145  Moves:1822
+720 [MEMORY OK]
+721 .[OK] Num args: 146  Moves:1835
+722 .[OK] Num args: 146  Moves:1835
+723 .[OK] Num args: 146  Moves:1835
+724 .[OK] Num args: 146  Moves:1835
+725 .[OK] Num args: 146  Moves:1835
+725 [MEMORY OK]
+726 .[OK] Num args: 147  Moves:1848
+727 .[OK] Num args: 147  Moves:1848
+728 .[OK] Num args: 147  Moves:1848
+729 .[OK] Num args: 147  Moves:1848
+730 .[OK] Num args: 147  Moves:1848
+730 [MEMORY OK]
+731 .[OK] Num args: 148  Moves:1860
+732 .[OK] Num args: 148  Moves:1860
+733 .[OK] Num args: 148  Moves:1860
+734 .[OK] Num args: 148  Moves:1860
+735 .[OK] Num args: 148  Moves:1860
+735 [MEMORY OK]
+736 .[OK] Num args: 149  Moves:1873
+737 .[OK] Num args: 149  Moves:1873
+738 .[OK] Num args: 149  Moves:1873
+739 .[OK] Num args: 149  Moves:1873
+740 .[OK] Num args: 149  Moves:1873
+740 [MEMORY OK]
+741 .[OK] Num args: 150  Moves:1885
+742 .[OK] Num args: 150  Moves:1885
+743 .[OK] Num args: 150  Moves:1885
+744 .[OK] Num args: 150  Moves:1885
+745 .[OK] Num args: 150  Moves:1885
+745 [MEMORY OK]
+746 .[OK] Num args: 151  Moves:1897
+747 .[OK] Num args: 151  Moves:1897
+748 .[OK] Num args: 151  Moves:1897
+749 .[OK] Num args: 151  Moves:1897
+750 .[OK] Num args: 151  Moves:1897
+750 [MEMORY OK]
+751 .[OK] Num args: 152  Moves:1908
+752 .[OK] Num args: 152  Moves:1908
+753 .[OK] Num args: 152  Moves:1908
+754 .[OK] Num args: 152  Moves:1908
+755 .[OK] Num args: 152  Moves:1908
+755 [MEMORY OK]
+756 .[OK] Num args: 153  Moves:1921
+757 .[OK] Num args: 153  Moves:1921
+758 .[OK] Num args: 153  Moves:1921
+759 .[OK] Num args: 153  Moves:1921
+760 .[OK] Num args: 153  Moves:1921
+760 [MEMORY OK]
+761 .[OK] Num args: 154  Moves:1933
+762 .[OK] Num args: 154  Moves:1933
+763 .[OK] Num args: 154  Moves:1933
+764 .[OK] Num args: 154  Moves:1933
+765 .[OK] Num args: 154  Moves:1933
+765 [MEMORY OK]
+766 .[OK] Num args: 155  Moves:1945
+767 .[OK] Num args: 155  Moves:1945
+768 .[OK] Num args: 155  Moves:1945
+769 .[OK] Num args: 155  Moves:1945
+770 .[OK] Num args: 155  Moves:1945
+770 [MEMORY OK]
+771 .[OK] Num args: 156  Moves:1956
+772 .[OK] Num args: 156  Moves:1956
+773 .[OK] Num args: 156  Moves:1956
+774 .[OK] Num args: 156  Moves:1956
+775 .[OK] Num args: 156  Moves:1956
+775 [MEMORY OK]
+776 .[OK] Num args: 157  Moves:1968
+777 .[OK] Num args: 157  Moves:1968
+778 .[OK] Num args: 157  Moves:1968
+779 .[OK] Num args: 157  Moves:1968
+780 .[OK] Num args: 157  Moves:1968
+780 [MEMORY OK]
+781 .[OK] Num args: 158  Moves:1979
+782 .[OK] Num args: 158  Moves:1979
+783 .[OK] Num args: 158  Moves:1979
+784 .[OK] Num args: 158  Moves:1979
+785 .[OK] Num args: 158  Moves:1979
+785 [MEMORY OK]
+786 .[OK] Num args: 159  Moves:1990
+787 .[OK] Num args: 159  Moves:1990
+788 .[OK] Num args: 159  Moves:1990
+789 .[OK] Num args: 159  Moves:1990
+790 .[OK] Num args: 159  Moves:1990
+790 [MEMORY OK]
+791 .[OK] Num args: 160  Moves:2000
+792 .[OK] Num args: 160  Moves:2000
+793 .[OK] Num args: 160  Moves:2000
+794 .[OK] Num args: 160  Moves:2000
+795 .[OK] Num args: 160  Moves:2000
+795 [MEMORY OK]
+796 .[OK] Num args: 161  Moves:2014
+797 .[OK] Num args: 161  Moves:2014
+798 .[OK] Num args: 161  Moves:2014
+799 .[OK] Num args: 161  Moves:2014
+800 .[OK] Num args: 161  Moves:2014
+800 [MEMORY OK]
+801 .[OK] Num args: 162  Moves:2027
+802 .[OK] Num args: 162  Moves:2027
+803 .[OK] Num args: 162  Moves:2027
+804 .[OK] Num args: 162  Moves:2027
+805 .[OK] Num args: 162  Moves:2027
+805 [MEMORY OK]
+806 .[OK] Num args: 163  Moves:2040
+807 .[OK] Num args: 163  Moves:2040
+808 .[OK] Num args: 163  Moves:2040
+809 .[OK] Num args: 163  Moves:2040
+810 .[OK] Num args: 163  Moves:2040
+810 [MEMORY OK]
+811 .[OK] Num args: 164  Moves:2052
+812 .[OK] Num args: 164  Moves:2052
+813 .[OK] Num args: 164  Moves:2052
+814 .[OK] Num args: 164  Moves:2052
+815 .[OK] Num args: 164  Moves:2052
+815 [MEMORY OK]
+816 .[OK] Num args: 165  Moves:2065
+817 .[OK] Num args: 165  Moves:2065
+818 .[OK] Num args: 165  Moves:2065
+819 .[OK] Num args: 165  Moves:2065
+820 .[OK] Num args: 165  Moves:2065
+820 [MEMORY OK]
+821 .[OK] Num args: 166  Moves:2077
+822 .[OK] Num args: 166  Moves:2077
+823 .[OK] Num args: 166  Moves:2077
+824 .[OK] Num args: 166  Moves:2077
+825 .[OK] Num args: 166  Moves:2077
+825 [MEMORY OK]
+826 .[OK] Num args: 167  Moves:2089
+827 .[OK] Num args: 167  Moves:2089
+828 .[OK] Num args: 167  Moves:2089
+829 .[OK] Num args: 167  Moves:2089
+830 .[OK] Num args: 167  Moves:2089
+830 [MEMORY OK]
+831 .[OK] Num args: 168  Moves:2100
+832 .[OK] Num args: 168  Moves:2100
+833 .[OK] Num args: 168  Moves:2100
+834 .[OK] Num args: 168  Moves:2100
+835 .[OK] Num args: 168  Moves:2100
+835 [MEMORY OK]
+836 .[OK] Num args: 169  Moves:2113
+837 .[OK] Num args: 169  Moves:2113
+838 .[OK] Num args: 169  Moves:2113
+839 .[OK] Num args: 169  Moves:2113
+840 .[OK] Num args: 169  Moves:2113
+840 [MEMORY OK]
+841 .[OK] Num args: 170  Moves:2125
+842 .[OK] Num args: 170  Moves:2125
+843 .[OK] Num args: 170  Moves:2125
+844 .[OK] Num args: 170  Moves:2125
+845 .[OK] Num args: 170  Moves:2125
+845 [MEMORY OK]
+846 .[OK] Num args: 171  Moves:2137
+847 .[OK] Num args: 171  Moves:2137
+848 .[OK] Num args: 171  Moves:2137
+849 .[OK] Num args: 171  Moves:2137
+850 .[OK] Num args: 171  Moves:2137
+850 [MEMORY OK]
+851 .[OK] Num args: 172  Moves:2148
+852 .[OK] Num args: 172  Moves:2148
+853 .[OK] Num args: 172  Moves:2148
+854 .[OK] Num args: 172  Moves:2148
+855 .[OK] Num args: 172  Moves:2148
+855 [MEMORY OK]
+856 .[OK] Num args: 173  Moves:2160
+857 .[OK] Num args: 173  Moves:2160
+858 .[OK] Num args: 173  Moves:2160
+859 .[OK] Num args: 173  Moves:2160
+860 .[OK] Num args: 173  Moves:2160
+860 [MEMORY OK]
+861 .[OK] Num args: 174  Moves:2171
+862 .[OK] Num args: 174  Moves:2171
+863 .[OK] Num args: 174  Moves:2171
+864 .[OK] Num args: 174  Moves:2171
+865 .[OK] Num args: 174  Moves:2171
+865 [MEMORY OK]
+866 .[OK] Num args: 175  Moves:2182
+867 .[OK] Num args: 175  Moves:2182
+868 .[OK] Num args: 175  Moves:2182
+869 .[OK] Num args: 175  Moves:2182
+870 .[OK] Num args: 175  Moves:2182
+870 [MEMORY OK]
+871 .[OK] Num args: 176  Moves:2192
+872 .[OK] Num args: 176  Moves:2192
+873 .[OK] Num args: 176  Moves:2192
+874 .[OK] Num args: 176  Moves:2192
+875 .[OK] Num args: 176  Moves:2192
+875 [MEMORY OK]
+876 .[OK] Num args: 177  Moves:2205
+877 .[OK] Num args: 177  Moves:2205
+878 .[OK] Num args: 177  Moves:2205
+879 .[OK] Num args: 177  Moves:2205
+880 .[OK] Num args: 177  Moves:2205
+880 [MEMORY OK]
+881 .[OK] Num args: 178  Moves:2217
+882 .[OK] Num args: 178  Moves:2217
+883 .[OK] Num args: 178  Moves:2217
+884 .[OK] Num args: 178  Moves:2217
+885 .[OK] Num args: 178  Moves:2217
+885 [MEMORY OK]
+886 .[OK] Num args: 179  Moves:2229
+887 .[OK] Num args: 179  Moves:2229
+888 .[OK] Num args: 179  Moves:2229
+889 .[OK] Num args: 179  Moves:2229
+890 .[OK] Num args: 179  Moves:2229
+890 [MEMORY OK]
+891 .[OK] Num args: 180  Moves:2240
+892 .[OK] Num args: 180  Moves:2240
+893 .[OK] Num args: 180  Moves:2240
+894 .[OK] Num args: 180  Moves:2240
+895 .[OK] Num args: 180  Moves:2240
+895 [MEMORY OK]
+896 .[OK] Num args: 181  Moves:2252
+897 .[OK] Num args: 181  Moves:2252
+898 .[OK] Num args: 181  Moves:2252
+899 .[OK] Num args: 181  Moves:2252
+900 .[OK] Num args: 181  Moves:2252
+900 [MEMORY OK]
+901 .[OK] Num args: 182  Moves:2263
+902 .[OK] Num args: 182  Moves:2263
+903 .[OK] Num args: 182  Moves:2263
+904 .[OK] Num args: 182  Moves:2263
+905 .[OK] Num args: 182  Moves:2263
+905 [MEMORY OK]
+906 .[OK] Num args: 183  Moves:2274
+907 .[OK] Num args: 183  Moves:2274
+908 .[OK] Num args: 183  Moves:2274
+909 .[OK] Num args: 183  Moves:2274
+910 .[OK] Num args: 183  Moves:2274
+910 [MEMORY OK]
+911 .[OK] Num args: 184  Moves:2284
+912 .[OK] Num args: 184  Moves:2284
+913 .[OK] Num args: 184  Moves:2284
+914 .[OK] Num args: 184  Moves:2284
+915 .[OK] Num args: 184  Moves:2284
+915 [MEMORY OK]
+916 .[OK] Num args: 185  Moves:2296
+917 .[OK] Num args: 185  Moves:2296
+918 .[OK] Num args: 185  Moves:2296
+919 .[OK] Num args: 185  Moves:2296
+920 .[OK] Num args: 185  Moves:2296
+920 [MEMORY OK]
+921 .[OK] Num args: 186  Moves:2307
+922 .[OK] Num args: 186  Moves:2307
+923 .[OK] Num args: 186  Moves:2307
+924 .[OK] Num args: 186  Moves:2307
+925 .[OK] Num args: 186  Moves:2307
+925 [MEMORY OK]
+926 .[OK] Num args: 187  Moves:2318
+927 .[OK] Num args: 187  Moves:2318
+928 .[OK] Num args: 187  Moves:2318
+929 .[OK] Num args: 187  Moves:2318
+930 .[OK] Num args: 187  Moves:2318
+930 [MEMORY OK]
+931 .[OK] Num args: 188  Moves:2328
+932 .[OK] Num args: 188  Moves:2328
+933 .[OK] Num args: 188  Moves:2328
+934 .[OK] Num args: 188  Moves:2328
+935 .[OK] Num args: 188  Moves:2328
+935 [MEMORY OK]
+936 .[OK] Num args: 189  Moves:2339
+937 .[OK] Num args: 189  Moves:2339
+938 .[OK] Num args: 189  Moves:2339
+939 .[OK] Num args: 189  Moves:2339
+940 .[OK] Num args: 189  Moves:2339
+940 [MEMORY OK]
+941 .[OK] Num args: 190  Moves:2349
+942 .[OK] Num args: 190  Moves:2349
+943 .[OK] Num args: 190  Moves:2349
+944 .[OK] Num args: 190  Moves:2349
+945 .[OK] Num args: 190  Moves:2349
+945 [MEMORY OK]
+946 .[OK] Num args: 191  Moves:2359
+947 .[OK] Num args: 191  Moves:2359
+948 .[OK] Num args: 191  Moves:2359
+949 .[OK] Num args: 191  Moves:2359
+950 .[OK] Num args: 191  Moves:2359
+950 [MEMORY OK]
+951 .[OK] Num args: 192  Moves:2368
+952 .[OK] Num args: 192  Moves:2368
+953 .[OK] Num args: 192  Moves:2368
+954 .[OK] Num args: 192  Moves:2368
+955 .[OK] Num args: 192  Moves:2368
+955 [MEMORY OK]
+956 .[OK] Num args: 193  Moves:2382
+957 .[OK] Num args: 193  Moves:2382
+958 .[OK] Num args: 193  Moves:2382
+959 .[OK] Num args: 193  Moves:2382
+960 .[OK] Num args: 193  Moves:2382
+960 [MEMORY OK]
+961 .[OK] Num args: 194  Moves:2395
+962 .[OK] Num args: 194  Moves:2395
+963 .[OK] Num args: 194  Moves:2395
+964 .[OK] Num args: 194  Moves:2395
+965 .[OK] Num args: 194  Moves:2395
+965 [MEMORY OK]
+966 .[OK] Num args: 195  Moves:2408
+967 .[OK] Num args: 195  Moves:2408
+968 .[OK] Num args: 195  Moves:2408
+969 .[OK] Num args: 195  Moves:2408
+970 .[OK] Num args: 195  Moves:2408
+970 [MEMORY OK]
+971 .[OK] Num args: 196  Moves:2420
+972 .[OK] Num args: 196  Moves:2420
+973 .[OK] Num args: 196  Moves:2420
+974 .[OK] Num args: 196  Moves:2420
+975 .[OK] Num args: 196  Moves:2420
+975 [MEMORY OK]
+976 .[OK] Num args: 197  Moves:2433
+977 .[OK] Num args: 197  Moves:2433
+978 .[OK] Num args: 197  Moves:2433
+979 .[OK] Num args: 197  Moves:2433
+980 .[OK] Num args: 197  Moves:2433
+980 [MEMORY OK]
+981 .[OK] Num args: 198  Moves:2445
+982 .[OK] Num args: 198  Moves:2445
+983 .[OK] Num args: 198  Moves:2445
+984 .[OK] Num args: 198  Moves:2445
+985 .[OK] Num args: 198  Moves:2445
+985 [MEMORY OK]
+986 .[OK] Num args: 199  Moves:2457
+987 .[OK] Num args: 199  Moves:2457
+988 .[OK] Num args: 199  Moves:2457
+989 .[OK] Num args: 199  Moves:2457
+990 .[OK] Num args: 199  Moves:2457
+990 [MEMORY OK]
+991 .[OK] Num args: 200  Moves:2468
+992 .[OK] Num args: 200  Moves:2468
+993 .[OK] Num args: 200  Moves:2468
+994 .[OK] Num args: 200  Moves:2468
+995 .[OK] Num args: 200  Moves:2468
+995 [MEMORY OK]
+996 .[OK] Num args: 201  Moves:2481
+997 .[OK] Num args: 201  Moves:2481
+998 .[OK] Num args: 201  Moves:2481
+999 .[OK] Num args: 201  Moves:2481
+1000 .[OK] Num args: 201  Moves:2481
+1000 [MEMORY OK]
+1001 .[OK] Num args: 202  Moves:2493
+1002 .[OK] Num args: 202  Moves:2493
+1003 .[OK] Num args: 202  Moves:2493
+1004 .[OK] Num args: 202  Moves:2493
+1005 .[OK] Num args: 202  Moves:2493
+1005 [MEMORY OK]
+1006 .[OK] Num args: 203  Moves:2505
+1007 .[OK] Num args: 203  Moves:2505
+1008 .[OK] Num args: 203  Moves:2505
+1009 .[OK] Num args: 203  Moves:2505
+1010 .[OK] Num args: 203  Moves:2505
+1010 [MEMORY OK]
+1011 .[OK] Num args: 204  Moves:2516
+1012 .[OK] Num args: 204  Moves:2516
+1013 .[OK] Num args: 204  Moves:2516
+1014 .[OK] Num args: 204  Moves:2516
+1015 .[OK] Num args: 204  Moves:2516
+1015 [MEMORY OK]
+1016 .[OK] Num args: 205  Moves:2528
+1017 .[OK] Num args: 205  Moves:2528
+1018 .[OK] Num args: 205  Moves:2528
+1019 .[OK] Num args: 205  Moves:2528
+1020 .[OK] Num args: 205  Moves:2528
+1020 [MEMORY OK]
+1021 .[OK] Num args: 206  Moves:2539
+1022 .[OK] Num args: 206  Moves:2539
+1023 .[OK] Num args: 206  Moves:2539
+1024 .[OK] Num args: 206  Moves:2539
+1025 .[OK] Num args: 206  Moves:2539
+1025 [MEMORY OK]
+1026 .[OK] Num args: 207  Moves:2550
+1027 .[OK] Num args: 207  Moves:2550
+1028 .[OK] Num args: 207  Moves:2550
+1029 .[OK] Num args: 207  Moves:2550
+1030 .[OK] Num args: 207  Moves:2550
+1030 [MEMORY OK]
+1031 .[OK] Num args: 208  Moves:2560
+1032 .[OK] Num args: 208  Moves:2560
+1033 .[OK] Num args: 208  Moves:2560
+1034 .[OK] Num args: 208  Moves:2560
+1035 .[OK] Num args: 208  Moves:2560
+1035 [MEMORY OK]
+1036 .[OK] Num args: 209  Moves:2573
+1037 .[OK] Num args: 209  Moves:2573
+1038 .[OK] Num args: 209  Moves:2573
+1039 .[OK] Num args: 209  Moves:2573
+1040 .[OK] Num args: 209  Moves:2573
+1040 [MEMORY OK]
+1041 .[OK] Num args: 210  Moves:2585
+1042 .[OK] Num args: 210  Moves:2585
+1043 .[OK] Num args: 210  Moves:2585
+1044 .[OK] Num args: 210  Moves:2585
+1045 .[OK] Num args: 210  Moves:2585
+1045 [MEMORY OK]
+1046 .[OK] Num args: 211  Moves:2597
+1047 .[OK] Num args: 211  Moves:2597
+1048 .[OK] Num args: 211  Moves:2597
+1049 .[OK] Num args: 211  Moves:2597
+1050 .[OK] Num args: 211  Moves:2597
+1050 [MEMORY OK]
+1051 .[OK] Num args: 212  Moves:2608
+1052 .[OK] Num args: 212  Moves:2608
+1053 .[OK] Num args: 212  Moves:2608
+1054 .[OK] Num args: 212  Moves:2608
+1055 .[OK] Num args: 212  Moves:2608
+1055 [MEMORY OK]
+1056 .[OK] Num args: 213  Moves:2620
+1057 .[OK] Num args: 213  Moves:2620
+1058 .[OK] Num args: 213  Moves:2620
+1059 .[OK] Num args: 213  Moves:2620
+1060 .[OK] Num args: 213  Moves:2620
+1060 [MEMORY OK]
+1061 .[OK] Num args: 214  Moves:2631
+1062 .[OK] Num args: 214  Moves:2631
+1063 .[OK] Num args: 214  Moves:2631
+1064 .[OK] Num args: 214  Moves:2631
+1065 .[OK] Num args: 214  Moves:2631
+1065 [MEMORY OK]
+1066 .[OK] Num args: 215  Moves:2642
+1067 .[OK] Num args: 215  Moves:2642
+1068 .[OK] Num args: 215  Moves:2642
+1069 .[OK] Num args: 215  Moves:2642
+1070 .[OK] Num args: 215  Moves:2642
+1070 [MEMORY OK]
+1071 .[OK] Num args: 216  Moves:2652
+1072 .[OK] Num args: 216  Moves:2652
+1073 .[OK] Num args: 216  Moves:2652
+1074 .[OK] Num args: 216  Moves:2652
+1075 .[OK] Num args: 216  Moves:2652
+1075 [MEMORY OK]
+1076 .[OK] Num args: 217  Moves:2664
+1077 .[OK] Num args: 217  Moves:2664
+1078 .[OK] Num args: 217  Moves:2664
+1079 .[OK] Num args: 217  Moves:2664
+1080 .[OK] Num args: 217  Moves:2664
+1080 [MEMORY OK]
+1081 .[OK] Num args: 218  Moves:2675
+1082 .[OK] Num args: 218  Moves:2675
+1083 .[OK] Num args: 218  Moves:2675
+1084 .[OK] Num args: 218  Moves:2675
+1085 .[OK] Num args: 218  Moves:2675
+1085 [MEMORY OK]
+1086 .[OK] Num args: 219  Moves:2686
+1087 .[OK] Num args: 219  Moves:2686
+1088 .[OK] Num args: 219  Moves:2686
+1089 .[OK] Num args: 219  Moves:2686
+1090 .[OK] Num args: 219  Moves:2686
+1090 [MEMORY OK]
+1091 .[OK] Num args: 220  Moves:2696
+1092 .[OK] Num args: 220  Moves:2696
+1093 .[OK] Num args: 220  Moves:2696
+1094 .[OK] Num args: 220  Moves:2696
+1095 .[OK] Num args: 220  Moves:2696
+1095 [MEMORY OK]
+1096 .[OK] Num args: 221  Moves:2707
+1097 .[OK] Num args: 221  Moves:2707
+1098 .[OK] Num args: 221  Moves:2707
+1099 .[OK] Num args: 221  Moves:2707
+1100 .[OK] Num args: 221  Moves:2707
+1100 [MEMORY OK]
+1101 .[OK] Num args: 222  Moves:2717
+1102 .[OK] Num args: 222  Moves:2717
+1103 .[OK] Num args: 222  Moves:2717
+1104 .[OK] Num args: 222  Moves:2717
+1105 .[OK] Num args: 222  Moves:2717
+1105 [MEMORY OK]
+1106 .[OK] Num args: 223  Moves:2727
+1107 .[OK] Num args: 223  Moves:2727
+1108 .[OK] Num args: 223  Moves:2727
+1109 .[OK] Num args: 223  Moves:2727
+1110 .[OK] Num args: 223  Moves:2727
+1110 [MEMORY OK]
+1111 .[OK] Num args: 224  Moves:2736
+1112 .[OK] Num args: 224  Moves:2736
+1113 .[OK] Num args: 224  Moves:2736
+1114 .[OK] Num args: 224  Moves:2736
+1115 .[OK] Num args: 224  Moves:2736
+1115 [MEMORY OK]
+1116 .[OK] Num args: 225  Moves:2749
+1117 .[OK] Num args: 225  Moves:2749
+1118 .[OK] Num args: 225  Moves:2749
+1119 .[OK] Num args: 225  Moves:2749
+1120 .[OK] Num args: 225  Moves:2749
+1120 [MEMORY OK]
+1121 .[OK] Num args: 226  Moves:2761
+1122 .[OK] Num args: 226  Moves:2761
+1123 .[OK] Num args: 226  Moves:2761
+1124 .[OK] Num args: 226  Moves:2761
+1125 .[OK] Num args: 226  Moves:2761
+1125 [MEMORY OK]
+1126 .[OK] Num args: 227  Moves:2773
+1127 .[OK] Num args: 227  Moves:2773
+1128 .[OK] Num args: 227  Moves:2773
+1129 .[OK] Num args: 227  Moves:2773
+1130 .[OK] Num args: 227  Moves:2773
+1130 [MEMORY OK]
+1131 .[OK] Num args: 228  Moves:2784
+1132 .[OK] Num args: 228  Moves:2784
+1133 .[OK] Num args: 228  Moves:2784
+1134 .[OK] Num args: 228  Moves:2784
+1135 .[OK] Num args: 228  Moves:2784
+1135 [MEMORY OK]
+1136 .[OK] Num args: 229  Moves:2796
+1137 .[OK] Num args: 229  Moves:2796
+1138 .[OK] Num args: 229  Moves:2796
+1139 .[OK] Num args: 229  Moves:2796
+1140 .[OK] Num args: 229  Moves:2796
+1140 [MEMORY OK]
+1141 .[OK] Num args: 230  Moves:2807
+1142 .[OK] Num args: 230  Moves:2807
+1143 .[OK] Num args: 230  Moves:2807
+1144 .[OK] Num args: 230  Moves:2807
+1145 .[OK] Num args: 230  Moves:2807
+1145 [MEMORY OK]
+1146 .[OK] Num args: 231  Moves:2818
+1147 .[OK] Num args: 231  Moves:2818
+1148 .[OK] Num args: 231  Moves:2818
+1149 .[OK] Num args: 231  Moves:2818
+1150 .[OK] Num args: 231  Moves:2818
+1150 [MEMORY OK]
+1151 .[OK] Num args: 232  Moves:2828
+1152 .[OK] Num args: 232  Moves:2828
+1153 .[OK] Num args: 232  Moves:2828
+1154 .[OK] Num args: 232  Moves:2828
+1155 .[OK] Num args: 232  Moves:2828
+1155 [MEMORY OK]
+1156 .[OK] Num args: 233  Moves:2840
+1157 .[OK] Num args: 233  Moves:2840
+1158 .[OK] Num args: 233  Moves:2840
+1159 .[OK] Num args: 233  Moves:2840
+1160 .[OK] Num args: 233  Moves:2840
+1160 [MEMORY OK]
+1161 .[OK] Num args: 234  Moves:2851
+1162 .[OK] Num args: 234  Moves:2851
+1163 .[OK] Num args: 234  Moves:2851
+1164 .[OK] Num args: 234  Moves:2851
+1165 .[OK] Num args: 234  Moves:2851
+1165 [MEMORY OK]
+1166 .[OK] Num args: 235  Moves:2862
+1167 .[OK] Num args: 235  Moves:2862
+1168 .[OK] Num args: 235  Moves:2862
+1169 .[OK] Num args: 235  Moves:2862
+1170 .[OK] Num args: 235  Moves:2862
+1170 [MEMORY OK]
+1171 .[OK] Num args: 236  Moves:2872
+1172 .[OK] Num args: 236  Moves:2872
+1173 .[OK] Num args: 236  Moves:2872
+1174 .[OK] Num args: 236  Moves:2872
+1175 .[OK] Num args: 236  Moves:2872
+1175 [MEMORY OK]
+1176 .[OK] Num args: 237  Moves:2883
+1177 .[OK] Num args: 237  Moves:2883
+1178 .[OK] Num args: 237  Moves:2883
+1179 .[OK] Num args: 237  Moves:2883
+1180 .[OK] Num args: 237  Moves:2883
+1180 [MEMORY OK]
+1181 .[OK] Num args: 238  Moves:2893
+1182 .[OK] Num args: 238  Moves:2893
+1183 .[OK] Num args: 238  Moves:2893
+1184 .[OK] Num args: 238  Moves:2893
+1185 .[OK] Num args: 238  Moves:2893
+1185 [MEMORY OK]
+1186 .[OK] Num args: 239  Moves:2903
+1187 .[OK] Num args: 239  Moves:2903
+1188 .[OK] Num args: 239  Moves:2903
+1189 .[OK] Num args: 239  Moves:2903
+1190 .[OK] Num args: 239  Moves:2903
+1190 [MEMORY OK]
+1191 .[OK] Num args: 240  Moves:2912
+1192 .[OK] Num args: 240  Moves:2912
+1193 .[OK] Num args: 240  Moves:2912
+1194 .[OK] Num args: 240  Moves:2912
+1195 .[OK] Num args: 240  Moves:2912
+1195 [MEMORY OK]
+1196 .[OK] Num args: 241  Moves:2924
+1197 .[OK] Num args: 241  Moves:2924
+1198 .[OK] Num args: 241  Moves:2924
+1199 .[OK] Num args: 241  Moves:2924
+1200 .[OK] Num args: 241  Moves:2924
+1200 [MEMORY OK]
+1201 .[OK] Num args: 242  Moves:2935
+1202 .[OK] Num args: 242  Moves:2935
+1203 .[OK] Num args: 242  Moves:2935
+1204 .[OK] Num args: 242  Moves:2935
+1205 .[OK] Num args: 242  Moves:2935
+1205 [MEMORY OK]
+1206 .[OK] Num args: 243  Moves:2946
+1207 .[OK] Num args: 243  Moves:2946
+1208 .[OK] Num args: 243  Moves:2946
+1209 .[OK] Num args: 243  Moves:2946
+1210 .[OK] Num args: 243  Moves:2946
+1210 [MEMORY OK]
+1211 .[OK] Num args: 244  Moves:2956
+1212 .[OK] Num args: 244  Moves:2956
+1213 .[OK] Num args: 244  Moves:2956
+1214 .[OK] Num args: 244  Moves:2956
+1215 .[OK] Num args: 244  Moves:2956
+1215 [MEMORY OK]
+1216 .[OK] Num args: 245  Moves:2967
+1217 .[OK] Num args: 245  Moves:2967
+1218 .[OK] Num args: 245  Moves:2967
+1219 .[OK] Num args: 245  Moves:2967
+1220 .[OK] Num args: 245  Moves:2967
+1220 [MEMORY OK]
+1221 .[OK] Num args: 246  Moves:2977
+1222 .[OK] Num args: 246  Moves:2977
+1223 .[OK] Num args: 246  Moves:2977
+1224 .[OK] Num args: 246  Moves:2977
+1225 .[OK] Num args: 246  Moves:2977
+1225 [MEMORY OK]
+1226 .[OK] Num args: 247  Moves:2987
+1227 .[OK] Num args: 247  Moves:2987
+1228 .[OK] Num args: 247  Moves:2987
+1229 .[OK] Num args: 247  Moves:2987
+1230 .[OK] Num args: 247  Moves:2987
+1230 [MEMORY OK]
+1231 .[OK] Num args: 248  Moves:2996
+1232 .[OK] Num args: 248  Moves:2996
+1233 .[OK] Num args: 248  Moves:2996
+1234 .[OK] Num args: 248  Moves:2996
+1235 .[OK] Num args: 248  Moves:2996
+1235 [MEMORY OK]
+1236 .[OK] Num args: 249  Moves:3007
+1237 .[OK] Num args: 249  Moves:3007
+1238 .[OK] Num args: 249  Moves:3007
+1239 .[OK] Num args: 249  Moves:3007
+1240 .[OK] Num args: 249  Moves:3007
+1240 [MEMORY OK]
+1241 .[OK] Num args: 250  Moves:3017
+1242 .[OK] Num args: 250  Moves:3017
+1243 .[OK] Num args: 250  Moves:3017
+1244 .[OK] Num args: 250  Moves:3017
+1245 .[OK] Num args: 250  Moves:3017
+1245 [MEMORY OK]
+1246 .[OK] Num args: 251  Moves:3027
+1247 .[OK] Num args: 251  Moves:3027
+1248 .[OK] Num args: 251  Moves:3027
+1249 .[OK] Num args: 251  Moves:3027
+1250 .[OK] Num args: 251  Moves:3027
+1250 [MEMORY OK]
+1251 .[OK] Num args: 252  Moves:3036
+1252 .[OK] Num args: 252  Moves:3036
+1253 .[OK] Num args: 252  Moves:3036
+1254 .[OK] Num args: 252  Moves:3036
+1255 .[OK] Num args: 252  Moves:3036
+1255 [MEMORY OK]
+1256 .[OK] Num args: 253  Moves:3046
+1257 .[OK] Num args: 253  Moves:3046
+1258 .[OK] Num args: 253  Moves:3046
+1259 .[OK] Num args: 253  Moves:3046
+1260 .[OK] Num args: 253  Moves:3046
+1260 [MEMORY OK]
+1261 .[OK] Num args: 254  Moves:3055
+1262 .[OK] Num args: 254  Moves:3055
+1263 .[OK] Num args: 254  Moves:3055
+1264 .[OK] Num args: 254  Moves:3055
+1265 .[OK] Num args: 254  Moves:3055
+1265 [MEMORY OK]
+1266 .[OK] Num args: 255  Moves:3064
+1267 .[OK] Num args: 255  Moves:3064
+1268 .[OK] Num args: 255  Moves:3064
+1269 .[OK] Num args: 255  Moves:3064
+1270 .[OK] Num args: 255  Moves:3064
+1270 [MEMORY OK]
+1271 .[OK] Num args: 256  Moves:3072
+1272 .[OK] Num args: 256  Moves:3072
+1273 .[OK] Num args: 256  Moves:3072
+1274 .[OK] Num args: 256  Moves:3072
+1275 .[OK] Num args: 256  Moves:3072
+1275 [MEMORY OK]
+1276 .[OK] Num args: 257  Moves:3601
+1277 .[OK] Num args: 257  Moves:3601
+1278 .[OK] Num args: 257  Moves:3601
+1279 .[OK] Num args: 257  Moves:3601
+1280 .[OK] Num args: 257  Moves:3601
+1280 [MEMORY OK]
+1281 .[OK] Num args: 258  Moves:3617
+1282 .[OK] Num args: 258  Moves:3617
+1283 .[OK] Num args: 258  Moves:3617
+1284 .[OK] Num args: 258  Moves:3617
+1285 .[OK] Num args: 258  Moves:3617
+1285 [MEMORY OK]
+1286 .[OK] Num args: 259  Moves:3633
+1287 .[OK] Num args: 259  Moves:3633
+1288 .[OK] Num args: 259  Moves:3633
+1289 .[OK] Num args: 259  Moves:3633
+1290 .[OK] Num args: 259  Moves:3633
+1290 [MEMORY OK]
+1291 .[OK] Num args: 260  Moves:3648
+1292 .[OK] Num args: 260  Moves:3648
+1293 .[OK] Num args: 260  Moves:3648
+1294 .[OK] Num args: 260  Moves:3648
+1295 .[OK] Num args: 260  Moves:3648
+1295 [MEMORY OK]
+1296 .[OK] Num args: 261  Moves:3664
+1297 .[OK] Num args: 261  Moves:3664
+1298 .[OK] Num args: 261  Moves:3664
+1299 .[OK] Num args: 261  Moves:3664
+1300 .[OK] Num args: 261  Moves:3664
+1300 [MEMORY OK]
+1301 .[OK] Num args: 262  Moves:3679
+1302 .[OK] Num args: 262  Moves:3679
+1303 .[OK] Num args: 262  Moves:3679
+1304 .[OK] Num args: 262  Moves:3679
+1305 .[OK] Num args: 262  Moves:3679
+1305 [MEMORY OK]
+1306 .[OK] Num args: 263  Moves:3694
+1307 .[OK] Num args: 263  Moves:3694
+1308 .[OK] Num args: 263  Moves:3694
+1309 .[OK] Num args: 263  Moves:3694
+1310 .[OK] Num args: 263  Moves:3694
+1310 [MEMORY OK]
+1311 .[OK] Num args: 264  Moves:3708
+1312 .[OK] Num args: 264  Moves:3708
+1313 .[OK] Num args: 264  Moves:3708
+1314 .[OK] Num args: 264  Moves:3708
+1315 .[OK] Num args: 264  Moves:3708
+1315 [MEMORY OK]
+1316 .[OK] Num args: 265  Moves:3724
+1317 .[OK] Num args: 265  Moves:3724
+1318 .[OK] Num args: 265  Moves:3724
+1319 .[OK] Num args: 265  Moves:3724
+1320 .[OK] Num args: 265  Moves:3724
+1320 [MEMORY OK]
+1321 .[OK] Num args: 266  Moves:3739
+1322 .[OK] Num args: 266  Moves:3739
+1323 .[OK] Num args: 266  Moves:3739
+1324 .[OK] Num args: 266  Moves:3739
+1325 .[OK] Num args: 266  Moves:3739
+1325 [MEMORY OK]
+1326 .[OK] Num args: 267  Moves:3754
+1327 .[OK] Num args: 267  Moves:3754
+1328 .[OK] Num args: 267  Moves:3754
+1329 .[OK] Num args: 267  Moves:3754
+1330 .[OK] Num args: 267  Moves:3754
+1330 [MEMORY OK]
+1331 .[OK] Num args: 268  Moves:3768
+1332 .[OK] Num args: 268  Moves:3768
+1333 .[OK] Num args: 268  Moves:3768
+1334 .[OK] Num args: 268  Moves:3768
+1335 .[OK] Num args: 268  Moves:3768
+1335 [MEMORY OK]
+1336 .[OK] Num args: 269  Moves:3783
+1337 .[OK] Num args: 269  Moves:3783
+1338 .[OK] Num args: 269  Moves:3783
+1339 .[OK] Num args: 269  Moves:3783
+1340 .[OK] Num args: 269  Moves:3783
+1340 [MEMORY OK]
+1341 .[OK] Num args: 270  Moves:3797
+1342 .[OK] Num args: 270  Moves:3797
+1343 .[OK] Num args: 270  Moves:3797
+1344 .[OK] Num args: 270  Moves:3797
+1345 .[OK] Num args: 270  Moves:3797
+1345 [MEMORY OK]
+1346 .[OK] Num args: 271  Moves:3811
+1347 .[OK] Num args: 271  Moves:3811
+1348 .[OK] Num args: 271  Moves:3811
+1349 .[OK] Num args: 271  Moves:3811
+1350 .[OK] Num args: 271  Moves:3811
+1350 [MEMORY OK]
+1351 .[OK] Num args: 272  Moves:3824
+1352 .[OK] Num args: 272  Moves:3824
+1353 .[OK] Num args: 272  Moves:3824
+1354 .[OK] Num args: 272  Moves:3824
+1355 .[OK] Num args: 272  Moves:3824
+1355 [MEMORY OK]
+1356 .[OK] Num args: 273  Moves:3840
+1357 .[OK] Num args: 273  Moves:3840
+1358 .[OK] Num args: 273  Moves:3840
+1359 .[OK] Num args: 273  Moves:3840
+1360 .[OK] Num args: 273  Moves:3840
+1360 [MEMORY OK]
+1361 .[OK] Num args: 274  Moves:3855
+1362 .[OK] Num args: 274  Moves:3855
+1363 .[OK] Num args: 274  Moves:3855
+1364 .[OK] Num args: 274  Moves:3855
+1365 .[OK] Num args: 274  Moves:3855
+1365 [MEMORY OK]
+1366 .[OK] Num args: 275  Moves:3870
+1367 .[OK] Num args: 275  Moves:3870
+1368 .[OK] Num args: 275  Moves:3870
+1369 .[OK] Num args: 275  Moves:3870
+1370 .[OK] Num args: 275  Moves:3870
+1370 [MEMORY OK]
+1371 .[OK] Num args: 276  Moves:3884
+1372 .[OK] Num args: 276  Moves:3884
+1373 .[OK] Num args: 276  Moves:3884
+1374 .[OK] Num args: 276  Moves:3884
+1375 .[OK] Num args: 276  Moves:3884
+1375 [MEMORY OK]
+1376 .[OK] Num args: 277  Moves:3899
+1377 .[OK] Num args: 277  Moves:3899
+1378 .[OK] Num args: 277  Moves:3899
+1379 .[OK] Num args: 277  Moves:3899
+1380 .[OK] Num args: 277  Moves:3899
+1380 [MEMORY OK]
+1381 .[OK] Num args: 278  Moves:3913
+1382 .[OK] Num args: 278  Moves:3913
+1383 .[OK] Num args: 278  Moves:3913
+1384 .[OK] Num args: 278  Moves:3913
+1385 .[OK] Num args: 278  Moves:3913
+1385 [MEMORY OK]
+1386 .[OK] Num args: 279  Moves:3927
+1387 .[OK] Num args: 279  Moves:3927
+1388 .[OK] Num args: 279  Moves:3927
+1389 .[OK] Num args: 279  Moves:3927
+1390 .[OK] Num args: 279  Moves:3927
+1390 [MEMORY OK]
+1391 .[OK] Num args: 280  Moves:3940
+1392 .[OK] Num args: 280  Moves:3940
+1393 .[OK] Num args: 280  Moves:3940
+1394 .[OK] Num args: 280  Moves:3940
+1395 .[OK] Num args: 280  Moves:3940
+1395 [MEMORY OK]
+1396 .[OK] Num args: 281  Moves:3955
+1397 .[OK] Num args: 281  Moves:3955
+1398 .[OK] Num args: 281  Moves:3955
+1399 .[OK] Num args: 281  Moves:3955
+1400 .[OK] Num args: 281  Moves:3955
+1400 [MEMORY OK]
+1401 .[OK] Num args: 282  Moves:3969
+1402 .[OK] Num args: 282  Moves:3969
+1403 .[OK] Num args: 282  Moves:3969
+1404 .[OK] Num args: 282  Moves:3969
+1405 .[OK] Num args: 282  Moves:3969
+1405 [MEMORY OK]
+1406 .[OK] Num args: 283  Moves:3983
+1407 .[OK] Num args: 283  Moves:3983
+1408 .[OK] Num args: 283  Moves:3983
+1409 .[OK] Num args: 283  Moves:3983
+1410 .[OK] Num args: 283  Moves:3983
+1410 [MEMORY OK]
+1411 .[OK] Num args: 284  Moves:3996
+1412 .[OK] Num args: 284  Moves:3996
+1413 .[OK] Num args: 284  Moves:3996
+1414 .[OK] Num args: 284  Moves:3996
+1415 .[OK] Num args: 284  Moves:3996
+1415 [MEMORY OK]
+1416 .[OK] Num args: 285  Moves:4010
+1417 .[OK] Num args: 285  Moves:4010
+1418 .[OK] Num args: 285  Moves:4010
+1419 .[OK] Num args: 285  Moves:4010
+1420 .[OK] Num args: 285  Moves:4010
+1420 [MEMORY OK]
+1421 .[OK] Num args: 286  Moves:4023
+1422 .[OK] Num args: 286  Moves:4023
+1423 .[OK] Num args: 286  Moves:4023
+1424 .[OK] Num args: 286  Moves:4023
+1425 .[OK] Num args: 286  Moves:4023
+1425 [MEMORY OK]
+1426 .[OK] Num args: 287  Moves:4036
+1427 .[OK] Num args: 287  Moves:4036
+1428 .[OK] Num args: 287  Moves:4036
+1429 .[OK] Num args: 287  Moves:4036
+1430 .[OK] Num args: 287  Moves:4036
+1430 [MEMORY OK]
+1431 .[OK] Num args: 288  Moves:4048
+1432 .[OK] Num args: 288  Moves:4048
+1433 .[OK] Num args: 288  Moves:4048
+1434 .[OK] Num args: 288  Moves:4048
+1435 .[OK] Num args: 288  Moves:4048
+1435 [MEMORY OK]
+1436 .[OK] Num args: 289  Moves:4064
+1437 .[OK] Num args: 289  Moves:4064
+1438 .[OK] Num args: 289  Moves:4064
+1439 .[OK] Num args: 289  Moves:4064
+1440 .[OK] Num args: 289  Moves:4064
+1440 [MEMORY OK]
+1441 .[OK] Num args: 290  Moves:4079
+1442 .[OK] Num args: 290  Moves:4079
+1443 .[OK] Num args: 290  Moves:4079
+1444 .[OK] Num args: 290  Moves:4079
+1445 .[OK] Num args: 290  Moves:4079
+1445 [MEMORY OK]
+1446 .[OK] Num args: 291  Moves:4094
+1447 .[OK] Num args: 291  Moves:4094
+1448 .[OK] Num args: 291  Moves:4094
+1449 .[OK] Num args: 291  Moves:4094
+1450 .[OK] Num args: 291  Moves:4094
+1450 [MEMORY OK]
+1451 .[OK] Num args: 292  Moves:4108
+1452 .[OK] Num args: 292  Moves:4108
+1453 .[OK] Num args: 292  Moves:4108
+1454 .[OK] Num args: 292  Moves:4108
+1455 .[OK] Num args: 292  Moves:4108
+1455 [MEMORY OK]
+1456 .[OK] Num args: 293  Moves:4123
+1457 .[OK] Num args: 293  Moves:4123
+1458 .[OK] Num args: 293  Moves:4123
+1459 .[OK] Num args: 293  Moves:4123
+1460 .[OK] Num args: 293  Moves:4123
+1460 [MEMORY OK]
+1461 .[OK] Num args: 294  Moves:4137
+1462 .[OK] Num args: 294  Moves:4137
+1463 .[OK] Num args: 294  Moves:4137
+1464 .[OK] Num args: 294  Moves:4137
+1465 .[OK] Num args: 294  Moves:4137
+1465 [MEMORY OK]
+1466 .[OK] Num args: 295  Moves:4151
+1467 .[OK] Num args: 295  Moves:4151
+1468 .[OK] Num args: 295  Moves:4151
+1469 .[OK] Num args: 295  Moves:4151
+1470 .[OK] Num args: 295  Moves:4151
+1470 [MEMORY OK]
+1471 .[OK] Num args: 296  Moves:4164
+1472 .[OK] Num args: 296  Moves:4164
+1473 .[OK] Num args: 296  Moves:4164
+1474 .[OK] Num args: 296  Moves:4164
+1475 .[OK] Num args: 296  Moves:4164
+1475 [MEMORY OK]
+1476 .[OK] Num args: 297  Moves:4179
+1477 .[OK] Num args: 297  Moves:4179
+1478 .[OK] Num args: 297  Moves:4179
+1479 .[OK] Num args: 297  Moves:4179
+1480 .[OK] Num args: 297  Moves:4179
+1480 [MEMORY OK]
+1481 .[OK] Num args: 298  Moves:4193
+1482 .[OK] Num args: 298  Moves:4193
+1483 .[OK] Num args: 298  Moves:4193
+1484 .[OK] Num args: 298  Moves:4193
+1485 .[OK] Num args: 298  Moves:4193
+1485 [MEMORY OK]
+1486 .[OK] Num args: 299  Moves:4207
+1487 .[OK] Num args: 299  Moves:4207
+1488 .[OK] Num args: 299  Moves:4207
+1489 .[OK] Num args: 299  Moves:4207
+1490 .[OK] Num args: 299  Moves:4207
+1490 [MEMORY OK]
+1491 .[OK] Num args: 300  Moves:4220
+1492 .[OK] Num args: 300  Moves:4220
+1493 .[OK] Num args: 300  Moves:4220
+1494 .[OK] Num args: 300  Moves:4220
+1495 .[OK] Num args: 300  Moves:4220
+1495 [MEMORY OK]
+1496 .[OK] Num args: 301  Moves:4234
+1497 .[OK] Num args: 301  Moves:4234
+1498 .[OK] Num args: 301  Moves:4234
+1499 .[OK] Num args: 301  Moves:4234
+1500 .[OK] Num args: 301  Moves:4234
+1500 [MEMORY OK]
+1501 .[OK] Num args: 302  Moves:4247
+1502 .[OK] Num args: 302  Moves:4247
+1503 .[OK] Num args: 302  Moves:4247
+1504 .[OK] Num args: 302  Moves:4247
+1505 .[OK] Num args: 302  Moves:4247
+1505 [MEMORY OK]
+1506 .[OK] Num args: 303  Moves:4260
+1507 .[OK] Num args: 303  Moves:4260
+1508 .[OK] Num args: 303  Moves:4260
+1509 .[OK] Num args: 303  Moves:4260
+1510 .[OK] Num args: 303  Moves:4260
+1510 [MEMORY OK]
+1511 .[OK] Num args: 304  Moves:4272
+1512 .[OK] Num args: 304  Moves:4272
+1513 .[OK] Num args: 304  Moves:4272
+1514 .[OK] Num args: 304  Moves:4272
+1515 .[OK] Num args: 304  Moves:4272
+1515 [MEMORY OK]
+1516 .[OK] Num args: 305  Moves:4287
+1517 .[OK] Num args: 305  Moves:4287
+1518 .[OK] Num args: 305  Moves:4287
+1519 .[OK] Num args: 305  Moves:4287
+1520 .[OK] Num args: 305  Moves:4287
+1520 [MEMORY OK]
+1521 .[OK] Num args: 306  Moves:4301
+1522 .[OK] Num args: 306  Moves:4301
+1523 .[OK] Num args: 306  Moves:4301
+1524 .[OK] Num args: 306  Moves:4301
+1525 .[OK] Num args: 306  Moves:4301
+1525 [MEMORY OK]
+1526 .[OK] Num args: 307  Moves:4315
+1527 .[OK] Num args: 307  Moves:4315
+1528 .[OK] Num args: 307  Moves:4315
+1529 .[OK] Num args: 307  Moves:4315
+1530 .[OK] Num args: 307  Moves:4315
+1530 [MEMORY OK]
+1531 .[OK] Num args: 308  Moves:4328
+1532 .[OK] Num args: 308  Moves:4328
+1533 .[OK] Num args: 308  Moves:4328
+1534 .[OK] Num args: 308  Moves:4328
+1535 .[OK] Num args: 308  Moves:4328
+1535 [MEMORY OK]
+1536 .[OK] Num args: 309  Moves:4342
+1537 .[OK] Num args: 309  Moves:4342
+1538 .[OK] Num args: 309  Moves:4342
+1539 .[OK] Num args: 309  Moves:4342
+1540 .[OK] Num args: 309  Moves:4342
+1540 [MEMORY OK]
+1541 .[OK] Num args: 310  Moves:4355
+1542 .[OK] Num args: 310  Moves:4355
+1543 .[OK] Num args: 310  Moves:4355
+1544 .[OK] Num args: 310  Moves:4355
+1545 .[OK] Num args: 310  Moves:4355
+1545 [MEMORY OK]
+1546 .[OK] Num args: 311  Moves:4368
+1547 .[OK] Num args: 311  Moves:4368
+1548 .[OK] Num args: 311  Moves:4368
+1549 .[OK] Num args: 311  Moves:4368
+1550 .[OK] Num args: 311  Moves:4368
+1550 [MEMORY OK]
+1551 .[OK] Num args: 312  Moves:4380
+1552 .[OK] Num args: 312  Moves:4380
+1553 .[OK] Num args: 312  Moves:4380
+1554 .[OK] Num args: 312  Moves:4380
+1555 .[OK] Num args: 312  Moves:4380
+1555 [MEMORY OK]
+1556 .[OK] Num args: 313  Moves:4394
+1557 .[OK] Num args: 313  Moves:4394
+1558 .[OK] Num args: 313  Moves:4394
+1559 .[OK] Num args: 313  Moves:4394
+1560 .[OK] Num args: 313  Moves:4394
+1560 [MEMORY OK]
+1561 .[OK] Num args: 314  Moves:4407
+1562 .[OK] Num args: 314  Moves:4407
+1563 .[OK] Num args: 314  Moves:4407
+1564 .[OK] Num args: 314  Moves:4407
+1565 .[OK] Num args: 314  Moves:4407
+1565 [MEMORY OK]
+1566 .[OK] Num args: 315  Moves:4420
+1567 .[OK] Num args: 315  Moves:4420
+1568 .[OK] Num args: 315  Moves:4420
+1569 .[OK] Num args: 315  Moves:4420
+1570 .[OK] Num args: 315  Moves:4420
+1570 [MEMORY OK]
+1571 .[OK] Num args: 316  Moves:4432
+1572 .[OK] Num args: 316  Moves:4432
+1573 .[OK] Num args: 316  Moves:4432
+1574 .[OK] Num args: 316  Moves:4432
+1575 .[OK] Num args: 316  Moves:4432
+1575 [MEMORY OK]
+1576 .[OK] Num args: 317  Moves:4445
+1577 .[OK] Num args: 317  Moves:4445
+1578 .[OK] Num args: 317  Moves:4445
+1579 .[OK] Num args: 317  Moves:4445
+1580 .[OK] Num args: 317  Moves:4445
+1580 [MEMORY OK]
+1581 .[OK] Num args: 318  Moves:4457
+1582 .[OK] Num args: 318  Moves:4457
+1583 .[OK] Num args: 318  Moves:4457
+1584 .[OK] Num args: 318  Moves:4457
+1585 .[OK] Num args: 318  Moves:4457
+1585 [MEMORY OK]
+1586 .[OK] Num args: 319  Moves:4469
+1587 .[OK] Num args: 319  Moves:4469
+1588 .[OK] Num args: 319  Moves:4469
+1589 .[OK] Num args: 319  Moves:4469
+1590 .[OK] Num args: 319  Moves:4469
+1590 [MEMORY OK]
+1591 .[OK] Num args: 320  Moves:4480
+1592 .[OK] Num args: 320  Moves:4480
+1593 .[OK] Num args: 320  Moves:4480
+1594 .[OK] Num args: 320  Moves:4480
+1595 .[OK] Num args: 320  Moves:4480
+1595 [MEMORY OK]
+1596 .[OK] Num args: 321  Moves:4496
+1597 .[OK] Num args: 321  Moves:4496
+1598 .[OK] Num args: 321  Moves:4496
+1599 .[OK] Num args: 321  Moves:4496
+1600 .[OK] Num args: 321  Moves:4496
+1600 [MEMORY OK]
+1601 .[OK] Num args: 322  Moves:4511
+1602 .[OK] Num args: 322  Moves:4511
+1603 .[OK] Num args: 322  Moves:4511
+1604 .[OK] Num args: 322  Moves:4511
+1605 .[OK] Num args: 322  Moves:4511
+1605 [MEMORY OK]
+1606 .[OK] Num args: 323  Moves:4526
+1607 .[OK] Num args: 323  Moves:4526
+1608 .[OK] Num args: 323  Moves:4526
+1609 .[OK] Num args: 323  Moves:4526
+1610 .[OK] Num args: 323  Moves:4526
+1610 [MEMORY OK]
+1611 .[OK] Num args: 324  Moves:4540
+1612 .[OK] Num args: 324  Moves:4540
+1613 .[OK] Num args: 324  Moves:4540
+1614 .[OK] Num args: 324  Moves:4540
+1615 .[OK] Num args: 324  Moves:4540
+1615 [MEMORY OK]
+1616 .[OK] Num args: 325  Moves:4555
+1617 .[OK] Num args: 325  Moves:4555
+1618 .[OK] Num args: 325  Moves:4555
+1619 .[OK] Num args: 325  Moves:4555
+1620 .[OK] Num args: 325  Moves:4555
+1620 [MEMORY OK]
+1621 .[OK] Num args: 326  Moves:4569
+1622 .[OK] Num args: 326  Moves:4569
+1623 .[OK] Num args: 326  Moves:4569
+1624 .[OK] Num args: 326  Moves:4569
+1625 .[OK] Num args: 326  Moves:4569
+1625 [MEMORY OK]
+1626 .[OK] Num args: 327  Moves:4583
+1627 .[OK] Num args: 327  Moves:4583
+1628 .[OK] Num args: 327  Moves:4583
+1629 .[OK] Num args: 327  Moves:4583
+1630 .[OK] Num args: 327  Moves:4583
+1630 [MEMORY OK]
+1631 .[OK] Num args: 328  Moves:4596
+1632 .[OK] Num args: 328  Moves:4596
+1633 .[OK] Num args: 328  Moves:4596
+1634 .[OK] Num args: 328  Moves:4596
+1635 .[OK] Num args: 328  Moves:4596
+1635 [MEMORY OK]
+1636 .[OK] Num args: 329  Moves:4611
+1637 .[OK] Num args: 329  Moves:4611
+1638 .[OK] Num args: 329  Moves:4611
+1639 .[OK] Num args: 329  Moves:4611
+1640 .[OK] Num args: 329  Moves:4611
+1640 [MEMORY OK]
+1641 .[OK] Num args: 330  Moves:4625
+1642 .[OK] Num args: 330  Moves:4625
+1643 .[OK] Num args: 330  Moves:4625
+1644 .[OK] Num args: 330  Moves:4625
+1645 .[OK] Num args: 330  Moves:4625
+1645 [MEMORY OK]
+1646 .[OK] Num args: 331  Moves:4639
+1647 .[OK] Num args: 331  Moves:4639
+1648 .[OK] Num args: 331  Moves:4639
+1649 .[OK] Num args: 331  Moves:4639
+1650 .[OK] Num args: 331  Moves:4639
+1650 [MEMORY OK]
+1651 .[OK] Num args: 332  Moves:4652
+1652 .[OK] Num args: 332  Moves:4652
+1653 .[OK] Num args: 332  Moves:4652
+1654 .[OK] Num args: 332  Moves:4652
+1655 .[OK] Num args: 332  Moves:4652
+1655 [MEMORY OK]
+1656 .[OK] Num args: 333  Moves:4666
+1657 .[OK] Num args: 333  Moves:4666
+1658 .[OK] Num args: 333  Moves:4666
+1659 .[OK] Num args: 333  Moves:4666
+1660 .[OK] Num args: 333  Moves:4666
+1660 [MEMORY OK]
+1661 .[OK] Num args: 334  Moves:4679
+1662 .[OK] Num args: 334  Moves:4679
+1663 .[OK] Num args: 334  Moves:4679
+1664 .[OK] Num args: 334  Moves:4679
+1665 .[OK] Num args: 334  Moves:4679
+1665 [MEMORY OK]
+1666 .[OK] Num args: 335  Moves:4692
+1667 .[OK] Num args: 335  Moves:4692
+1668 .[OK] Num args: 335  Moves:4692
+1669 .[OK] Num args: 335  Moves:4692
+1670 .[OK] Num args: 335  Moves:4692
+1670 [MEMORY OK]
+1671 .[OK] Num args: 336  Moves:4704
+1672 .[OK] Num args: 336  Moves:4704
+1673 .[OK] Num args: 336  Moves:4704
+1674 .[OK] Num args: 336  Moves:4704
+1675 .[OK] Num args: 336  Moves:4704
+1675 [MEMORY OK]
+1676 .[OK] Num args: 337  Moves:4719
+1677 .[OK] Num args: 337  Moves:4719
+1678 .[OK] Num args: 337  Moves:4719
+1679 .[OK] Num args: 337  Moves:4719
+1680 .[OK] Num args: 337  Moves:4719
+1680 [MEMORY OK]
+1681 .[OK] Num args: 338  Moves:4733
+1682 .[OK] Num args: 338  Moves:4733
+1683 .[OK] Num args: 338  Moves:4733
+1684 .[OK] Num args: 338  Moves:4733
+1685 .[OK] Num args: 338  Moves:4733
+1685 [MEMORY OK]
+1686 .[OK] Num args: 339  Moves:4747
+1687 .[OK] Num args: 339  Moves:4747
+1688 .[OK] Num args: 339  Moves:4747
+1689 .[OK] Num args: 339  Moves:4747
+1690 .[OK] Num args: 339  Moves:4747
+1690 [MEMORY OK]
+1691 .[OK] Num args: 340  Moves:4760
+1692 .[OK] Num args: 340  Moves:4760
+1693 .[OK] Num args: 340  Moves:4760
+1694 .[OK] Num args: 340  Moves:4760
+1695 .[OK] Num args: 340  Moves:4760
+1695 [MEMORY OK]
+1696 .[OK] Num args: 341  Moves:4774
+1697 .[OK] Num args: 341  Moves:4774
+1698 .[OK] Num args: 341  Moves:4774
+1699 .[OK] Num args: 341  Moves:4774
+1700 .[OK] Num args: 341  Moves:4774
+1700 [MEMORY OK]
+1701 .[OK] Num args: 342  Moves:4787
+1702 .[OK] Num args: 342  Moves:4787
+1703 .[OK] Num args: 342  Moves:4787
+1704 .[OK] Num args: 342  Moves:4787
+1705 .[OK] Num args: 342  Moves:4787
+1705 [MEMORY OK]
+1706 .[OK] Num args: 343  Moves:4800
+1707 .[OK] Num args: 343  Moves:4800
+1708 .[OK] Num args: 343  Moves:4800
+1709 .[OK] Num args: 343  Moves:4800
+1710 .[OK] Num args: 343  Moves:4800
+1710 [MEMORY OK]
+1711 .[OK] Num args: 344  Moves:4812
+1712 .[OK] Num args: 344  Moves:4812
+1713 .[OK] Num args: 344  Moves:4812
+1714 .[OK] Num args: 344  Moves:4812
+1715 .[OK] Num args: 344  Moves:4812
+1715 [MEMORY OK]
+1716 .[OK] Num args: 345  Moves:4826
+1717 .[OK] Num args: 345  Moves:4826
+1718 .[OK] Num args: 345  Moves:4826
+1719 .[OK] Num args: 345  Moves:4826
+1720 .[OK] Num args: 345  Moves:4826
+1720 [MEMORY OK]
+1721 .[OK] Num args: 346  Moves:4839
+1722 .[OK] Num args: 346  Moves:4839
+1723 .[OK] Num args: 346  Moves:4839
+1724 .[OK] Num args: 346  Moves:4839
+1725 .[OK] Num args: 346  Moves:4839
+1725 [MEMORY OK]
+1726 .[OK] Num args: 347  Moves:4852
+1727 .[OK] Num args: 347  Moves:4852
+1728 .[OK] Num args: 347  Moves:4852
+1729 .[OK] Num args: 347  Moves:4852
+1730 .[OK] Num args: 347  Moves:4852
+1730 [MEMORY OK]
+1731 .[OK] Num args: 348  Moves:4864
+1732 .[OK] Num args: 348  Moves:4864
+1733 .[OK] Num args: 348  Moves:4864
+1734 .[OK] Num args: 348  Moves:4864
+1735 .[OK] Num args: 348  Moves:4864
+1735 [MEMORY OK]
+1736 .[OK] Num args: 349  Moves:4877
+1737 .[OK] Num args: 349  Moves:4877
+1738 .[OK] Num args: 349  Moves:4877
+1739 .[OK] Num args: 349  Moves:4877
+1740 .[OK] Num args: 349  Moves:4877
+1740 [MEMORY OK]
+1741 .[OK] Num args: 350  Moves:4889
+1742 .[OK] Num args: 350  Moves:4889
+1743 .[OK] Num args: 350  Moves:4889
+1744 .[OK] Num args: 350  Moves:4889
+1745 .[OK] Num args: 350  Moves:4889
+1745 [MEMORY OK]
+1746 .[OK] Num args: 351  Moves:4901
+1747 .[OK] Num args: 351  Moves:4901
+1748 .[OK] Num args: 351  Moves:4901
+1749 .[OK] Num args: 351  Moves:4901
+1750 .[OK] Num args: 351  Moves:4901
+1750 [MEMORY OK]
+1751 .[OK] Num args: 352  Moves:4912
+1752 .[OK] Num args: 352  Moves:4912
+1753 .[OK] Num args: 352  Moves:4912
+1754 .[OK] Num args: 352  Moves:4912
+1755 .[OK] Num args: 352  Moves:4912
+1755 [MEMORY OK]
+1756 .[OK] Num args: 353  Moves:4927
+1757 .[OK] Num args: 353  Moves:4927
+1758 .[OK] Num args: 353  Moves:4927
+1759 .[OK] Num args: 353  Moves:4927
+1760 .[OK] Num args: 353  Moves:4927
+1760 [MEMORY OK]
+1761 .[OK] Num args: 354  Moves:4941
+1762 .[OK] Num args: 354  Moves:4941
+1763 .[OK] Num args: 354  Moves:4941
+1764 .[OK] Num args: 354  Moves:4941
+1765 .[OK] Num args: 354  Moves:4941
+1765 [MEMORY OK]
+1766 .[OK] Num args: 355  Moves:4955
+1767 .[OK] Num args: 355  Moves:4955
+1768 .[OK] Num args: 355  Moves:4955
+1769 .[OK] Num args: 355  Moves:4955
+1770 .[OK] Num args: 355  Moves:4955
+1770 [MEMORY OK]
+1771 .[OK] Num args: 356  Moves:4968
+1772 .[OK] Num args: 356  Moves:4968
+1773 .[OK] Num args: 356  Moves:4968
+1774 .[OK] Num args: 356  Moves:4968
+1775 .[OK] Num args: 356  Moves:4968
+1775 [MEMORY OK]
+1776 .[OK] Num args: 357  Moves:4982
+1777 .[OK] Num args: 357  Moves:4982
+1778 .[OK] Num args: 357  Moves:4982
+1779 .[OK] Num args: 357  Moves:4982
+1780 .[OK] Num args: 357  Moves:4982
+1780 [MEMORY OK]
+1781 .[OK] Num args: 358  Moves:4995
+1782 .[OK] Num args: 358  Moves:4995
+1783 .[OK] Num args: 358  Moves:4995
+1784 .[OK] Num args: 358  Moves:4995
+1785 .[OK] Num args: 358  Moves:4995
+1785 [MEMORY OK]
+1786 .[OK] Num args: 359  Moves:5008
+1787 .[OK] Num args: 359  Moves:5008
+1788 .[OK] Num args: 359  Moves:5008
+1789 .[OK] Num args: 359  Moves:5008
+1790 .[OK] Num args: 359  Moves:5008
+1790 [MEMORY OK]
+1791 .[OK] Num args: 360  Moves:5020
+1792 .[OK] Num args: 360  Moves:5020
+1793 .[OK] Num args: 360  Moves:5020
+1794 .[OK] Num args: 360  Moves:5020
+1795 .[OK] Num args: 360  Moves:5020
+1795 [MEMORY OK]
+1796 .[OK] Num args: 361  Moves:5034
+1797 .[OK] Num args: 361  Moves:5034
+1798 .[OK] Num args: 361  Moves:5034
+1799 .[OK] Num args: 361  Moves:5034
+1800 .[OK] Num args: 361  Moves:5034
+1800 [MEMORY OK]
+1801 .[OK] Num args: 362  Moves:5047
+1802 .[OK] Num args: 362  Moves:5047
+1803 .[OK] Num args: 362  Moves:5047
+1804 .[OK] Num args: 362  Moves:5047
+1805 .[OK] Num args: 362  Moves:5047
+1805 [MEMORY OK]
+1806 .[OK] Num args: 363  Moves:5060
+1807 .[OK] Num args: 363  Moves:5060
+1808 .[OK] Num args: 363  Moves:5060
+1809 .[OK] Num args: 363  Moves:5060
+1810 .[OK] Num args: 363  Moves:5060
+1810 [MEMORY OK]
+1811 .[OK] Num args: 364  Moves:5072
+1812 .[OK] Num args: 364  Moves:5072
+1813 .[OK] Num args: 364  Moves:5072
+1814 .[OK] Num args: 364  Moves:5072
+1815 .[OK] Num args: 364  Moves:5072
+1815 [MEMORY OK]
+1816 .[OK] Num args: 365  Moves:5085
+1817 .[OK] Num args: 365  Moves:5085
+1818 .[OK] Num args: 365  Moves:5085
+1819 .[OK] Num args: 365  Moves:5085
+1820 .[OK] Num args: 365  Moves:5085
+1820 [MEMORY OK]
+1821 .[OK] Num args: 366  Moves:5097
+1822 .[OK] Num args: 366  Moves:5097
+1823 .[OK] Num args: 366  Moves:5097
+1824 .[OK] Num args: 366  Moves:5097
+1825 .[OK] Num args: 366  Moves:5097
+1825 [MEMORY OK]
+1826 .[OK] Num args: 367  Moves:5109
+1827 .[OK] Num args: 367  Moves:5109
+1828 .[OK] Num args: 367  Moves:5109
+1829 .[OK] Num args: 367  Moves:5109
+1830 .[OK] Num args: 367  Moves:5109
+1830 [MEMORY OK]
+1831 .[OK] Num args: 368  Moves:5120
+1832 .[OK] Num args: 368  Moves:5120
+1833 .[OK] Num args: 368  Moves:5120
+1834 .[OK] Num args: 368  Moves:5120
+1835 .[OK] Num args: 368  Moves:5120
+1835 [MEMORY OK]
+1836 .[OK] Num args: 369  Moves:5134
+1837 .[OK] Num args: 369  Moves:5134
+1838 .[OK] Num args: 369  Moves:5134
+1839 .[OK] Num args: 369  Moves:5134
+1840 .[OK] Num args: 369  Moves:5134
+1840 [MEMORY OK]
+1841 .[OK] Num args: 370  Moves:5147
+1842 .[OK] Num args: 370  Moves:5147
+1843 .[OK] Num args: 370  Moves:5147
+1844 .[OK] Num args: 370  Moves:5147
+1845 .[OK] Num args: 370  Moves:5147
+1845 [MEMORY OK]
+1846 .[OK] Num args: 371  Moves:5160
+1847 .[OK] Num args: 371  Moves:5160
+1848 .[OK] Num args: 371  Moves:5160
+1849 .[OK] Num args: 371  Moves:5160
+1850 .[OK] Num args: 371  Moves:5160
+1850 [MEMORY OK]
+1851 .[OK] Num args: 372  Moves:5172
+1852 .[OK] Num args: 372  Moves:5172
+1853 .[OK] Num args: 372  Moves:5172
+1854 .[OK] Num args: 372  Moves:5172
+1855 .[OK] Num args: 372  Moves:5172
+1855 [MEMORY OK]
+1856 .[OK] Num args: 373  Moves:5185
+1857 .[OK] Num args: 373  Moves:5185
+1858 .[OK] Num args: 373  Moves:5185
+1859 .[OK] Num args: 373  Moves:5185
+1860 .[OK] Num args: 373  Moves:5185
+1860 [MEMORY OK]
+1861 .[OK] Num args: 374  Moves:5197
+1862 .[OK] Num args: 374  Moves:5197
+1863 .[OK] Num args: 374  Moves:5197
+1864 .[OK] Num args: 374  Moves:5197
+1865 .[OK] Num args: 374  Moves:5197
+1865 [MEMORY OK]
+1866 .[OK] Num args: 375  Moves:5209
+1867 .[OK] Num args: 375  Moves:5209
+1868 .[OK] Num args: 375  Moves:5209
+1869 .[OK] Num args: 375  Moves:5209
+1870 .[OK] Num args: 375  Moves:5209
+1870 [MEMORY OK]
+1871 .[OK] Num args: 376  Moves:5220
+1872 .[OK] Num args: 376  Moves:5220
+1873 .[OK] Num args: 376  Moves:5220
+1874 .[OK] Num args: 376  Moves:5220
+1875 .[OK] Num args: 376  Moves:5220
+1875 [MEMORY OK]
+1876 .[OK] Num args: 377  Moves:5233
+1877 .[OK] Num args: 377  Moves:5233
+1878 .[OK] Num args: 377  Moves:5233
+1879 .[OK] Num args: 377  Moves:5233
+1880 .[OK] Num args: 377  Moves:5233
+1880 [MEMORY OK]
+1881 .[OK] Num args: 378  Moves:5245
+1882 .[OK] Num args: 378  Moves:5245
+1883 .[OK] Num args: 378  Moves:5245
+1884 .[OK] Num args: 378  Moves:5245
+1885 .[OK] Num args: 378  Moves:5245
+1885 [MEMORY OK]
+1886 .[OK] Num args: 379  Moves:5257
+1887 .[OK] Num args: 379  Moves:5257
+1888 .[OK] Num args: 379  Moves:5257
+1889 .[OK] Num args: 379  Moves:5257
+1890 .[OK] Num args: 379  Moves:5257
+1890 [MEMORY OK]
+1891 .[OK] Num args: 380  Moves:5268
+1892 .[OK] Num args: 380  Moves:5268
+1893 .[OK] Num args: 380  Moves:5268
+1894 .[OK] Num args: 380  Moves:5268
+1895 .[OK] Num args: 380  Moves:5268
+1895 [MEMORY OK]
+1896 .[OK] Num args: 381  Moves:5280
+1897 .[OK] Num args: 381  Moves:5280
+1898 .[OK] Num args: 381  Moves:5280
+1899 .[OK] Num args: 381  Moves:5280
+1900 .[OK] Num args: 381  Moves:5280
+1900 [MEMORY OK]
+1901 .[OK] Num args: 382  Moves:5291
+1902 .[OK] Num args: 382  Moves:5291
+1903 .[OK] Num args: 382  Moves:5291
+1904 .[OK] Num args: 382  Moves:5291
+1905 .[OK] Num args: 382  Moves:5291
+1905 [MEMORY OK]
+1906 .[OK] Num args: 383  Moves:5302
+1907 .[OK] Num args: 383  Moves:5302
+1908 .[OK] Num args: 383  Moves:5302
+1909 .[OK] Num args: 383  Moves:5302
+1910 .[OK] Num args: 383  Moves:5302
+1910 [MEMORY OK]
+1911 .[OK] Num args: 384  Moves:5312
+1912 .[OK] Num args: 384  Moves:5312
+1913 .[OK] Num args: 384  Moves:5312
+1914 .[OK] Num args: 384  Moves:5312
+1915 .[OK] Num args: 384  Moves:5312
+1915 [MEMORY OK]
+1916 .[OK] Num args: 385  Moves:5328
+1917 .[OK] Num args: 385  Moves:5328
+1918 .[OK] Num args: 385  Moves:5328
+1919 .[OK] Num args: 385  Moves:5328
+1920 .[OK] Num args: 385  Moves:5328
+1920 [MEMORY OK]
+1921 .[OK] Num args: 386  Moves:5343
+1922 .[OK] Num args: 386  Moves:5343
+1923 .[OK] Num args: 386  Moves:5343
+1924 .[OK] Num args: 386  Moves:5343
+1925 .[OK] Num args: 386  Moves:5343
+1925 [MEMORY OK]
+1926 .[OK] Num args: 387  Moves:5358
+1927 .[OK] Num args: 387  Moves:5358
+1928 .[OK] Num args: 387  Moves:5358
+1929 .[OK] Num args: 387  Moves:5358
+1930 .[OK] Num args: 387  Moves:5358
+1930 [MEMORY OK]
+1931 .[OK] Num args: 388  Moves:5372
+1932 .[OK] Num args: 388  Moves:5372
+1933 .[OK] Num args: 388  Moves:5372
+1934 .[OK] Num args: 388  Moves:5372
+1935 .[OK] Num args: 388  Moves:5372
+1935 [MEMORY OK]
+1936 .[OK] Num args: 389  Moves:5387
+1937 .[OK] Num args: 389  Moves:5387
+1938 .[OK] Num args: 389  Moves:5387
+1939 .[OK] Num args: 389  Moves:5387
+1940 .[OK] Num args: 389  Moves:5387
+1940 [MEMORY OK]
+1941 .[OK] Num args: 390  Moves:5401
+1942 .[OK] Num args: 390  Moves:5401
+1943 .[OK] Num args: 390  Moves:5401
+1944 .[OK] Num args: 390  Moves:5401
+1945 .[OK] Num args: 390  Moves:5401
+1945 [MEMORY OK]
+1946 .[OK] Num args: 391  Moves:5415
+1947 .[OK] Num args: 391  Moves:5415
+1948 .[OK] Num args: 391  Moves:5415
+1949 .[OK] Num args: 391  Moves:5415
+1950 .[OK] Num args: 391  Moves:5415
+1950 [MEMORY OK]
+1951 .[OK] Num args: 392  Moves:5428
+1952 .[OK] Num args: 392  Moves:5428
+1953 .[OK] Num args: 392  Moves:5428
+1954 .[OK] Num args: 392  Moves:5428
+1955 .[OK] Num args: 392  Moves:5428
+1955 [MEMORY OK]
+1956 .[OK] Num args: 393  Moves:5443
+1957 .[OK] Num args: 393  Moves:5443
+1958 .[OK] Num args: 393  Moves:5443
+1959 .[OK] Num args: 393  Moves:5443
+1960 .[OK] Num args: 393  Moves:5443
+1960 [MEMORY OK]
+1961 .[OK] Num args: 394  Moves:5457
+1962 .[OK] Num args: 394  Moves:5457
+1963 .[OK] Num args: 394  Moves:5457
+1964 .[OK] Num args: 394  Moves:5457
+1965 .[OK] Num args: 394  Moves:5457
+1965 [MEMORY OK]
+1966 .[OK] Num args: 395  Moves:5471
+1967 .[OK] Num args: 395  Moves:5471
+1968 .[OK] Num args: 395  Moves:5471
+1969 .[OK] Num args: 395  Moves:5471
+1970 .[OK] Num args: 395  Moves:5471
+1970 [MEMORY OK]
+1971 .[OK] Num args: 396  Moves:5484
+1972 .[OK] Num args: 396  Moves:5484
+1973 .[OK] Num args: 396  Moves:5484
+1974 .[OK] Num args: 396  Moves:5484
+1975 .[OK] Num args: 396  Moves:5484
+1975 [MEMORY OK]
+1976 .[OK] Num args: 397  Moves:5498
+1977 .[OK] Num args: 397  Moves:5498
+1978 .[OK] Num args: 397  Moves:5498
+1979 .[OK] Num args: 397  Moves:5498
+1980 .[OK] Num args: 397  Moves:5498
+1980 [MEMORY OK]
+1981 .[OK] Num args: 398  Moves:5511
+1982 .[OK] Num args: 398  Moves:5511
+1983 .[OK] Num args: 398  Moves:5511
+1984 .[OK] Num args: 398  Moves:5511
+1985 .[OK] Num args: 398  Moves:5511
+1985 [MEMORY OK]
+1986 .[OK] Num args: 399  Moves:5524
+1987 .[OK] Num args: 399  Moves:5524
+1988 .[OK] Num args: 399  Moves:5524
+1989 .[OK] Num args: 399  Moves:5524
+1990 .[OK] Num args: 399  Moves:5524
+1990 [MEMORY OK]
+1991 .[OK] Num args: 400  Moves:5536
+1992 .[OK] Num args: 400  Moves:5536
+1993 .[OK] Num args: 400  Moves:5536
+1994 .[OK] Num args: 400  Moves:5536
+1995 .[OK] Num args: 400  Moves:5536
+1995 [MEMORY OK]
+1996 .[OK] Num args: 401  Moves:5551
+1997 .[OK] Num args: 401  Moves:5551
+1998 .[OK] Num args: 401  Moves:5551
+1999 .[OK] Num args: 401  Moves:5551
+2000 .[OK] Num args: 401  Moves:5551
+2000 [MEMORY OK]
+2001 .[OK] Num args: 402  Moves:5565
+2002 .[OK] Num args: 402  Moves:5565
+2003 .[OK] Num args: 402  Moves:5565
+2004 .[OK] Num args: 402  Moves:5565
+2005 .[OK] Num args: 402  Moves:5565
+2005 [MEMORY OK]
+2006 .[OK] Num args: 403  Moves:5579
+2007 .[OK] Num args: 403  Moves:5579
+2008 .[OK] Num args: 403  Moves:5579
+2009 .[OK] Num args: 403  Moves:5579
+2010 .[OK] Num args: 403  Moves:5579
+2010 [MEMORY OK]
+2011 .[OK] Num args: 404  Moves:5592
+2012 .[OK] Num args: 404  Moves:5592
+2013 .[OK] Num args: 404  Moves:5592
+2014 .[OK] Num args: 404  Moves:5592
+2015 .[OK] Num args: 404  Moves:5592
+2015 [MEMORY OK]
+2016 .[OK] Num args: 405  Moves:5606
+2017 .[OK] Num args: 405  Moves:5606
+2018 .[OK] Num args: 405  Moves:5606
+2019 .[OK] Num args: 405  Moves:5606
+2020 .[OK] Num args: 405  Moves:5606
+2020 [MEMORY OK]
+2021 .[OK] Num args: 406  Moves:5619
+2022 .[OK] Num args: 406  Moves:5619
+2023 .[OK] Num args: 406  Moves:5619
+2024 .[OK] Num args: 406  Moves:5619
+2025 .[OK] Num args: 406  Moves:5619
+2025 [MEMORY OK]
+2026 .[OK] Num args: 407  Moves:5632
+2027 .[OK] Num args: 407  Moves:5632
+2028 .[OK] Num args: 407  Moves:5632
+2029 .[OK] Num args: 407  Moves:5632
+2030 .[OK] Num args: 407  Moves:5632
+2030 [MEMORY OK]
+2031 .[OK] Num args: 408  Moves:5644
+2032 .[OK] Num args: 408  Moves:5644
+2033 .[OK] Num args: 408  Moves:5644
+2034 .[OK] Num args: 408  Moves:5644
+2035 .[OK] Num args: 408  Moves:5644
+2035 [MEMORY OK]
+2036 .[OK] Num args: 409  Moves:5658
+2037 .[OK] Num args: 409  Moves:5658
+2038 .[OK] Num args: 409  Moves:5658
+2039 .[OK] Num args: 409  Moves:5658
+2040 .[OK] Num args: 409  Moves:5658
+2040 [MEMORY OK]
+2041 .[OK] Num args: 410  Moves:5671
+2042 .[OK] Num args: 410  Moves:5671
+2043 .[OK] Num args: 410  Moves:5671
+2044 .[OK] Num args: 410  Moves:5671
+2045 .[OK] Num args: 410  Moves:5671
+2045 [MEMORY OK]
+2046 .[OK] Num args: 411  Moves:5684
+2047 .[OK] Num args: 411  Moves:5684
+2048 .[OK] Num args: 411  Moves:5684
+2049 .[OK] Num args: 411  Moves:5684
+2050 .[OK] Num args: 411  Moves:5684
+2050 [MEMORY OK]
+2051 .[OK] Num args: 412  Moves:5696
+2052 .[OK] Num args: 412  Moves:5696
+2053 .[OK] Num args: 412  Moves:5696
+2054 .[OK] Num args: 412  Moves:5696
+2055 .[OK] Num args: 412  Moves:5696
+2055 [MEMORY OK]
+2056 .[OK] Num args: 413  Moves:5709
+2057 .[OK] Num args: 413  Moves:5709
+2058 .[OK] Num args: 413  Moves:5709
+2059 .[OK] Num args: 413  Moves:5709
+2060 .[OK] Num args: 413  Moves:5709
+2060 [MEMORY OK]
+2061 .[OK] Num args: 414  Moves:5721
+2062 .[OK] Num args: 414  Moves:5721
+2063 .[OK] Num args: 414  Moves:5721
+2064 .[OK] Num args: 414  Moves:5721
+2065 .[OK] Num args: 414  Moves:5721
+2065 [MEMORY OK]
+2066 .[OK] Num args: 415  Moves:5733
+2067 .[OK] Num args: 415  Moves:5733
+2068 .[OK] Num args: 415  Moves:5733
+2069 .[OK] Num args: 415  Moves:5733
+2070 .[OK] Num args: 415  Moves:5733
+2070 [MEMORY OK]
+2071 .[OK] Num args: 416  Moves:5744
+2072 .[OK] Num args: 416  Moves:5744
+2073 .[OK] Num args: 416  Moves:5744
+2074 .[OK] Num args: 416  Moves:5744
+2075 .[OK] Num args: 416  Moves:5744
+2075 [MEMORY OK]
+2076 .[OK] Num args: 417  Moves:5759
+2077 .[OK] Num args: 417  Moves:5759
+2078 .[OK] Num args: 417  Moves:5759
+2079 .[OK] Num args: 417  Moves:5759
+2080 .[OK] Num args: 417  Moves:5759
+2080 [MEMORY OK]
+2081 .[OK] Num args: 418  Moves:5773
+2082 .[OK] Num args: 418  Moves:5773
+2083 .[OK] Num args: 418  Moves:5773
+2084 .[OK] Num args: 418  Moves:5773
+2085 .[OK] Num args: 418  Moves:5773
+2085 [MEMORY OK]
+2086 .[OK] Num args: 419  Moves:5787
+2087 .[OK] Num args: 419  Moves:5787
+2088 .[OK] Num args: 419  Moves:5787
+2089 .[OK] Num args: 419  Moves:5787
+2090 .[OK] Num args: 419  Moves:5787
+2090 [MEMORY OK]
+2091 .[OK] Num args: 420  Moves:5800
+2092 .[OK] Num args: 420  Moves:5800
+2093 .[OK] Num args: 420  Moves:5800
+2094 .[OK] Num args: 420  Moves:5800
+2095 .[OK] Num args: 420  Moves:5800
+2095 [MEMORY OK]
+2096 .[OK] Num args: 421  Moves:5814
+2097 .[OK] Num args: 421  Moves:5814
+2098 .[OK] Num args: 421  Moves:5814
+2099 .[OK] Num args: 421  Moves:5814
+2100 .[OK] Num args: 421  Moves:5814
+2100 [MEMORY OK]
+2101 .[OK] Num args: 422  Moves:5827
+2102 .[OK] Num args: 422  Moves:5827
+2103 .[OK] Num args: 422  Moves:5827
+2104 .[OK] Num args: 422  Moves:5827
+2105 .[OK] Num args: 422  Moves:5827
+2105 [MEMORY OK]
+2106 .[OK] Num args: 423  Moves:5840
+2107 .[OK] Num args: 423  Moves:5840
+2108 .[OK] Num args: 423  Moves:5840
+2109 .[OK] Num args: 423  Moves:5840
+2110 .[OK] Num args: 423  Moves:5840
+2110 [MEMORY OK]
+2111 .[OK] Num args: 424  Moves:5852
+2112 .[OK] Num args: 424  Moves:5852
+2113 .[OK] Num args: 424  Moves:5852
+2114 .[OK] Num args: 424  Moves:5852
+2115 .[OK] Num args: 424  Moves:5852
+2115 [MEMORY OK]
+2116 .[OK] Num args: 425  Moves:5866
+2117 .[OK] Num args: 425  Moves:5866
+2118 .[OK] Num args: 425  Moves:5866
+2119 .[OK] Num args: 425  Moves:5866
+2120 .[OK] Num args: 425  Moves:5866
+2120 [MEMORY OK]
+2121 .[OK] Num args: 426  Moves:5879
+2122 .[OK] Num args: 426  Moves:5879
+2123 .[OK] Num args: 426  Moves:5879
+2124 .[OK] Num args: 426  Moves:5879
+2125 .[OK] Num args: 426  Moves:5879
+2125 [MEMORY OK]
+2126 .[OK] Num args: 427  Moves:5892
+2127 .[OK] Num args: 427  Moves:5892
+2128 .[OK] Num args: 427  Moves:5892
+2129 .[OK] Num args: 427  Moves:5892
+2130 .[OK] Num args: 427  Moves:5892
+2130 [MEMORY OK]
+2131 .[OK] Num args: 428  Moves:5904
+2132 .[OK] Num args: 428  Moves:5904
+2133 .[OK] Num args: 428  Moves:5904
+2134 .[OK] Num args: 428  Moves:5904
+2135 .[OK] Num args: 428  Moves:5904
+2135 [MEMORY OK]
+2136 .[OK] Num args: 429  Moves:5917
+2137 .[OK] Num args: 429  Moves:5917
+2138 .[OK] Num args: 429  Moves:5917
+2139 .[OK] Num args: 429  Moves:5917
+2140 .[OK] Num args: 429  Moves:5917
+2140 [MEMORY OK]
+2141 .[OK] Num args: 430  Moves:5929
+2142 .[OK] Num args: 430  Moves:5929
+2143 .[OK] Num args: 430  Moves:5929
+2144 .[OK] Num args: 430  Moves:5929
+2145 .[OK] Num args: 430  Moves:5929
+2145 [MEMORY OK]
+2146 .[OK] Num args: 431  Moves:5941
+2147 .[OK] Num args: 431  Moves:5941
+2148 .[OK] Num args: 431  Moves:5941
+2149 .[OK] Num args: 431  Moves:5941
+2150 .[OK] Num args: 431  Moves:5941
+2150 [MEMORY OK]
+2151 .[OK] Num args: 432  Moves:5952
+2152 .[OK] Num args: 432  Moves:5952
+2153 .[OK] Num args: 432  Moves:5952
+2154 .[OK] Num args: 432  Moves:5952
+2155 .[OK] Num args: 432  Moves:5952
+2155 [MEMORY OK]
+2156 .[OK] Num args: 433  Moves:5966
+2157 .[OK] Num args: 433  Moves:5966
+2158 .[OK] Num args: 433  Moves:5966
+2159 .[OK] Num args: 433  Moves:5966
+2160 .[OK] Num args: 433  Moves:5966
+2160 [MEMORY OK]
+2161 .[OK] Num args: 434  Moves:5979
+2162 .[OK] Num args: 434  Moves:5979
+2163 .[OK] Num args: 434  Moves:5979
+2164 .[OK] Num args: 434  Moves:5979
+2165 .[OK] Num args: 434  Moves:5979
+2165 [MEMORY OK]
+2166 .[OK] Num args: 435  Moves:5992
+2167 .[OK] Num args: 435  Moves:5992
+2168 .[OK] Num args: 435  Moves:5992
+2169 .[OK] Num args: 435  Moves:5992
+2170 .[OK] Num args: 435  Moves:5992
+2170 [MEMORY OK]
+2171 .[OK] Num args: 436  Moves:6004
+2172 .[OK] Num args: 436  Moves:6004
+2173 .[OK] Num args: 436  Moves:6004
+2174 .[OK] Num args: 436  Moves:6004
+2175 .[OK] Num args: 436  Moves:6004
+2175 [MEMORY OK]
+2176 .[OK] Num args: 437  Moves:6017
+2177 .[OK] Num args: 437  Moves:6017
+2178 .[OK] Num args: 437  Moves:6017
+2179 .[OK] Num args: 437  Moves:6017
+2180 .[OK] Num args: 437  Moves:6017
+2180 [MEMORY OK]
+2181 .[OK] Num args: 438  Moves:6029
+2182 .[OK] Num args: 438  Moves:6029
+2183 .[OK] Num args: 438  Moves:6029
+2184 .[OK] Num args: 438  Moves:6029
+2185 .[OK] Num args: 438  Moves:6029
+2185 [MEMORY OK]
+2186 .[OK] Num args: 439  Moves:6041
+2187 .[OK] Num args: 439  Moves:6041
+2188 .[OK] Num args: 439  Moves:6041
+2189 .[OK] Num args: 439  Moves:6041
+2190 .[OK] Num args: 439  Moves:6041
+2190 [MEMORY OK]
+2191 .[OK] Num args: 440  Moves:6052
+2192 .[OK] Num args: 440  Moves:6052
+2193 .[OK] Num args: 440  Moves:6052
+2194 .[OK] Num args: 440  Moves:6052
+2195 .[OK] Num args: 440  Moves:6052
+2195 [MEMORY OK]
+2196 .[OK] Num args: 441  Moves:6065
+2197 .[OK] Num args: 441  Moves:6065
+2198 .[OK] Num args: 441  Moves:6065
+2199 .[OK] Num args: 441  Moves:6065
+2200 .[OK] Num args: 441  Moves:6065
+2200 [MEMORY OK]
+2201 .[OK] Num args: 442  Moves:6077
+2202 .[OK] Num args: 442  Moves:6077
+2203 .[OK] Num args: 442  Moves:6077
+2204 .[OK] Num args: 442  Moves:6077
+2205 .[OK] Num args: 442  Moves:6077
+2205 [MEMORY OK]
+2206 .[OK] Num args: 443  Moves:6089
+2207 .[OK] Num args: 443  Moves:6089
+2208 .[OK] Num args: 443  Moves:6089
+2209 .[OK] Num args: 443  Moves:6089
+2210 .[OK] Num args: 443  Moves:6089
+2210 [MEMORY OK]
+2211 .[OK] Num args: 444  Moves:6100
+2212 .[OK] Num args: 444  Moves:6100
+2213 .[OK] Num args: 444  Moves:6100
+2214 .[OK] Num args: 444  Moves:6100
+2215 .[OK] Num args: 444  Moves:6100
+2215 [MEMORY OK]
+2216 .[OK] Num args: 445  Moves:6112
+2217 .[OK] Num args: 445  Moves:6112
+2218 .[OK] Num args: 445  Moves:6112
+2219 .[OK] Num args: 445  Moves:6112
+2220 .[OK] Num args: 445  Moves:6112
+2220 [MEMORY OK]
+2221 .[OK] Num args: 446  Moves:6123
+2222 .[OK] Num args: 446  Moves:6123
+2223 .[OK] Num args: 446  Moves:6123
+2224 .[OK] Num args: 446  Moves:6123
+2225 .[OK] Num args: 446  Moves:6123
+2225 [MEMORY OK]
+2226 .[OK] Num args: 447  Moves:6134
+2227 .[OK] Num args: 447  Moves:6134
+2228 .[OK] Num args: 447  Moves:6134
+2229 .[OK] Num args: 447  Moves:6134
+2230 .[OK] Num args: 447  Moves:6134
+2230 [MEMORY OK]
+2231 .[OK] Num args: 448  Moves:6144
+2232 .[OK] Num args: 448  Moves:6144
+2233 .[OK] Num args: 448  Moves:6144
+2234 .[OK] Num args: 448  Moves:6144
+2235 .[OK] Num args: 448  Moves:6144
+2235 [MEMORY OK]
+2236 .[OK] Num args: 449  Moves:6159
+2237 .[OK] Num args: 449  Moves:6159
+2238 .[OK] Num args: 449  Moves:6159
+2239 .[OK] Num args: 449  Moves:6159
+2240 .[OK] Num args: 449  Moves:6159
+2240 [MEMORY OK]
+2241 .[OK] Num args: 450  Moves:6173
+2242 .[OK] Num args: 450  Moves:6173
+2243 .[OK] Num args: 450  Moves:6173
+2244 .[OK] Num args: 450  Moves:6173
+2245 .[OK] Num args: 450  Moves:6173
+2245 [MEMORY OK]
+2246 .[OK] Num args: 451  Moves:6187
+2247 .[OK] Num args: 451  Moves:6187
+2248 .[OK] Num args: 451  Moves:6187
+2249 .[OK] Num args: 451  Moves:6187
+2250 .[OK] Num args: 451  Moves:6187
+2250 [MEMORY OK]
+2251 .[OK] Num args: 452  Moves:6200
+2252 .[OK] Num args: 452  Moves:6200
+2253 .[OK] Num args: 452  Moves:6200
+2254 .[OK] Num args: 452  Moves:6200
+2255 .[OK] Num args: 452  Moves:6200
+2255 [MEMORY OK]
+2256 .[OK] Num args: 453  Moves:6214
+2257 .[OK] Num args: 453  Moves:6214
+2258 .[OK] Num args: 453  Moves:6214
+2259 .[OK] Num args: 453  Moves:6214
+2260 .[OK] Num args: 453  Moves:6214
+2260 [MEMORY OK]
+2261 .[OK] Num args: 454  Moves:6227
+2262 .[OK] Num args: 454  Moves:6227
+2263 .[OK] Num args: 454  Moves:6227
+2264 .[OK] Num args: 454  Moves:6227
+2265 .[OK] Num args: 454  Moves:6227
+2265 [MEMORY OK]
+2266 .[OK] Num args: 455  Moves:6240
+2267 .[OK] Num args: 455  Moves:6240
+2268 .[OK] Num args: 455  Moves:6240
+2269 .[OK] Num args: 455  Moves:6240
+2270 .[OK] Num args: 455  Moves:6240
+2270 [MEMORY OK]
+2271 .[OK] Num args: 456  Moves:6252
+2272 .[OK] Num args: 456  Moves:6252
+2273 .[OK] Num args: 456  Moves:6252
+2274 .[OK] Num args: 456  Moves:6252
+2275 .[OK] Num args: 456  Moves:6252
+2275 [MEMORY OK]
+2276 .[OK] Num args: 457  Moves:6266
+2277 .[OK] Num args: 457  Moves:6266
+2278 .[OK] Num args: 457  Moves:6266
+2279 .[OK] Num args: 457  Moves:6266
+2280 .[OK] Num args: 457  Moves:6266
+2280 [MEMORY OK]
+2281 .[OK] Num args: 458  Moves:6279
+2282 .[OK] Num args: 458  Moves:6279
+2283 .[OK] Num args: 458  Moves:6279
+2284 .[OK] Num args: 458  Moves:6279
+2285 .[OK] Num args: 458  Moves:6279
+2285 [MEMORY OK]
+2286 .[OK] Num args: 459  Moves:6292
+2287 .[OK] Num args: 459  Moves:6292
+2288 .[OK] Num args: 459  Moves:6292
+2289 .[OK] Num args: 459  Moves:6292
+2290 .[OK] Num args: 459  Moves:6292
+2290 [MEMORY OK]
+2291 .[OK] Num args: 460  Moves:6304
+2292 .[OK] Num args: 460  Moves:6304
+2293 .[OK] Num args: 460  Moves:6304
+2294 .[OK] Num args: 460  Moves:6304
+2295 .[OK] Num args: 460  Moves:6304
+2295 [MEMORY OK]
+2296 .[OK] Num args: 461  Moves:6317
+2297 .[OK] Num args: 461  Moves:6317
+2298 .[OK] Num args: 461  Moves:6317
+2299 .[OK] Num args: 461  Moves:6317
+2300 .[OK] Num args: 461  Moves:6317
+2300 [MEMORY OK]
+2301 .[OK] Num args: 462  Moves:6329
+2302 .[OK] Num args: 462  Moves:6329
+2303 .[OK] Num args: 462  Moves:6329
+2304 .[OK] Num args: 462  Moves:6329
+2305 .[OK] Num args: 462  Moves:6329
+2305 [MEMORY OK]
+2306 .[OK] Num args: 463  Moves:6341
+2307 .[OK] Num args: 463  Moves:6341
+2308 .[OK] Num args: 463  Moves:6341
+2309 .[OK] Num args: 463  Moves:6341
+2310 .[OK] Num args: 463  Moves:6341
+2310 [MEMORY OK]
+2311 .[OK] Num args: 464  Moves:6352
+2312 .[OK] Num args: 464  Moves:6352
+2313 .[OK] Num args: 464  Moves:6352
+2314 .[OK] Num args: 464  Moves:6352
+2315 .[OK] Num args: 464  Moves:6352
+2315 [MEMORY OK]
+2316 .[OK] Num args: 465  Moves:6366
+2317 .[OK] Num args: 465  Moves:6366
+2318 .[OK] Num args: 465  Moves:6366
+2319 .[OK] Num args: 465  Moves:6366
+2320 .[OK] Num args: 465  Moves:6366
+2320 [MEMORY OK]
+2321 .[OK] Num args: 466  Moves:6379
+2322 .[OK] Num args: 466  Moves:6379
+2323 .[OK] Num args: 466  Moves:6379
+2324 .[OK] Num args: 466  Moves:6379
+2325 .[OK] Num args: 466  Moves:6379
+2325 [MEMORY OK]
+2326 .[OK] Num args: 467  Moves:6392
+2327 .[OK] Num args: 467  Moves:6392
+2328 .[OK] Num args: 467  Moves:6392
+2329 .[OK] Num args: 467  Moves:6392
+2330 .[OK] Num args: 467  Moves:6392
+2330 [MEMORY OK]
+2331 .[OK] Num args: 468  Moves:6404
+2332 .[OK] Num args: 468  Moves:6404
+2333 .[OK] Num args: 468  Moves:6404
+2334 .[OK] Num args: 468  Moves:6404
+2335 .[OK] Num args: 468  Moves:6404
+2335 [MEMORY OK]
+2336 .[OK] Num args: 469  Moves:6417
+2337 .[OK] Num args: 469  Moves:6417
+2338 .[OK] Num args: 469  Moves:6417
+2339 .[OK] Num args: 469  Moves:6417
+2340 .[OK] Num args: 469  Moves:6417
+2340 [MEMORY OK]
+2341 .[OK] Num args: 470  Moves:6429
+2342 .[OK] Num args: 470  Moves:6429
+2343 .[OK] Num args: 470  Moves:6429
+2344 .[OK] Num args: 470  Moves:6429
+2345 .[OK] Num args: 470  Moves:6429
+2345 [MEMORY OK]
+2346 .[OK] Num args: 471  Moves:6441
+2347 .[OK] Num args: 471  Moves:6441
+2348 .[OK] Num args: 471  Moves:6441
+2349 .[OK] Num args: 471  Moves:6441
+2350 .[OK] Num args: 471  Moves:6441
+2350 [MEMORY OK]
+2351 .[OK] Num args: 472  Moves:6452
+2352 .[OK] Num args: 472  Moves:6452
+2353 .[OK] Num args: 472  Moves:6452
+2354 .[OK] Num args: 472  Moves:6452
+2355 .[OK] Num args: 472  Moves:6452
+2355 [MEMORY OK]
+2356 .[OK] Num args: 473  Moves:6465
+2357 .[OK] Num args: 473  Moves:6465
+2358 .[OK] Num args: 473  Moves:6465
+2359 .[OK] Num args: 473  Moves:6465
+2360 .[OK] Num args: 473  Moves:6465
+2360 [MEMORY OK]
+2361 .[OK] Num args: 474  Moves:6477
+2362 .[OK] Num args: 474  Moves:6477
+2363 .[OK] Num args: 474  Moves:6477
+2364 .[OK] Num args: 474  Moves:6477
+2365 .[OK] Num args: 474  Moves:6477
+2365 [MEMORY OK]
+2366 .[OK] Num args: 475  Moves:6489
+2367 .[OK] Num args: 475  Moves:6489
+2368 .[OK] Num args: 475  Moves:6489
+2369 .[OK] Num args: 475  Moves:6489
+2370 .[OK] Num args: 475  Moves:6489
+2370 [MEMORY OK]
+2371 .[OK] Num args: 476  Moves:6500
+2372 .[OK] Num args: 476  Moves:6500
+2373 .[OK] Num args: 476  Moves:6500
+2374 .[OK] Num args: 476  Moves:6500
+2375 .[OK] Num args: 476  Moves:6500
+2375 [MEMORY OK]
+2376 .[OK] Num args: 477  Moves:6512
+2377 .[OK] Num args: 477  Moves:6512
+2378 .[OK] Num args: 477  Moves:6512
+2379 .[OK] Num args: 477  Moves:6512
+2380 .[OK] Num args: 477  Moves:6512
+2380 [MEMORY OK]
+2381 .[OK] Num args: 478  Moves:6523
+2382 .[OK] Num args: 478  Moves:6523
+2383 .[OK] Num args: 478  Moves:6523
+2384 .[OK] Num args: 478  Moves:6523
+2385 .[OK] Num args: 478  Moves:6523
+2385 [MEMORY OK]
+2386 .[OK] Num args: 479  Moves:6534
+2387 .[OK] Num args: 479  Moves:6534
+2388 .[OK] Num args: 479  Moves:6534
+2389 .[OK] Num args: 479  Moves:6534
+2390 .[OK] Num args: 479  Moves:6534
+2390 [MEMORY OK]
+2391 .[OK] Num args: 480  Moves:6544
+2392 .[OK] Num args: 480  Moves:6544
+2393 .[OK] Num args: 480  Moves:6544
+2394 .[OK] Num args: 480  Moves:6544
+2395 .[OK] Num args: 480  Moves:6544
+2395 [MEMORY OK]
+2396 .[OK] Num args: 481  Moves:6558
+2397 .[OK] Num args: 481  Moves:6558
+2398 .[OK] Num args: 481  Moves:6558
+2399 .[OK] Num args: 481  Moves:6558
+2400 .[OK] Num args: 481  Moves:6558
+2400 [MEMORY OK]
+2401 .[OK] Num args: 482  Moves:6571
+2402 .[OK] Num args: 482  Moves:6571
+2403 .[OK] Num args: 482  Moves:6571
+2404 .[OK] Num args: 482  Moves:6571
+2405 .[OK] Num args: 482  Moves:6571
+2405 [MEMORY OK]
+2406 .[OK] Num args: 483  Moves:6584
+2407 .[OK] Num args: 483  Moves:6584
+2408 .[OK] Num args: 483  Moves:6584
+2409 .[OK] Num args: 483  Moves:6584
+2410 .[OK] Num args: 483  Moves:6584
+2410 [MEMORY OK]
+2411 .[OK] Num args: 484  Moves:6596
+2412 .[OK] Num args: 484  Moves:6596
+2413 .[OK] Num args: 484  Moves:6596
+2414 .[OK] Num args: 484  Moves:6596
+2415 .[OK] Num args: 484  Moves:6596
+2415 [MEMORY OK]
+2416 .[OK] Num args: 485  Moves:6609
+2417 .[OK] Num args: 485  Moves:6609
+2418 .[OK] Num args: 485  Moves:6609
+2419 .[OK] Num args: 485  Moves:6609
+2420 .[OK] Num args: 485  Moves:6609
+2420 [MEMORY OK]
+2421 .[OK] Num args: 486  Moves:6621
+2422 .[OK] Num args: 486  Moves:6621
+2423 .[OK] Num args: 486  Moves:6621
+2424 .[OK] Num args: 486  Moves:6621
+2425 .[OK] Num args: 486  Moves:6621
+2425 [MEMORY OK]
+2426 .[OK] Num args: 487  Moves:6633
+2427 .[OK] Num args: 487  Moves:6633
+2428 .[OK] Num args: 487  Moves:6633
+2429 .[OK] Num args: 487  Moves:6633
+2430 .[OK] Num args: 487  Moves:6633
+2430 [MEMORY OK]
+2431 .[OK] Num args: 488  Moves:6644
+2432 .[OK] Num args: 488  Moves:6644
+2433 .[OK] Num args: 488  Moves:6644
+2434 .[OK] Num args: 488  Moves:6644
+2435 .[OK] Num args: 488  Moves:6644
+2435 [MEMORY OK]
+2436 .[OK] Num args: 489  Moves:6657
+2437 .[OK] Num args: 489  Moves:6657
+2438 .[OK] Num args: 489  Moves:6657
+2439 .[OK] Num args: 489  Moves:6657
+2440 .[OK] Num args: 489  Moves:6657
+2440 [MEMORY OK]
+2441 .[OK] Num args: 490  Moves:6669
+2442 .[OK] Num args: 490  Moves:6669
+2443 .[OK] Num args: 490  Moves:6669
+2444 .[OK] Num args: 490  Moves:6669
+2445 .[OK] Num args: 490  Moves:6669
+2445 [MEMORY OK]
+2446 .[OK] Num args: 491  Moves:6681
+2447 .[OK] Num args: 491  Moves:6681
+2448 .[OK] Num args: 491  Moves:6681
+2449 .[OK] Num args: 491  Moves:6681
+2450 .[OK] Num args: 491  Moves:6681
+2450 [MEMORY OK]
+2451 .[OK] Num args: 492  Moves:6692
+2452 .[OK] Num args: 492  Moves:6692
+2453 .[OK] Num args: 492  Moves:6692
+2454 .[OK] Num args: 492  Moves:6692
+2455 .[OK] Num args: 492  Moves:6692
+2455 [MEMORY OK]
+2456 .[OK] Num args: 493  Moves:6704
+2457 .[OK] Num args: 493  Moves:6704
+2458 .[OK] Num args: 493  Moves:6704
+2459 .[OK] Num args: 493  Moves:6704
+2460 .[OK] Num args: 493  Moves:6704
+2460 [MEMORY OK]
+2461 .[OK] Num args: 494  Moves:6715
+2462 .[OK] Num args: 494  Moves:6715
+2463 .[OK] Num args: 494  Moves:6715
+2464 .[OK] Num args: 494  Moves:6715
+2465 .[OK] Num args: 494  Moves:6715
+2465 [MEMORY OK]
+2466 .[OK] Num args: 495  Moves:6726
+2467 .[OK] Num args: 495  Moves:6726
+2468 .[OK] Num args: 495  Moves:6726
+2469 .[OK] Num args: 495  Moves:6726
+2470 .[OK] Num args: 495  Moves:6726
+2470 [MEMORY OK]
+2471 .[OK] Num args: 496  Moves:6736
+2472 .[OK] Num args: 496  Moves:6736
+2473 .[OK] Num args: 496  Moves:6736
+2474 .[OK] Num args: 496  Moves:6736
+2475 .[OK] Num args: 496  Moves:6736
+2475 [MEMORY OK]
+2476 .[OK] Num args: 497  Moves:6749
+2477 .[OK] Num args: 497  Moves:6749
+2478 .[OK] Num args: 497  Moves:6749
+2479 .[OK] Num args: 497  Moves:6749
+2480 .[OK] Num args: 497  Moves:6749
+2480 [MEMORY OK]
+2481 .[OK] Num args: 498  Moves:6761
+2482 .[OK] Num args: 498  Moves:6761
+2483 .[OK] Num args: 498  Moves:6761
+2484 .[OK] Num args: 498  Moves:6761
+2485 .[OK] Num args: 498  Moves:6761
+2485 [MEMORY OK]
+2486 .[OK] Num args: 499  Moves:6773
+2487 .[OK] Num args: 499  Moves:6773
+2488 .[OK] Num args: 499  Moves:6773
+2489 .[OK] Num args: 499  Moves:6773
+2490 .[OK] Num args: 499  Moves:6773
+2490 [MEMORY OK]
+2491 .[OK] Num args: 500  Moves:6784
+2492 .[OK] Num args: 500  Moves:6784
+2493 .[OK] Num args: 500  Moves:6784
+2494 .[OK] Num args: 500  Moves:6784
+2495 .[OK] Num args: 500  Moves:6784
+2495 [MEMORY OK]
+2496 .[OK] Num args: 501  Moves:6796
+2497 .[OK] Num args: 501  Moves:6796
+2498 .[OK] Num args: 501  Moves:6796
+2499 .[OK] Num args: 501  Moves:6796
+2500 .[OK] Num args: 501  Moves:6796
+2500 [MEMORY OK]
+
+Congrats , all tests have been completed successfully 🥳✅

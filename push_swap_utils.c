@@ -13,6 +13,17 @@
 #include "push_swap.h"
 #include <limits.h>
 
+int is_in_int_arr(int i, int *arr, int size)
+{
+	while (size--)
+	{
+		if (i == arr[0])
+			return (1);
+		arr++;
+	}
+	return (0);
+}
+
 // perform ra/rb/rr/rrr first, finaly pa
 void	perform_move(t_ctx *ctx, t_move *move)
 {

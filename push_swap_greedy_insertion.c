@@ -64,6 +64,7 @@ t_move	calc_cost(t_ctx *ctx, t_list *stack_b_node, int pos_b)
 	return (move);
 }
 
+// calc best cost move to any of b to sorted a
 t_move	calc_best_cost_move(t_ctx *ctx)
 {
 	int		pos_b;

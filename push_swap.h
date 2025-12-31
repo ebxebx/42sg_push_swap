@@ -75,4 +75,7 @@ t_list		*find_smallest_larger(t_list *a, int x_rank);
 t_list		*find_min_rank(t_list *a);
 t_list		*find_max_rank(t_list *a);
 
+
+int			is_in_int_arr(int i, int *arr, int size);
+
 #endif

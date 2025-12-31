@@ -70,30 +70,25 @@ int check_rank(t_list *stack)
 }
 
 // circular list have max drop_count == 1
-int check_circular_list(t_list *stack)
+int check_circular_list(t_list *stack, int size_a)
 {
 	t_list *current;
 	t_data *data;
 	int		drop_count;
 
+	if (size_a == 0)
+		return (0);
 	drop_count = 0;
 	current = stack;
-	while (current)
+	while (size_a--)
 	{
 		data = (t_data *)current->content;
-		// printf("Checking node with Value: %d, Rank: %d\n",data->value, data->rank);
-		if (current->next)
-		{
-			// printf("Next node's Value: %d, Rank: %d\n",
-				// ((t_data *)current->next->content)->value,
-				// ((t_data *)current->next->content)->rank);
-			if (data->value > ((t_data *)current->next->content)->value)
-			{
-				drop_count++;
-				if (drop_count > 1)
-					return (0);
-			}
-		}
+		if (current->next && data->value > ((t_data *)current->next->content)->value)
+			drop_count++;
+		else if (data->value > ((t_data *)stack->content)->value)
+			drop_count++;
+		if (drop_count > 1)
+			return (0);
         current = current->next;
 	}
 	return (1);
@@ -455,7 +450,7 @@ int	calc_chunks(t_ctx *ctx)
 		return (8);
 	else if (ctx->size_a < 400)
 		return (9);
-	else if (ctx->size_a < 500)
+	else if (ctx->size_a <= 500)
 		return (10);
 	else
 		return (11);
@@ -472,7 +467,7 @@ void sort_small(t_ctx *ctx)
 	t_data	*data1;
 	t_data	*data2;
 	t_data	*data3;
-	if (ctx->size_a == 3)
+	if (ctx->size_a >= 3)
 	{
 		// print_stack2(ctx->a, "Sort small start:\n");
 		data1 = getData(ctx->a->content);
@@ -486,8 +481,23 @@ void sort_small(t_ctx *ctx)
 			// 1 -> 3 -> 2
 			rotate(&(ctx->a), &(ctx->b), 'a', 1);
 			swap(&(ctx->a), 'a');
-			rotate_reverse(&(ctx->a), &(ctx->b), 'a', 1);
+			// rotate_reverse(&(ctx->a), &(ctx->b), 'a', 1);
 		}
+		// // 3rd > 4th
+		// if (ctx->size_a == 5 && 
+		// 	data3->rank > getData(ctx->a->next->next->next->content)->rank)
+		// {	
+		// 	rotate(&(ctx->a), &(ctx->b), 'a', 2);
+		// 	swap(&(ctx->a), 'a');
+		// }
+		// else
+		// // 4th
+		// if (ctx->size_a == 5 && 
+		// 	data3->rank > getData(ctx->a->next->next->next->next->content)->rank)
+		// {	
+		// 	rotate_reverse(&(ctx->a), &(ctx->b), 'a', 2);
+		// 	swap(&(ctx->a), 'a');
+		// }
 		// print_stack2(ctx->a, "Sort small end:\n");
 	}
 }
@@ -504,7 +514,8 @@ void	chunking(t_ctx *ctx)
 	int chunk_size;
 	int	i;
 
-	chunks = calc_chunks(ctx);
+	 chunks = calc_chunks(ctx);
+	//chunks = 10; // best for 500
 	chunk_size = ctx->size_a / chunks;
 	i = 0;
 	int from = 0;
@@ -518,11 +529,11 @@ void	chunking(t_ctx *ctx)
 			// if (node)
 			// 	printf("node->rank: %d", ((t_data *)(node->content))->rank);
 			to = ((t_data *)(node->content))->rank;
-			// if (to - from >= 6)
-			// 	to -= 5;
+			if (to - from + 1 > 3)
+			 	to -= 3;
 			// else
 			// left one only, because need in sort order
-				to -= 1;
+			//	to -= 1;
 		}
 		else
 			to = from + chunk_size - 1;
@@ -534,13 +545,41 @@ void	chunking(t_ctx *ctx)
 			if (from <= data->rank && data->rank <= to)
 			{
 				push(&(ctx->a), &(ctx->b), 'b', 1);
+				if (data->rank <= (to - from / 2))
+					rotate(&(ctx->a), &(ctx->b), 'b', 1);
 				ctx->size_a--;
 				ctx->size_b++;
 				j--;
 			}
 			else
 			{
-				rotate(&(ctx->a), &(ctx->b), 'a', 1);
+				// rotate(&(ctx->a), &(ctx->b), 'a', 1);
+
+				// calc which node is best to move, worse than just rotate
+				t_move	best_move;
+				t_move	move;
+				t_list	*node;
+				best_move.total = INT_MAX;
+				node = ctx->a;
+				while (node)
+				{
+					data = (t_data *)(node->content);
+					if (from <= data->rank && data->rank <= to)
+					{
+						move.ra = calc_rot_cost(calc_index_of_node(ctx->a, node), ctx->size_a);
+						move.total = ft_abs(move.ra);
+
+						if (best_move.total > move.total)
+							best_move = move;
+					}
+					node = node->next;
+				}
+
+				// printf("best_move.ra: %d\n", best_move.ra);
+				if (best_move.ra > 0)
+					rotate(&(ctx->a), &(ctx->b), 'a', best_move.ra);
+				else if (best_move.ra < 0)
+					rotate_reverse(&(ctx->a), &(ctx->b), 'a', -best_move.ra);
 			}
 		}
 		from = to + 1;		
@@ -548,8 +587,41 @@ void	chunking(t_ctx *ctx)
 		// printf("Stack B after chunking:\n");
 		// print_stack(ctx->b);
 	}
-	// printf("Stack A after chunking:\n");
-	// print_stack(ctx->a);
+	// print_stack2(ctx->a, "Stack A after chunking:\n");
+	if (!check_circular_list(ctx->a, ctx->size_a))
+	{
+		sort_small(ctx);
+		// print_stack2(ctx->a, "Stack A after sort small:\n");
+	}
+}
+
+void fix_order_a(t_ctx *ctx)
+{
+	int	cost_a;
+	
+	cost_a = calc_rot_cost(calc_index_of_node(ctx->a, find_min_rank(ctx->a)), ctx->size_a);
+	if (cost_a > 0)
+	{
+		rotate(&(ctx->a), &(ctx->b), 'a', cost_a);
+	}
+	else if (cost_a < 0)
+	{
+		rotate_reverse(&(ctx->a), &(ctx->b), 'a', -cost_a);
+	}
+}
+
+int	last_2_reversed(t_list *stack)
+{
+	t_list *prev;
+
+	prev = stack;
+	while(stack && stack->next)
+	{
+		prev = stack;
+		stack = stack->next;
+	}
+	// printf("prev: %p, stack: %p\n", prev, stack);
+	return (getData(prev->content)->rank > getData(stack->content)->rank);
 }
 
 int	main(int ac, char **av)
@@ -574,36 +646,31 @@ int	main(int ac, char **av)
 	init_cache_a(&ctx);
 	init_cache_b(&ctx);
 
-	if (check_circular_list(ctx.a))
-	{
-		int	cost_a = calc_rot_cost(calc_index_of_node(ctx.a, find_min_rank(ctx.a)), ctx.size_a);
-		if (cost_a > 0)
-		{
-			rotate(&(ctx.a), &(ctx.b), 'a', cost_a);
-		}
-		else if (cost_a < 0)
-		{
-			rotate_reverse(&(ctx.a), &(ctx.b), 'a', -cost_a);
-		}
-
-		if (check_order(ctx.a))
-		{
-			// print_stack2(ctx.a, "Done!\n");
-			return (0);
-		}
-	}
-
-	sort_small(&ctx);
+	if (check_circular_list(ctx.a, ctx.size_a))
+		fix_order_a(&ctx);
 	if (check_order(ctx.a))
+		return (0);
+	if (ctx.size_a >= 3 && ctx.size_a <= 4)
 	{
-		// print_stack2(ctx.a, "Done!\n");
+		while (1)
+		{
+			sort_small(&ctx);
+			if (check_circular_list(ctx.a, ctx.size_a))
+				fix_order_a(&ctx);
+			if (check_order(ctx.a))
+				return (0);
+			if (last_2_reversed(ctx.a))
+				rotate_reverse(&(ctx.a), &(ctx.b), 'a', 1);
+			else
+				rotate(&(ctx.a), &(ctx.b), 'a', 1);
+			// print_stack2(ctx.a, "4-5:\n");			
+		}
 		return (0);
 	}
 
 	int sort = 1;
 	if (ac > 1 && ctx.size_a > 0)
 	{
-		// printf("ccc\n");
 		if (sort == 0) radix_sort(&(ctx.a));
 		else if (sort == 1) {
 		// Phase 1, Reduce Stage (push to B to reduce A)
@@ -613,10 +680,10 @@ int	main(int ac, char **av)
 
 		if (lis_size >= ctx.size_a / 2)
 		{
-			int	i;
+			// print_stack2(ctx.a, "LIS:\n");
 			while (ctx.size_a != lis_size)
 			{
-				i = 0;
+				/*int i = 0;
 				while (i < lis_size)
 				{
 					if (((t_data *)ctx.a->content)->rank == lis_arr[i])
@@ -625,12 +692,41 @@ int	main(int ac, char **av)
 						continue;
 					}
 					i++;
+				} */
+
+				// calc which node is best to move
+				t_move	best_move;
+				t_move	move;
+				t_list	*node;
+				best_move.total = INT_MAX;
+				node = ctx.a;
+				while (node)
+				{
+					if (!is_in_int_arr(getData(node->content)->rank, lis_arr, lis_size))
+					{
+						move.ra = calc_rot_cost(calc_index_of_node(ctx.a, node), ctx.size_a);
+						move.total = ft_abs(move.ra);
+
+						if (best_move.total > move.total)
+							best_move = move;
+					}
+					node = node->next;
 				}
+
+				if (best_move.ra > 0)
+					rotate(&(ctx.a), &(ctx.b), 'a', best_move.ra);
+				else if (best_move.ra < 0)
+					rotate_reverse(&(ctx.a), &(ctx.b), 'a', -best_move.ra);
+
 				// printf("LIS Rank: %d\n", lis_arr[i]);
 				push(&(ctx.a), &(ctx.b), 'b', 1);
 				ctx.size_a--;
 				ctx.size_b++;
 			}
+
+
+
+
 			// printf("Stack A after extracting LIS:\n");
 			// print_stack(stack_a);
 			// printf("Stack B after extracting LIS:\n");

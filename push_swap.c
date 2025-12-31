@@ -545,7 +545,8 @@ void	chunking(t_ctx *ctx)
 			if (from <= data->rank && data->rank <= to)
 			{
 				push(&(ctx->a), &(ctx->b), 'b', 1);
-				if (data->rank <= (to - from / 2))
+				// if (data->rank <= ((to - from) / 2)) // wrong
+				if (data->rank <= from + ((to - from) / 3)) // /3 or /4 or /5
 					rotate(&(ctx->a), &(ctx->b), 'b', 1);
 				ctx->size_a--;
 				ctx->size_b++;
@@ -553,8 +554,10 @@ void	chunking(t_ctx *ctx)
 			}
 			else
 			{
-				// rotate(&(ctx->a), &(ctx->b), 'a', 1);
-
+				int rot = 1;
+				if (rot == 1)
+					rotate(&(ctx->a), &(ctx->b), 'a', 1);
+				else{
 				// calc which node is best to move, worse than just rotate
 				t_move	best_move;
 				t_move	move;
@@ -580,6 +583,7 @@ void	chunking(t_ctx *ctx)
 					rotate(&(ctx->a), &(ctx->b), 'a', best_move.ra);
 				else if (best_move.ra < 0)
 					rotate_reverse(&(ctx->a), &(ctx->b), 'a', -best_move.ra);
+				}
 			}
 		}
 		from = to + 1;		
@@ -678,7 +682,7 @@ int	main(int ac, char **av)
 		int *lis_arr = NULL;
 		get_longest_increasing_subsequence(ctx.a, calc_stack_size(ctx.a), &lis_size, &lis_arr);
 
-		if (lis_size >= ctx.size_a / 2)
+		if (lis_size >= ctx.size_a / 3)
 		{
 			// print_stack2(ctx.a, "LIS:\n");
 			while (ctx.size_a != lis_size)
@@ -742,10 +746,17 @@ int	main(int ac, char **av)
 		t_move	move;
 		// init_cache_a(&ctx);
 		// init_cache_b(&ctx);
+		int k;
 		while (ctx.size_b)
 		{
 			// printf("size_b: %d\n", ctx.size_b);
-			move = calc_best_cost_move(&ctx);
+			k = 0;
+			if (ctx.size_b >= 150)
+				k = 12; // k = 12 / 8 / 16 for 500 nums
+			// if (k > (ctx.size_b / 2))
+			else
+				k = 0;
+			move = calc_best_cost_move(&ctx, k); 
 			perform_move(&ctx, &move);
 
 			// printf("Stack A after perform move:\n");
@@ -758,9 +769,12 @@ int	main(int ac, char **av)
 		// printf("Stack B after Greedy Insertion:\n");
 		// print_stack(ctx.b);
 
-		int final_rotate = calc_index_of_node(ctx.a, find_min_rank(ctx.a));
+		int final_rotate = calc_rot_cost(calc_index_of_node(ctx.a, find_min_rank(ctx.a)), ctx.size_a);
 		// printf("Final rotate: %d\n", final_rotate);
-		rotate(&(ctx.a), &(ctx.b), 'a', final_rotate);
+		if (final_rotate > 0)
+			rotate(&(ctx.a), &(ctx.b), 'a', final_rotate);
+		else
+			rotate_reverse(&(ctx.a), &(ctx.b), 'a', -final_rotate);
 		// printf("Stack A after final rotate:\n");
 		// print_stack(ctx.a);
 

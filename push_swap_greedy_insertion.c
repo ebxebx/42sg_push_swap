@@ -65,7 +65,8 @@ t_move	calc_cost(t_ctx *ctx, t_list *stack_b_node, int pos_b)
 }
 
 // calc best cost move to any of b to sorted a
-t_move	calc_best_cost_move(t_ctx *ctx)
+// k = pick from top/bottom k items
+t_move	calc_best_cost_move(t_ctx *ctx, int k)
 {
 	int		pos_b;
 	t_move	move;
@@ -78,9 +79,12 @@ t_move	calc_best_cost_move(t_ctx *ctx)
 	while (pos_b < ctx->size_b)
 	{
 		// Find the smallest cost
-		move = calc_cost(ctx, node_b, pos_b);
-		if (move.total < best_move.total)
-			best_move = move;
+		if (k <= 0 || pos_b < k || pos_b >= ctx->size_b - k)
+		{
+			move = calc_cost(ctx, node_b, pos_b);
+			if (move.total < best_move.total)
+				best_move = move;
+		}
 		node_b = node_b->next;
 		pos_b++;
 	}
@@ -89,7 +93,7 @@ t_move	calc_best_cost_move(t_ctx *ctx)
 
 // Return minimal signed rotation cost to bring position `pos` to top.
 // +k means rotate up k times (ra/rb),
-//	-k means reverse rotate k times (rra/rrb).
+// -k means reverse rotate k times (rra/rrb).
 int	calc_rot_cost(int pos, int size)
 {
 	int	up;

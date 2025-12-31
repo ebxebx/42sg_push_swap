@@ -63,11 +63,10 @@ int			bit_count(int max);
 
 int			calc_rot_cost(int pos, int size);
 int			combine_rr(int *cost_a, int *cost_b);
-t_move		calc_best_cost_move(t_ctx *ctx);
 void		perform_move(t_ctx *ctx, t_move *move);
 
 t_move		calc_cost(t_ctx *ctx, t_list *stack_b_node, int pos_b);
-t_move		calc_best_cost_move(t_ctx *ctx);
+t_move		calc_best_cost_move(t_ctx *ctx, int k);
 int			calc_rot_cost(int pos, int size);
 int			calc_index_of_node(t_list *stack, t_list *node);
 int			combine_rr(int *cost_a, int *cost_b);

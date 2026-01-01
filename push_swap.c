@@ -431,29 +431,16 @@ void	get_longest_increasing_subsequence(t_list *stack, int stack_size, int *lis_
 
 int	calc_chunks(t_ctx *ctx)
 {
-	if (ctx->size_a < 100)
-	{
-		if (80 < ctx->size_a)
-			return (4);
-		else if (50 < ctx->size_a && ctx->size_a < 80)
-			return (3);
-		else
-			return (2);
-	}
-	else if (ctx->size_a < 150)
-		return (5);
-	else if (ctx->size_a < 200)
-		return (6);
-	else if (ctx->size_a < 250)
-		return (7);
-	else if (ctx->size_a < 325)
-		return (8);
-	else if (ctx->size_a < 400)
-		return (9);
+	if (ctx->size_a <= 125)
+		return (1);
+	else if (ctx->size_a <= 250)
+		return (2);
+	else if (ctx->size_a <= 375)
+		return (3);
 	else if (ctx->size_a <= 500)
-		return (10);
+		return (4);
 	else
-		return (11);
+		return (5);
 	return (1);
 }
 

@@ -512,6 +512,7 @@ void	chunking(t_ctx *ctx)
 	// 300 -> 9
 	// 400 -> 10
 	// 500 -> 11 chunk
+	int small_size = 3;
 	int	chunks;
 	int chunk_size;
 	int	i;
@@ -546,7 +547,7 @@ void	chunking(t_ctx *ctx)
 			to = from + chunk_size - 1;
 		int j = to - from + 1;
 		// printf("from: %d, to: %d\n", from, to);
-		while (ctx->size_a > 3 && (
+		while (ctx->size_a > small_size && (
 			(j >= 1)
 			|| (
 				extra > 0 &&
@@ -745,9 +746,11 @@ int	main(int ac, char **av)
 		int *lis_arr = NULL;
 		get_longest_increasing_subsequence(ctx.a, calc_stack_size(ctx.a), &lis_size, &lis_arr);
 
-		if (lis_size >= ctx.size_a / 3)
+		// if (lis_size >= ctx.size_a / 3)
+		if (lis_size >= (ctx.size_a / 2) + 1)
 		{
-			// print_stack2(ctx.a, "LIS:\n");
+			// print_stack2(ctx.a, "LIS :\n");
+			// printf("LIS SIZE: %d\n", lis_size);
 			while (ctx.size_a != lis_size)
 			{
 				/*int i = 0;
@@ -814,9 +817,15 @@ int	main(int ac, char **av)
 		{
 			// printf("size_b: %d\n", ctx.size_b);
 			k = 0;
-			if (ctx.size_b >= 150)
-				k = 12; // k = 12 / 8 / 16 for 500 nums
+			if (ctx.size_b >= 200)
+			// 23 best
+				k = 24; // k = 12 / 8 / 16 for 500 nums
+			else if (ctx.size_b >= 150)
+			// 23 best
+				k = 23; // k = 12 / 8 / 16 for 500 nums
 			// if (k > (ctx.size_b / 2))
+			/*else if (ctx.size_b >= 125)
+				k = 30;*/
 			else
 				k = 0;
 			move = calc_best_cost_move(&ctx, k); 

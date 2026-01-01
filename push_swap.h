@@ -6,7 +6,7 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/26 12:37:32 by zchoo             #+#    #+#             */
-/*   Updated: 2025/12/29 20:44:40 by zchoo            ###   ########.fr       */
+/*   Updated: 2025/12/30 19:21:09 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void		print_stack(t_list *stack);
 t_data		*create_data(int value, int rank);
 int			bit_count(int max);
 
-int			calc_rot_cost(int rank, int size);
+int			calc_rot_cost(int pos, int size);
 int			combine_rr(int *cost_a, int *cost_b);
 t_move		calc_best_cost_move(t_ctx *ctx);
 void		perform_move(t_ctx *ctx, t_move *move);

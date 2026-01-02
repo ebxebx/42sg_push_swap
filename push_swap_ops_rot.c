@@ -6,7 +6,7 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 16:58:29 by zchoo             #+#    #+#             */
-/*   Updated: 2026/01/02 19:03:54 by zchoo            ###   ########.fr       */
+/*   Updated: 2026/01/02 20:25:17 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ra(t_ctx *ctx)
 
 void	rra(t_ctx *ctx)
 {
-	rot_up(&(ctx->a));
+	rot_down(&(ctx->a));
 	ft_printf("rra\n");
 	ctx->ops++;
 }
@@ -38,7 +38,7 @@ void	rb(t_ctx *ctx)
 
 void	rrb(t_ctx *ctx)
 {
-	rot_up(&(ctx->b));
+	rot_down(&(ctx->b));
 	ft_printf("rrb\n");
 	ctx->ops++;
 }

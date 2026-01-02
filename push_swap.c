@@ -6,7 +6,7 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/26 12:33:51 by zchoo             #+#    #+#             */
-/*   Updated: 2026/01/02 20:00:55 by zchoo            ###   ########.fr       */
+/*   Updated: 2026/01/02 21:04:57 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,16 +75,20 @@ int check_circular_list(t_list *stack, int size_a)
 	t_data *data;
 	int		drop_count;
 
+	print_stack(stack, "Check Circular List\n");
 	if (size_a == 0)
 		return (0);
 	drop_count = 0;
 	current = stack;
 	while (size_a--)
 	{
-		data = (t_data *)current->content;
-		if (current->next && data->value > ((t_data *)current->next->content)->value)
-			drop_count++;
-		else if (data->value > ((t_data *)stack->content)->value)
+		data = getData(current->content);
+		if (current->next)
+		{
+		 	if (data->rank > getData(current->next->content)->rank)
+				drop_count++;
+		}
+		else if (data->rank > ((t_data *)stack->content)->rank)
 			drop_count++;
 		if (drop_count > 1)
 			return (0);
@@ -108,7 +112,7 @@ int check_order(t_list *stack)
 			// ft_printf("Next node's Value: %d, Rank: %d\n",
 				// ((t_data *)current->next->content)->value,
 				// ((t_data *)current->next->content)->rank);
-			if (data->value > ((t_data *)current->next->content)->value)
+			if (data->rank > ((t_data *)current->next->content)->rank)
 				return (0);
 		}
         current = current->next;
@@ -437,18 +441,13 @@ int	last_2_reversed(t_list *stack)
 // pb by chunk
 void	chunking(t_ctx *ctx)
 {
-	// 100 -> 5 chunk
-	// 200 -> 7
-	// 300 -> 9
-	// 400 -> 10
-	// 500 -> 11 chunk
 	int small_size = 3;
 	int	chunks;
 	int chunk_size;
 	int	i;
 
-	 chunks = calc_chunks(ctx);
-	//chunks = 10; // best for 500
+	print_stack(ctx->a, "Chunking\n");
+	chunks = calc_chunks(ctx);
 	chunk_size = ctx->size_a / chunks;
 	i = 0;
 	int from = 0;
@@ -603,7 +602,9 @@ void fix_order_a(t_ctx *ctx)
 {
 	int	cost_a;
 	
-	cost_a = calc_rot_cost(calc_index_of_node(ctx->a, find_min_rank(ctx->a)), ctx->size_a);
+	print_stack(ctx->a, "Fix Order: A\n");
+	cost_a = calc_rot_cost(
+		calc_index_of_node(ctx->a, find_min_rank(ctx->a)), ctx->size_a);
 	if (cost_a != 0)
 		apply_rot_a(ctx, cost_a);
 }
@@ -627,8 +628,8 @@ int	main(int ac, char **av)
 	init_cache_a(&ctx);
 	init_cache_b(&ctx);
 
-	radix_sort(&ctx);
-	return (0);
+	// radix_sort(&ctx);
+	// return (0);
 
 	if (check_circular_list(ctx.a, ctx.size_a))
 		fix_order_a(&ctx);
@@ -662,6 +663,7 @@ int	main(int ac, char **av)
 		// if (lis_size >= ctx.size_a / 3)
 		if (lis_size >= (ctx.size_a / 2) + 1)
 		{
+			print_stack(ctx.a, "LIS\n");
 			while (ctx.size_a != lis_size)
 			{
 				/*int i = 0;
@@ -700,6 +702,8 @@ int	main(int ac, char **av)
 				// ft_printf("LIS Rank: %d\n", lis_arr[i]);
 				pb(&ctx);
 			}
+			print_stack(ctx.a, "Stack A after LIS\n");
+			print_stack(ctx.b, "Stack B after LIS\n");
 			free(lis_arr);
 		}
 		else
@@ -723,10 +727,14 @@ int	main(int ac, char **av)
 			else
 				k = 0;
 			move = calc_best_cost_move(&ctx, k); 
+			print_stack(ctx.a, "Stack A before exec move!\n");
 			execute_move(&ctx, move);
+			print_stack(ctx.a, "Stack A after exec move!\n");
 		}
+		print_stack(ctx.a, "Stack A before fix order!\n");
 		if (check_circular_list(ctx.a, ctx.size_a))
 			fix_order_a(&ctx);
+		print_stack(ctx.a, "Stack A Finish!\n");
 	}
 	else
 		ft_putstr_fd("Error\n", 2);

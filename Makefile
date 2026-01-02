@@ -10,8 +10,10 @@ TEST_CMD = ./$(NAME) 2 1 3
 LIBFT_DIR = ./libft
 LIBFT     = $(LIBFT_DIR)/libft.a
 
-SRCS = push_swap.c push_swap_utils.c move_stack.c push_swap_test.c \
-		push_swap_greedy_insertion.c
+SRCS = push_swap.c push_swap_utils.c \
+		push_swap_ops_rot.c push_swap_ops_rot_helper.c \
+		push_swap_ops_push.c push_swap_ops_swap.c push_swap_ops_apply.c \
+		push_swap_greedy_insertion.c push_swap_radix_sort.c
 OBJS = $(SRCS:.c=.o)
 
 CC = cc
@@ -21,6 +23,12 @@ LIBFT_FLAGS = -L$(LIBFT_DIR) -lft
 # Add dependency flags and derived files
 DEPFLAGS = -MMD -MP
 DEPS = $(SRCS:.c=.d)
+
+ifeq ($(DEBUG),1)
+	CFLAGS += -DDEBUG=1 -g3
+else
+	CFLAGS += -DDEBUG=0
+endif
 
 all: $(NAME)
 

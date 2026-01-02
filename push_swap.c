@@ -6,33 +6,32 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/26 12:33:51 by zchoo             #+#    #+#             */
-/*   Updated: 2025/12/30 19:38:27 by zchoo            ###   ########.fr       */
+/*   Updated: 2026/01/02 20:00:55 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "push_swap_ops.h"
 #include <limits.h>
 
-void print_stack2(t_list *stack, char *label)
-{
-	if (label && *label)
-		printf("%s", label);
-	print_stack(stack);
-}
-
-void print_stack(t_list *stack)
+void	print_stack(t_list *stack, char *label)
 {
 	t_list *current;
 	t_data *data;
+
+	if (!DEBUG)
+		return;
+	if (label && *label)
+		ft_printf("%s", label);
 
 	current = stack;
 	while (current)
 	{
 		data = (t_data *)current->content;
 		if (data)
-			printf("Value: %d, Rank: %d\n", data->value, data->rank);
+			ft_printf("Value: %d, Rank: %d\n", data->value, data->rank);
 		else
-			printf("Empty node\n");
+			ft_printf("Empty node\n");
 		current = current->next;
 	}
 }
@@ -47,10 +46,10 @@ int check_rank(t_list *stack)
 	while (current)
 	{
 		data = (t_data *)current->content;
-		// printf("Checking node with Value: %d, Rank: %d\n",data->value, data->rank);
+		// ft_printf("Checking node with Value: %d, Rank: %d\n",data->value, data->rank);
 		if (current->next)
 		{
-			// printf("Next node's Value: %d, Rank: %d\n",
+			// ft_printf("Next node's Value: %d, Rank: %d\n",
 				// ((t_data *)current->next->content)->value,
 				// ((t_data *)current->next->content)->rank);
 			if (!compare_rank(data, (t_data *)current->next->content))
@@ -58,7 +57,7 @@ int check_rank(t_list *stack)
 		}
 		else
 		{
-			// printf("First node's Value: %d, Rank: %d\n",
+			// ft_printf("First node's Value: %d, Rank: %d\n",
 				// ((t_data *)stack->content)->value,
 				// ((t_data *)stack->content)->rank);
 			if (!compare_rank(data, (t_data *)stack->content))
@@ -103,10 +102,10 @@ int check_order(t_list *stack)
 	while (current)
 	{
 		data = (t_data *)current->content;
-		// printf("Checking node with Value: %d, Rank: %d\n",data->value, data->rank);
+		// ft_printf("Checking node with Value: %d, Rank: %d\n",data->value, data->rank);
 		if (current->next)
 		{
-			// printf("Next node's Value: %d, Rank: %d\n",
+			// ft_printf("Next node's Value: %d, Rank: %d\n",
 				// ((t_data *)current->next->content)->value,
 				// ((t_data *)current->next->content)->rank);
 			if (data->value > ((t_data *)current->next->content)->value)
@@ -139,14 +138,14 @@ void update_rank(t_list *stack)
 	current = stack;
 	while (!check_rank(stack))
 	{
-		// printf("%d---->\n", i++);
+		// ft_printf("%d---->\n", i++);
 		swapped = 0;
 		data = (t_data *)current->content;
 		next = current->next;
 
 		while (next)
 		{
-			/* // printf("Comparing %d (rank %d) with %d (rank %d)\n",
+			/* // ft_printf("Comparing %d (rank %d) with %d (rank %d)\n",
 				((t_data *)next->content)->value, ((t_data *)next->content)->rank,
 				data->value, data->rank); */
 			if (!compare_rank(data, (t_data *)next->content))
@@ -155,21 +154,21 @@ void update_rank(t_list *stack)
 				data->rank = ((t_data *)next->content)->rank;
 				((t_data *)next->content)->rank = swapped;
 
-				/* // printf("Swapped ranks: %d <-> %d\n", data->rank, ((t_data *)next->content)->rank);
-				// printf("After swap: %d (rank %d), %d (rank %d)\n",
+				/* // ft_printf("Swapped ranks: %d <-> %d\n", data->rank, ((t_data *)next->content)->rank);
+				// ft_printf("After swap: %d (rank %d), %d (rank %d)\n",
 					data->value, data->rank,
 					((t_data *)next->content)->value, ((t_data *)next->content)->rank); */
 			}
 			next = next->next;
 		}
 
-		/* // printf("=====\n");
+		/* // ft_printf("=====\n");
 		// print_stack(stack); */
 		current = current->next;
 		if (!current)
 			current = stack;
 	}
-	// printf("+++++\n");
+	// ft_printf("+++++\n");
 }
 
 void compute_rank(t_list *stack)
@@ -183,7 +182,7 @@ void compute_rank(t_list *stack)
 	current = stack;
 	while (current)
 	{
-		// printf("%d---->\n", i++);
+		// ft_printf("%d---->\n", i++);
 		data = (t_data *)current->content;
 		next = stack;
 
@@ -194,11 +193,11 @@ void compute_rank(t_list *stack)
 			next = next->next;
 		}
 
-		// printf("=====\n");
+		// ft_printf("=====\n");
 		// print_stack(stack);
 		current = current->next;
 	}
-	// printf("+++++\n");
+	// ft_printf("+++++\n");
 }
 
 int duplicate(t_list *stack, int n)
@@ -230,11 +229,11 @@ int read_input(int ac, char **av, t_list **stack)
 		av_backup = av;
 		ac = ft_strarr_len(av) + offset;
 		offset = 0;
-		// printf("aaa\n");
+		// ft_printf("aaa\n");
 	}
 	while (ac >= 2)
 	{
-		// printf("bb\n");
+		// ft_printf("bb\n");
 		temp = ft_atoi(av[offset]);
 		if ((temp == 0 && av[offset][0] != '0')
 			|| duplicate(*stack, temp) )
@@ -284,58 +283,6 @@ int read_input(int ac, char **av, t_list **stack)
 	return (0);
 }
 
-int max_bits(t_list *stack)
-{
-	int max = 0;
-	t_list *current = stack;
-
-	while (current)
-	{
-		t_data *data = (t_data *)current->content;
-		if (data->rank > max)
-			max = data->rank;
-		current = current->next;
-	}
-	return (bit_count(max));
-}
-
-void radix_sort(t_list **stack_a)
-{
-	t_list *stack_b;
-	int		i;
-	int		j;
-	int		k;
-	int		bits;
-
-	stack_b = NULL;
-	i = 0;
-	bits = max_bits(*stack_a);
-	// printf("Max bits: %d\n", bits);
-	while (i < bits)
-	{
-		j = 0;
-		k = ft_lstsize(*stack_a);
-		while (j < k)
-		{
-			// Perform bitwise operations for each bit
-			if (((t_data *)(*stack_a)->content)->rank & (1 << i))
-				rotate(stack_a, &stack_b, 'a', 1);
-			else
-				push(stack_a, &stack_b, 'b', 1);
-			j++;
-		}
-
-		j = 0;
-		k = ft_lstsize(stack_b);
-		while (j++ < k)
-			push(stack_a, &stack_b, 'a', 1);
-		i++;
-	}
-	/* ft_putendl_fd("Stack A after sorting:", 1);
-	// print_stack(*stack_a);
-	ft_putendl_fd("Stack B after sorting:", 1);
-	// print_stack(stack_b); */
-}
 
 int	calc_stack_size(t_list *stack)
 {
@@ -369,7 +316,7 @@ void	get_longest_increasing_subsequence(t_list *stack, int stack_size, int *lis_
 	}
 	// while (i--)
 	// {
-	// 	// printf("Stack Rank[%d]: %d\n", i, arr[i]);
+	// 	// ft_printf("Stack Rank[%d]: %d\n", i, arr[i]);
 	// }
 
 	i = 0;
@@ -393,7 +340,7 @@ void	get_longest_increasing_subsequence(t_list *stack, int stack_size, int *lis_
 	}
 	// while (i--)
 	// {
-	// 	// printf("DP[%d]: %d, Prev[%d]: %d\n", i, dp[i], i, prev[i]);
+	// 	// ft_printf("DP[%d]: %d, Prev[%d]: %d\n", i, dp[i], i, prev[i]);
 	// }
 
 	*lis_size = 0;
@@ -407,8 +354,8 @@ void	get_longest_increasing_subsequence(t_list *stack, int stack_size, int *lis_
 		}
 		i++;
 	}
-	// printf("LIS Size: %d\n", *lis_size);
-	// printf("LIS Last: %d\n", last);
+	// ft_printf("LIS Size: %d\n", *lis_size);
+	// ft_printf("LIS Last: %d\n", last);
 	*lis_arr = malloc(sizeof(int) * (*lis_size));
 	if (!*lis_arr)
 		return ;
@@ -421,7 +368,7 @@ void	get_longest_increasing_subsequence(t_list *stack, int stack_size, int *lis_
 	i = 0;
 	while (i < *lis_size)
 	{
-		// printf("LIS Arr[%d]: %d\n", i, (*lis_arr)[i]);
+		// ft_printf("LIS Arr[%d]: %d\n", i, (*lis_arr)[i]);
 		i++;
 	}
 	free(arr);
@@ -456,36 +403,19 @@ void sort_small(t_ctx *ctx)
 	t_data	*data3;
 	if (ctx->size_a >= 3)
 	{
-		// print_stack2(ctx->a, "Sort small start:\n");
+		print_stack(ctx->a, "Sort small start:\n");
 		data1 = getData(ctx->a->content);
 		data2 = getData(ctx->a->next->content);
 		data3 = getData(ctx->a->next->next->content);
 		// 2 -> 1 -> 3
 		if (data1->rank > data2->rank)
-			swap(&(ctx->a), 'a');
+			sa(ctx);
 		else if (data2->rank > data3->rank)
 		{
 			// 1 -> 3 -> 2
-			rotate(&(ctx->a), &(ctx->b), 'a', 1);
-			swap(&(ctx->a), 'a');
-			// rotate_reverse(&(ctx->a), &(ctx->b), 'a', 1);
+			ra(ctx);
+			sa(ctx);
 		}
-		// // 3rd > 4th
-		// if (ctx->size_a == 5 && 
-		// 	data3->rank > getData(ctx->a->next->next->next->content)->rank)
-		// {	
-		// 	rotate(&(ctx->a), &(ctx->b), 'a', 2);
-		// 	swap(&(ctx->a), 'a');
-		// }
-		// else
-		// // 4th
-		// if (ctx->size_a == 5 && 
-		// 	data3->rank > getData(ctx->a->next->next->next->next->content)->rank)
-		// {	
-		// 	rotate_reverse(&(ctx->a), &(ctx->b), 'a', 2);
-		// 	swap(&(ctx->a), 'a');
-		// }
-		// print_stack2(ctx->a, "Sort small end:\n");
 	}
 }
 
@@ -499,7 +429,7 @@ int	last_2_reversed(t_list *stack)
 		prev = stack;
 		stack = stack->next;
 	}
-	// printf("prev: %p, stack: %p\n", prev, stack);
+	// ft_printf("prev: %p, stack: %p\n", prev, stack);
 	return (getData(prev->content)->rank > getData(stack->content)->rank);
 }
 
@@ -535,7 +465,7 @@ void	chunking(t_ctx *ctx)
 			t_list *node = NULL;
 			node = find_max_rank(ctx->a);
 			// if (node)
-			// 	printf("node->rank: %d", ((t_data *)(node->content))->rank);
+			// 	ft_printf("node->rank: %d", ((t_data *)(node->content))->rank);
 			to = ((t_data *)(node->content))->rank;
 			/* if (to - from + 1 > 3)
 			 	to -= 3;
@@ -546,7 +476,7 @@ void	chunking(t_ctx *ctx)
 		else
 			to = from + chunk_size - 1;
 		int j = to - from + 1;
-		// printf("from: %d, to: %d\n", from, to);
+		// ft_printf("from: %d, to: %d\n", from, to);
 		while (ctx->size_a > small_size && (
 			(j >= 1)
 			|| (
@@ -555,14 +485,12 @@ void	chunking(t_ctx *ctx)
 			)
 		)
 		{
-			// printf("i: %d, j: %d, size_a:%d\n", i, j, ctx->size_a);
-			// print_stack2(ctx->a, "CCC\n");
+			// ft_printf("i: %d, j: %d, size_a:%d\n", i, j, ctx->size_a);
+			// print_stack(ctx->a, "CCC\n");
 			data = (t_data *)(ctx->a->content);
 			if (from <= data->rank && data->rank <= to)
 			{
-				push(&(ctx->a), &(ctx->b), 'b', 1);
-				ctx->size_a--;
-				ctx->size_b++;
+				pb(ctx);
 				if (ctx->size_a == 0)
 				{
 					ctx->min_a = -1;
@@ -577,7 +505,7 @@ void	chunking(t_ctx *ctx)
 				//ctx->max_b = getData(find_max_rank(ctx->b)->content)->rank;
 				// if (data->rank <= ((to - from) / 2)) // wrong
 				if (data->rank <= from + ((to - from) / 3)) // /3 or /4 or /5
-					rotate(&(ctx->a), &(ctx->b), 'b', 1);
+					rb(ctx);
 				j--;
 				last_ra = 0;
 			}
@@ -586,7 +514,7 @@ void	chunking(t_ctx *ctx)
 				int rot = 1;
 				if (rot == 1)
 				{
-					rotate(&(ctx->a), &(ctx->b), 'a', 1);
+					ra(ctx);
 					last_ra++;
 				}
 				else{
@@ -610,16 +538,10 @@ void	chunking(t_ctx *ctx)
 					node = node->next;
 				}
 
-				// printf("best_move.ra: %d\n", best_move.ra);
-				if (best_move.ra > 0){
-					rotate(&(ctx->a), &(ctx->b), 'a', best_move.ra);
-					
-					last_ra++;
-
-				}
-				else if (best_move.ra < 0){
-					rotate_reverse(&(ctx->a), &(ctx->b), 'a', -best_move.ra);
-
+				// ft_printf("best_move.ra: %d\n", best_move.ra);
+				if (best_move.ra != 0)
+				{
+					apply_rot_a(ctx, best_move.ra);
 					last_ra++;
 				}
 				}
@@ -628,20 +550,20 @@ void	chunking(t_ctx *ctx)
 				(void) threhold;
 				(void) extra_max;
 /* 				if (last_ra > 50){
-					// printf("a:min/max: %d/%d, extra: %d, from: %d, to: %d\n", ctx->min_a, ctx->max_a, extra, from, to);
-					// print_stack2(ctx->b, "stack b, error: last_ra > 100\n");
-					// print_stack2(ctx->a, "stack a, error: last_ra > 100\n");
+					// ft_printf("a:min/max: %d/%d, extra: %d, from: %d, to: %d\n", ctx->min_a, ctx->max_a, extra, from, to);
+					// print_stack(ctx->b, "stack b, error: last_ra > 100\n");
+					// print_stack(ctx->a, "stack a, error: last_ra > 100\n");
 					exit(1);
 				}
 				if (last_ra >= threhold)
 				{
-					// printf("last_ra: %d\n", last_ra);
+					// ft_printf("last_ra: %d\n", last_ra);
 					// (void)extra_max;
 					if (extra <= extra_max)
 					{
 						extra += 8;
 						to = from + chunk_size - 1 + extra;
-						// printf("to updated: %d, extra: %d\n", to, extra);
+						// ft_printf("to updated: %d, extra: %d\n", to, extra);
 					}
 				} */
 
@@ -650,13 +572,13 @@ void	chunking(t_ctx *ctx)
 		// from = to + 1;		
 		from = ctx->min_a;		
 		i++;
-		// print_stack2(ctx->b, "Stack B after chunking:\n");
+		// print_stack(ctx->b, "Stack B after chunking:\n");
 	}
-	// print_stack2(ctx->a, "Stack A after chunking:\n");
+	// print_stack(ctx->a, "Stack A after chunking:\n");
 	if (!check_circular_list(ctx->a, ctx->size_a))
 	{
 		// sort_small(ctx);
-		// print_stack2(ctx->a, "Stack A after sort small:\n");
+		// print_stack(ctx->a, "Stack A after sort small:\n");
 
 		if (ctx->size_a >= 3 && ctx->size_a <= 4)
 		{
@@ -668,10 +590,10 @@ void	chunking(t_ctx *ctx)
 				if (check_order(ctx->a))
 					break ;
 				if (last_2_reversed(ctx->a))
-					rotate_reverse(&(ctx->a), &(ctx->b), 'a', 1);
+					rra(ctx);
 				else
-					rotate(&(ctx->a), &(ctx->b), 'a', 1);
-				// print_stack2(ctx->a, "4-5:\n");			
+					ra(ctx);
+				// print_stack(ctx->a, "4-5:\n");			
 			}
 		}
 	}
@@ -682,37 +604,31 @@ void fix_order_a(t_ctx *ctx)
 	int	cost_a;
 	
 	cost_a = calc_rot_cost(calc_index_of_node(ctx->a, find_min_rank(ctx->a)), ctx->size_a);
-	if (cost_a > 0)
-	{
-		rotate(&(ctx->a), &(ctx->b), 'a', cost_a);
-	}
-	else if (cost_a < 0)
-	{
-		rotate_reverse(&(ctx->a), &(ctx->b), 'a', -cost_a);
-	}
+	if (cost_a != 0)
+		apply_rot_a(ctx, cost_a);
 }
 
 int	main(int ac, char **av)
 {
-	// t_list *stack_a;
-	// t_list *stack_b;
 	int		result;
 	t_ctx	ctx;
 
-	// stack_a = NULL;
-	// stack_b = NULL;
 	ctx.a = NULL;
 	ctx.b = NULL;
+	ctx.ops = 0;
 
 	result = read_input(ac, av, &(ctx.a));
+	print_stack(ctx.a, "Input:\n");
 	if (result != 0)
 		return (1);
 
 	compute_rank(ctx.a);
-	// test_move_stack();
 
 	init_cache_a(&ctx);
 	init_cache_b(&ctx);
+
+	radix_sort(&ctx);
+	return (0);
 
 	if (check_circular_list(ctx.a, ctx.size_a))
 		fix_order_a(&ctx);
@@ -728,19 +644,16 @@ int	main(int ac, char **av)
 			if (check_order(ctx.a))
 				return (0);
 			if (last_2_reversed(ctx.a))
-				rotate_reverse(&(ctx.a), &(ctx.b), 'a', 1);
+				rra(&ctx);
 			else
-				rotate(&(ctx.a), &(ctx.b), 'a', 1);
-			// print_stack2(ctx.a, "4-5:\n");			
+				ra(&ctx);
+			// print_stack(ctx.a, "4-5:\n");			
 		}
 		return (0);
 	}
 
-	int sort = 1;
 	if (ac > 1 && ctx.size_a > 0)
 	{
-		if (sort == 0) radix_sort(&(ctx.a));
-		else if (sort == 1) {
 		// Phase 1, Reduce Stage (push to B to reduce A)
 		int lis_size = 0;
 		int *lis_arr = NULL;
@@ -749,8 +662,6 @@ int	main(int ac, char **av)
 		// if (lis_size >= ctx.size_a / 3)
 		if (lis_size >= (ctx.size_a / 2) + 1)
 		{
-			// print_stack2(ctx.a, "LIS :\n");
-			// printf("LIS SIZE: %d\n", lis_size);
 			while (ctx.size_a != lis_size)
 			{
 				/*int i = 0;
@@ -758,7 +669,7 @@ int	main(int ac, char **av)
 				{
 					if (((t_data *)ctx.a->content)->rank == lis_arr[i])
 					{
-						rotate(&(ctx.a), &(ctx.b), 'a', 1);
+						ra(ctx);
 						continue;
 					}
 					i++;
@@ -783,39 +694,22 @@ int	main(int ac, char **av)
 					node = node->next;
 				}
 
-				if (best_move.ra > 0)
-					rotate(&(ctx.a), &(ctx.b), 'a', best_move.ra);
-				else if (best_move.ra < 0)
-					rotate_reverse(&(ctx.a), &(ctx.b), 'a', -best_move.ra);
+				if (best_move.ra != 0)
+					apply_rot_a(&ctx, best_move.ra);
 
-				// printf("LIS Rank: %d\n", lis_arr[i]);
-				push(&(ctx.a), &(ctx.b), 'b', 1);
-				ctx.size_a--;
-				ctx.size_b++;
+				// ft_printf("LIS Rank: %d\n", lis_arr[i]);
+				pb(&ctx);
 			}
-
-
-
-
-			// printf("Stack A after extracting LIS:\n");
-			// print_stack(stack_a);
-			// printf("Stack B after extracting LIS:\n");
-			// print_stack(stack_b);
 			free(lis_arr);
 		}
 		else
 			chunking(&ctx);
 
-		// printf("size_a: %d, size_b: %d\n", ctx.size_a, ctx.size_b);
-		// printf("=============================\n");
-		// Phase 1, Rebuild Stage (push back to A in order)
 		t_move	move;
-		// init_cache_a(&ctx);
-		// init_cache_b(&ctx);
 		int k;
 		while (ctx.size_b)
 		{
-			// printf("size_b: %d\n", ctx.size_b);
+			// ft_printf("size_b: %d\n", ctx.size_b);
 			k = 0;
 			if (ctx.size_b >= 200)
 			// 23 best
@@ -829,36 +723,15 @@ int	main(int ac, char **av)
 			else
 				k = 0;
 			move = calc_best_cost_move(&ctx, k); 
-			perform_move(&ctx, &move);
-
-			// printf("Stack A after perform move:\n");
-			// print_stack(ctx.a);
-			// printf("Stack B after perform move:\n");
-			// print_stack(ctx.b);
+			execute_move(&ctx, move);
 		}
-		// printf("Stack A after Greedy Insertion:\n");
-		// print_stack(ctx.a);
-		// printf("Stack B after Greedy Insertion:\n");
-		// print_stack(ctx.b);
-
-		int final_rotate = calc_rot_cost(calc_index_of_node(ctx.a, find_min_rank(ctx.a)), ctx.size_a);
-		// printf("Final rotate: %d\n", final_rotate);
-		if (final_rotate > 0)
-			rotate(&(ctx.a), &(ctx.b), 'a', final_rotate);
-		else
-			rotate_reverse(&(ctx.a), &(ctx.b), 'a', -final_rotate);
-		// printf("Stack A after final rotate:\n");
-		// print_stack(ctx.a);
-
-		} // end sort == 1
+		if (check_circular_list(ctx.a, ctx.size_a))
+			fix_order_a(&ctx);
 	}
 	else
 		ft_putstr_fd("Error\n", 2);
 
 	ft_lstclear(&(ctx.a), free);
 	ft_lstclear(&(ctx.b), free);
-
-	// ft_lstclear(&stack_a, free);
-	// ft_lstclear(&stack_b, free);
 	return (0);
 }

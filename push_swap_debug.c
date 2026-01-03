@@ -6,7 +6,7 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 12:07:14 by zchoo             #+#    #+#             */
-/*   Updated: 2026/01/03 13:29:42 by zchoo            ###   ########.fr       */
+/*   Updated: 2026/01/03 17:52:38 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	debug_print_stack(t_list *stack, char *label)
 	current = stack;
 	while (current)
 	{
-		data = (t_data *)current->content;
+		data = to_data(current->content);
 		if (data)
 			ft_printf("Value: %d, Rank: %d\n", data->value, data->rank);
 		else

@@ -6,7 +6,7 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 17:31:15 by zchoo             #+#    #+#             */
-/*   Updated: 2026/01/02 18:05:41 by zchoo            ###   ########.fr       */
+/*   Updated: 2026/01/03 18:05:25 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	pa(t_ctx *ctx)
 	ctx->ops++;
 	ctx->size_b--;
 	ctx->size_a++;
+	update_min_max(ctx);
 }
 
 void	pb(t_ctx *ctx)
@@ -32,4 +33,5 @@ void	pb(t_ctx *ctx)
 	ctx->ops++;
 	ctx->size_a--;
 	ctx->size_b++;
+	update_min_max(ctx);
 }

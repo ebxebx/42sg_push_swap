@@ -6,15 +6,15 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 15:44:31 by zchoo             #+#    #+#             */
-/*   Updated: 2026/01/03 15:48:02 by zchoo            ###   ########.fr       */
+/*   Updated: 2026/01/03 16:39:22 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "push_swap_ops.h"
 #include "push_swap_debug.h"
+#include "push_swap_ops.h"
 
-void	sort_small(t_ctx *ctx)
+void	sort_3_nodes(t_ctx *ctx)
 {
 	t_data	*data1;
 	t_data	*data2;
@@ -36,27 +36,47 @@ void	sort_small(t_ctx *ctx)
 	}
 }
 
+void	sort_small(t_ctx *ctx)
+{
+	if (ctx->size_a >= 3 && ctx->size_a <= 4)
+	{
+		debug_print_stack(ctx->a, "Stack size 3-4:\n");
+		while (1)
+		{
+			sort_3_nodes(ctx);
+			if (check_circular_list(ctx->a, ctx->size_a))
+				fix_order_a(ctx);
+			if (check_order(ctx->a))
+				return ;
+			if (last_2_reversed(ctx->a))
+				rra(ctx);
+			else
+				ra(ctx);
+		}
+		return ;
+	}
+}
+
 int	last_2_reversed(t_list *stack)
 {
-	t_list *prev;
+	t_list	*prev;
 
 	prev = stack;
-	while(stack && stack->next)
+	while (stack && stack->next)
 	{
 		prev = stack;
 		stack = stack->next;
 	}
-	// ft_printf("prev: %p, stack: %p\n", prev, stack);
 	return (to_data(prev->content)->rank > to_data(stack->content)->rank);
 }
 
-void fix_order_a(t_ctx *ctx)
+void	fix_order_a(t_ctx *ctx)
 {
 	int	cost_a;
-	
+
 	debug_print_stack(ctx->a, "Fix Order: A\n");
-	cost_a = calc_rot_cost(
-		calc_index_of_node(ctx->a, find_min_rank(ctx->a)), ctx->size_a);
+	cost_a = calc_rot_cost(calc_index_of_node(ctx->a, find_min_rank(ctx->a)),
+			ctx->size_a);
 	if (cost_a != 0)
 		apply_rot_a(ctx, cost_a);
 }

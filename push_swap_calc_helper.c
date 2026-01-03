@@ -6,7 +6,7 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 14:19:28 by zchoo             #+#    #+#             */
-/*   Updated: 2026/01/03 15:35:35 by zchoo            ###   ########.fr       */
+/*   Updated: 2026/01/03 18:05:43 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,28 @@ int	calc_stack_size(t_list *stack)
 		stack = stack->next;
 	}
 	return (size);
+}
+
+void	update_min_max(t_ctx *ctx)
+{
+	if (ctx->size_a > 0)
+	{
+		ctx->min_a = to_data(find_min_rank(ctx->a)->content)->rank;
+		ctx->max_a = to_data(find_max_rank(ctx->a)->content)->rank;
+	}
+	else
+	{
+		ctx->min_a = -1;
+		ctx->max_a = -1;
+	}
+	if (ctx->size_b > 0)
+	{
+		ctx->min_b = to_data(find_min_rank(ctx->b)->content)->rank;
+		ctx->max_b = to_data(find_max_rank(ctx->b)->content)->rank;
+	}
+	else
+	{
+		ctx->min_b = -1;
+		ctx->max_b = -1;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/26 12:37:32 by zchoo             #+#    #+#             */
-/*   Updated: 2026/01/03 18:07:28 by zchoo            ###   ########.fr       */
+/*   Updated: 2026/01/03 18:42:15 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int			last_2_reversed(t_list *stack);
 void		fix_order_a(t_ctx *ctx);
 
 // push_swap_chunking.c
-void		chunking(t_ctx *ctx);
+void		push_b_by_chunk(t_ctx *ctx);
 
 // push_swap_longest_increasing_subsequence.c
 void		get_longest_increasing_subsequence(

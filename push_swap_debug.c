@@ -6,7 +6,7 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 12:07:14 by zchoo             #+#    #+#             */
-/*   Updated: 2026/01/03 17:52:38 by zchoo            ###   ########.fr       */
+/*   Updated: 2026/01/03 18:51:04 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ void	debug_printf(const char *format_str, ...)
 	if (!DEBUG)
 		return ;
 	va_start(args, format_str);
-	// Pass the format string AND the captured va_list to the target function pointer
 	ft_vprintf(format_str, &args);
 	va_end(args);
 }

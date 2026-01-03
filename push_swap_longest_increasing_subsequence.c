@@ -6,7 +6,7 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 15:32:48 by zchoo             #+#    #+#             */
-/*   Updated: 2026/01/03 15:33:38 by zchoo            ###   ########.fr       */
+/*   Updated: 2026/01/03 18:52:10 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ void	get_longest_increasing_subsequence(t_list *stack, int stack_size, int *lis_
 	dp = malloc(sizeof(int) * stack_size);
 	prev = malloc(sizeof(int) * stack_size);
 
-	// dump stack to arr;
 	t_list *current = stack;
 	i = 0;
 	while (current)
@@ -31,10 +30,6 @@ void	get_longest_increasing_subsequence(t_list *stack, int stack_size, int *lis_
 		arr[i++] = ((t_data *)current->content)->rank;
 		current = current->next;
 	}
-	// while (i--)
-	// {
-	// 	// ft_printf("Stack Rank[%d]: %d\n", i, arr[i]);
-	// }
 
 	i = 0;
 	while (i < stack_size)
@@ -55,10 +50,6 @@ void	get_longest_increasing_subsequence(t_list *stack, int stack_size, int *lis_
 		}
 		i++;
 	}
-	// while (i--)
-	// {
-	// 	// ft_printf("DP[%d]: %d, Prev[%d]: %d\n", i, dp[i], i, prev[i]);
-	// }
 
 	*lis_size = 0;
 	i = 0;

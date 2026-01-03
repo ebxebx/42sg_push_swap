@@ -6,7 +6,7 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 16:17:26 by zchoo             #+#    #+#             */
-/*   Updated: 2026/01/03 17:25:08 by zchoo            ###   ########.fr       */
+/*   Updated: 2026/01/03 18:40:10 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,8 @@ void	sort(t_ctx *ctx)
 		free(lis_arr);
 	}
 	else
-		chunking(ctx);
+		push_b_by_chunk(ctx);
+	sort_small(ctx);
 	greedy_insertion_push_a(ctx);
 	debug_print_stack(ctx->a, "Stack A before fix order!\n");
 	if (check_circular_list(ctx->a, ctx->size_a))

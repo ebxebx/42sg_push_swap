@@ -6,7 +6,7 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 16:17:43 by zchoo             #+#    #+#             */
-/*   Updated: 2026/01/03 13:24:19 by zchoo            ###   ########.fr       */
+/*   Updated: 2026/01/03 15:23:44 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static int	max_bits(t_list *stack)
 	int		max;
 
 	node = find_max_rank(stack);
-	max = getData(node->content)->rank;
+	max = to_data(node->content)->rank;
 	return (bit_count(max));
 }
 
@@ -56,9 +56,7 @@ void	radix_sort(t_ctx *ctx)
 		j = ctx->size_a;
 		while (j)
 		{
-			// ft_printf("size_a: %d, ops: %d\n", ctx->size_a, ctx->ops);
-			// print_stack(ctx->a, "Radix Sort: A\n");
-			if (getData(ctx->a->content)->rank & (1 << i))
+			if (to_data(ctx->a->content)->rank & (1 << i))
 				ra(ctx);
 			else
 				pb(ctx);

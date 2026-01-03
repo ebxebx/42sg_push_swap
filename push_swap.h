@@ -6,7 +6,7 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/26 12:37:32 by zchoo             #+#    #+#             */
-/*   Updated: 2026/01/03 13:31:35 by zchoo            ###   ########.fr       */
+/*   Updated: 2026/01/03 15:48:29 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,26 +51,43 @@ typedef struct s_ctx
 	int		ops;
 }			t_ctx;
 
+// push_swap_read_input.c
+int			read_input(int ac, char **av, t_list **stack);
+
+// push_swap_chunking.c
+void		chunking(t_ctx *ctx);
+
+// push_swap_longest_increasing_subsequence.c
+void		get_longest_increasing_subsequence(
+	t_list *stack, int stack_size, int *lis_size, int **lis_arr);
+
+// push_swap_sort_helper.c
+void		sort_small(t_ctx *ctx);
+int			last_2_reversed(t_list *stack);
+void		fix_order_a(t_ctx *ctx);
+
+// push_swap_utils.c
+int			is_in_int_arr(int i, int *arr, int size);
+t_data		*to_data(void *ptr);
 void		init_cache_a(t_ctx *ctx);
 void		init_cache_b(t_ctx *ctx);
 
-int			compare_rank(t_data *data1, t_data *data2);
 void		radix_sort(t_ctx *ctx);
 
-t_data		*getData(void *ptr);
-
-int			calc_rot_cost(int pos, int size);
-int			combine_rr(int *cost_a, int *cost_b);
-
-t_move		calc_cost(t_ctx *ctx, t_list *stack_b_node, int pos_b);
-t_move		calc_best_cost_move(t_ctx *ctx, int k);
-int			calc_rot_cost(int pos, int size);
-int			calc_index_of_node(t_list *stack, t_list *node);
-int			combine_rr(int *cost_a, int *cost_b);
-t_list		*find_smallest_larger(t_list *a, int x_rank);
+// push_swap_check.c
+int			check_circular_list(t_list *stack, int size_a);
+int			check_order(t_list *stack);
 t_list		*find_min_rank(t_list *a);
 t_list		*find_max_rank(t_list *a);
 
-int			is_in_int_arr(int i, int *arr, int size);
+// push_swap_calc.c
+int			calc_index_of_node(t_list *stack, t_list *node);
+void		calc_rank(t_list *stack);
+
+// push_swap_greedy_insertion.c
+t_move		calc_cost_move(t_ctx *ctx, t_list *stack_b_node, int pos_b);
+t_move		calc_best_cost_move(t_ctx *ctx, int k);
+int			calc_rot_cost(int pos, int size);
+int			combine_rr(int *cost_a, int *cost_b);
 
 #endif

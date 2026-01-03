@@ -6,3 +6,4 @@ pro_checker
 *.d
 *.txt
 *.sh
+*.csv

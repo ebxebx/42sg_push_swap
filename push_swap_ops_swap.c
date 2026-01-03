@@ -6,7 +6,7 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 17:36:05 by zchoo             #+#    #+#             */
-/*   Updated: 2026/01/02 18:04:30 by zchoo            ###   ########.fr       */
+/*   Updated: 2026/01/03 15:23:44 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ static void	swap(t_list **stack)
 
 	if (!stack || !*stack || !(*stack)->next)
 		return ;
-	temp = getData((*stack)->content);
-	(*stack)->content = getData((*stack)->next->content);
+	temp = to_data((*stack)->content);
+	(*stack)->content = to_data((*stack)->next->content);
 	(*stack)->next->content = temp;
 }
 

@@ -6,23 +6,12 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/26 12:33:51 by zchoo             #+#    #+#             */
-/*   Updated: 2026/01/02 18:59:28 by zchoo            ###   ########.fr       */
+/*   Updated: 2026/01/03 15:23:54 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <limits.h>
-
-int is_in_int_arr(int i, int *arr, int size)
-{
-	while (size--)
-	{
-		if (i == arr[0])
-			return (1);
-		arr++;
-	}
-	return (0);
-}
 
 void	init_cache_a(t_ctx *ctx)
 {
@@ -66,50 +55,18 @@ void	init_cache_b(t_ctx *ctx)
 	}
 }
 
-t_list	*find_min_rank(t_list *a)
+t_data	*to_data(void *ptr)
 {
-	t_list *cur;
-	t_list *min_node;
-	int min_rank;
-	int r;
-
-	cur = a;
-	min_node = a;
-	min_rank = ((t_data *)a->content)->rank;
-
-	while (cur)
-	{
-		r = ((t_data *)cur->content)->rank;
-		if (r < min_rank)
-		{
-			min_rank = r;
-			min_node = cur;
-		}
-		cur = cur->next;
-	}
-	return (min_node);
+	return ((t_data *)ptr);
 }
 
-t_list	*find_max_rank(t_list *a)
+int	is_in_int_arr(int i, int *arr, int size)
 {
-	t_list *cur;
-	t_list *max_node;
-	int max_rank;
-	int r;
-
-	cur = a;
-	max_node = a;
-	max_rank = ((t_data *)a->content)->rank;
-
-	while (cur)
+	while (size--)
 	{
-		r = ((t_data *)cur->content)->rank;
-		if (r > max_rank)
-		{
-			max_rank = r;
-			max_node = cur;
-		}
-		cur = cur->next;
+		if (i == arr[0])
+			return (1);
+		arr++;
 	}
-	return (max_node);
+	return (0);
 }

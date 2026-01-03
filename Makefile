@@ -10,10 +10,14 @@ TEST_CMD = ./$(NAME) 9 1 -10 -2 5 100
 LIBFT_DIR = ./libft
 LIBFT     = $(LIBFT_DIR)/libft.a
 
-SRCS = push_swap.c push_swap_utils.c \
+SRCS = push_swap.c push_swap_read_input.c \
+		push_swap_utils.c push_swap_sort_helper.c \
 		push_swap_ops_rot.c push_swap_ops_rot_helper.c \
 		push_swap_ops_push.c push_swap_ops_swap.c push_swap_ops_apply.c \
 		push_swap_greedy_insertion.c push_swap_radix_sort.c \
+		push_swap_chunking.c \
+		push_swap_longest_increasing_subsequence.c \
+		push_swap_check.c push_swap_calc_helper.c \
 		push_swap_debug.c
 OBJS = $(SRCS:.c=.o)
 

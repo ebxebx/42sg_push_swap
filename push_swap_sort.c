@@ -6,7 +6,7 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 16:17:26 by zchoo             #+#    #+#             */
-/*   Updated: 2026/01/03 18:40:10 by zchoo            ###   ########.fr       */
+/*   Updated: 2026/01/03 21:42:38 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,13 @@ void	lis_push_b(t_ctx *ctx, int *lis_arr, int lis_size)
 	}
 }
 
+/*
+	May fine tune k value like ....
+
+	if (ctx->size_b >= 125) // need furture test ...
+		k = 30;
+
+*/
 void	greedy_insertion_push_a(t_ctx *ctx)
 {
 	t_move	move;
@@ -56,9 +63,6 @@ void	greedy_insertion_push_a(t_ctx *ctx)
 			k = 24;
 		else if (ctx->size_b >= 150)
 			k = 23;
-		// if (k > (ctx->size_b / 2))
-		/*else if (ctx->size_b >= 125)
-			k = 30;*/
 		move = calc_best_cost_move(ctx, k);
 		debug_print_stack(ctx->a, "Stack A before exec move!\n");
 		execute_move(ctx, move);

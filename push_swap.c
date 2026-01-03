@@ -6,35 +6,14 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/26 12:33:51 by zchoo             #+#    #+#             */
-/*   Updated: 2026/01/02 21:04:57 by zchoo            ###   ########.fr       */
+/*   Updated: 2026/01/03 13:28:01 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "push_swap_ops.h"
+#include "push_swap_debug.h"
 #include <limits.h>
-
-void	print_stack(t_list *stack, char *label)
-{
-	t_list *current;
-	t_data *data;
-
-	if (!DEBUG)
-		return;
-	if (label && *label)
-		ft_printf("%s", label);
-
-	current = stack;
-	while (current)
-	{
-		data = (t_data *)current->content;
-		if (data)
-			ft_printf("Value: %d, Rank: %d\n", data->value, data->rank);
-		else
-			ft_printf("Empty node\n");
-		current = current->next;
-	}
-}
 
 // buggy, something is wrong with the rank checking
 int check_rank(t_list *stack)
@@ -75,7 +54,7 @@ int check_circular_list(t_list *stack, int size_a)
 	t_data *data;
 	int		drop_count;
 
-	print_stack(stack, "Check Circular List\n");
+	debug_print_stack(stack, "Check Circular List\n");
 	if (size_a == 0)
 		return (0);
 	drop_count = 0;
@@ -109,9 +88,6 @@ int check_order(t_list *stack)
 		// ft_printf("Checking node with Value: %d, Rank: %d\n",data->value, data->rank);
 		if (current->next)
 		{
-			// ft_printf("Next node's Value: %d, Rank: %d\n",
-				// ((t_data *)current->next->content)->value,
-				// ((t_data *)current->next->content)->rank);
 			if (data->rank > ((t_data *)current->next->content)->rank)
 				return (0);
 		}
@@ -167,7 +143,7 @@ void update_rank(t_list *stack)
 		}
 
 		/* // ft_printf("=====\n");
-		// print_stack(stack); */
+		// debug_print_stack(stack); */
 		current = current->next;
 		if (!current)
 			current = stack;
@@ -198,7 +174,7 @@ void compute_rank(t_list *stack)
 		}
 
 		// ft_printf("=====\n");
-		// print_stack(stack);
+		// debug_print_stack(stack);
 		current = current->next;
 	}
 	// ft_printf("+++++\n");
@@ -407,7 +383,7 @@ void sort_small(t_ctx *ctx)
 	t_data	*data3;
 	if (ctx->size_a >= 3)
 	{
-		print_stack(ctx->a, "Sort small start:\n");
+		debug_print_stack(ctx->a, "Sort small start:\n");
 		data1 = getData(ctx->a->content);
 		data2 = getData(ctx->a->next->content);
 		data3 = getData(ctx->a->next->next->content);
@@ -446,7 +422,7 @@ void	chunking(t_ctx *ctx)
 	int chunk_size;
 	int	i;
 
-	print_stack(ctx->a, "Chunking\n");
+	debug_print_stack(ctx->a, "Chunking\n");
 	chunks = calc_chunks(ctx);
 	chunk_size = ctx->size_a / chunks;
 	i = 0;
@@ -485,7 +461,7 @@ void	chunking(t_ctx *ctx)
 		)
 		{
 			// ft_printf("i: %d, j: %d, size_a:%d\n", i, j, ctx->size_a);
-			// print_stack(ctx->a, "CCC\n");
+			// debug_print_stack(ctx->a, "CCC\n");
 			data = (t_data *)(ctx->a->content);
 			if (from <= data->rank && data->rank <= to)
 			{
@@ -550,8 +526,8 @@ void	chunking(t_ctx *ctx)
 				(void) extra_max;
 /* 				if (last_ra > 50){
 					// ft_printf("a:min/max: %d/%d, extra: %d, from: %d, to: %d\n", ctx->min_a, ctx->max_a, extra, from, to);
-					// print_stack(ctx->b, "stack b, error: last_ra > 100\n");
-					// print_stack(ctx->a, "stack a, error: last_ra > 100\n");
+					// debug_print_stack(ctx->b, "stack b, error: last_ra > 100\n");
+					// debug_print_stack(ctx->a, "stack a, error: last_ra > 100\n");
 					exit(1);
 				}
 				if (last_ra >= threhold)
@@ -571,13 +547,13 @@ void	chunking(t_ctx *ctx)
 		// from = to + 1;		
 		from = ctx->min_a;		
 		i++;
-		// print_stack(ctx->b, "Stack B after chunking:\n");
+		// debug_print_stack(ctx->b, "Stack B after chunking:\n");
 	}
-	// print_stack(ctx->a, "Stack A after chunking:\n");
+	// debug_print_stack(ctx->a, "Stack A after chunking:\n");
 	if (!check_circular_list(ctx->a, ctx->size_a))
 	{
 		// sort_small(ctx);
-		// print_stack(ctx->a, "Stack A after sort small:\n");
+		// debug_print_stack(ctx->a, "Stack A after sort small:\n");
 
 		if (ctx->size_a >= 3 && ctx->size_a <= 4)
 		{
@@ -592,7 +568,7 @@ void	chunking(t_ctx *ctx)
 					rra(ctx);
 				else
 					ra(ctx);
-				// print_stack(ctx->a, "4-5:\n");			
+				// debug_print_stack(ctx->a, "4-5:\n");			
 			}
 		}
 	}
@@ -602,7 +578,7 @@ void fix_order_a(t_ctx *ctx)
 {
 	int	cost_a;
 	
-	print_stack(ctx->a, "Fix Order: A\n");
+	debug_print_stack(ctx->a, "Fix Order: A\n");
 	cost_a = calc_rot_cost(
 		calc_index_of_node(ctx->a, find_min_rank(ctx->a)), ctx->size_a);
 	if (cost_a != 0)
@@ -611,6 +587,7 @@ void fix_order_a(t_ctx *ctx)
 
 int	main(int ac, char **av)
 {
+	debug_printf("Hi %s %d", "aa", 1);
 	int		result;
 	t_ctx	ctx;
 
@@ -619,7 +596,7 @@ int	main(int ac, char **av)
 	ctx.ops = 0;
 
 	result = read_input(ac, av, &(ctx.a));
-	print_stack(ctx.a, "Input:\n");
+	debug_print_stack(ctx.a, "Input:\n");
 	if (result != 0)
 		return (1);
 
@@ -648,7 +625,7 @@ int	main(int ac, char **av)
 				rra(&ctx);
 			else
 				ra(&ctx);
-			// print_stack(ctx.a, "4-5:\n");			
+			// debug_print_stack(ctx.a, "4-5:\n");			
 		}
 		return (0);
 	}
@@ -663,7 +640,7 @@ int	main(int ac, char **av)
 		// if (lis_size >= ctx.size_a / 3)
 		if (lis_size >= (ctx.size_a / 2) + 1)
 		{
-			print_stack(ctx.a, "LIS\n");
+			debug_print_stack(ctx.a, "LIS\n");
 			while (ctx.size_a != lis_size)
 			{
 				/*int i = 0;
@@ -702,8 +679,8 @@ int	main(int ac, char **av)
 				// ft_printf("LIS Rank: %d\n", lis_arr[i]);
 				pb(&ctx);
 			}
-			print_stack(ctx.a, "Stack A after LIS\n");
-			print_stack(ctx.b, "Stack B after LIS\n");
+			debug_print_stack(ctx.a, "Stack A after LIS\n");
+			debug_print_stack(ctx.b, "Stack B after LIS\n");
 			free(lis_arr);
 		}
 		else
@@ -727,14 +704,14 @@ int	main(int ac, char **av)
 			else
 				k = 0;
 			move = calc_best_cost_move(&ctx, k); 
-			print_stack(ctx.a, "Stack A before exec move!\n");
+			debug_print_stack(ctx.a, "Stack A before exec move!\n");
 			execute_move(&ctx, move);
-			print_stack(ctx.a, "Stack A after exec move!\n");
+			debug_print_stack(ctx.a, "Stack A after exec move!\n");
 		}
-		print_stack(ctx.a, "Stack A before fix order!\n");
+		debug_print_stack(ctx.a, "Stack A before fix order!\n");
 		if (check_circular_list(ctx.a, ctx.size_a))
 			fix_order_a(&ctx);
-		print_stack(ctx.a, "Stack A Finish!\n");
+		debug_print_stack(ctx.a, "Stack A Finish!\n");
 	}
 	else
 		ft_putstr_fd("Error\n", 2);

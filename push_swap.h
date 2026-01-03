@@ -6,7 +6,7 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/26 12:37:32 by zchoo             #+#    #+#             */
-/*   Updated: 2026/01/02 19:10:31 by zchoo            ###   ########.fr       */
+/*   Updated: 2026/01/03 13:31:35 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,6 @@ void		init_cache_b(t_ctx *ctx);
 
 int			compare_rank(t_data *data1, t_data *data2);
 void		radix_sort(t_ctx *ctx);
-
-void		print_stack(t_list *stack, char *label);
 
 t_data		*getData(void *ptr);
 

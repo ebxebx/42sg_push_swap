@@ -6,12 +6,13 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 16:17:43 by zchoo             #+#    #+#             */
-/*   Updated: 2026/01/02 19:59:21 by zchoo            ###   ########.fr       */
+/*   Updated: 2026/01/03 13:24:19 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "push_swap_ops.h"
+#include "push_swap_debug.h"
 
 static int	bit_count(int max)
 {
@@ -66,5 +67,5 @@ void	radix_sort(t_ctx *ctx)
 		push_all_to_a(ctx);
 		i++;
 	}
-	print_stack(ctx->a, "Radix Sort Final: A\n");
+	debug_print_stack(ctx->a, "Radix Sort Final: A\n");
 }
